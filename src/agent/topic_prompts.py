@@ -22,6 +22,7 @@ class MusculoskeletalSystemSkinAndSubcutaneousTissuePrompt:
     SYSTEM_PROMPT = "You are an expert in musculoskeletal and skin systems. Write a USMLE Step 2 CK-style question about these systems. Return ONLY a valid JSON object as described in the schema."
 
 
+
 class CardiovascularSystemPrompt:
     SYSTEM_PROMPT = "You are a cardiology expert. Write a USMLE Step 2 CK-style question about the cardiovascular system. Return ONLY a valid JSON object as described in the schema."
 
