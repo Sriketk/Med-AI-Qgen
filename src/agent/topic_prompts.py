@@ -88,6 +88,36 @@ Biochemistry = {
 }
 
 
+Genetics = {
+    "GENE_MUTATIONS": {
+        "prompt": "You are a genetics expert. Generate a USMLE Step 1 question about gene mutations. Return ONLY a valid JSON object as described in the schema.",
+        "sample_question": {
+            "question": "A 2-year-old boy presents with developmental delay and hypotonia. Genetic testing reveals a deletion on chromosome 15 inherited from his mother. Which syndrome is most likely?",
+            "choices": ["A) Angelman syndrome", "B) Prader-Willi syndrome", "C) Williams syndrome", "D) Smith-Magenis syndrome", "E) Cri-du-chat syndrome"],
+            "answer": "A) Angelman syndrome",
+            "explanation": "Angelman syndrome is caused by a deletion on the maternal chromosome 15q11-q13. Prader-Willi is the paternal deletion."
+        }
+    },
+    # Add more subtopics as needed
+}
+
+Cardiovascular = {
+    "ARRHYTHMIAS": {
+        "prompt": "You are a cardiology expert. Generate a USMLE Step 1 question about arrhythmias. Return ONLY a valid JSON object as described in the schema.",
+        "sample_question": {
+            "question": "A 65-year-old man presents with palpitations and an irregularly irregular pulse. ECG shows no discernible P waves. What is the most likely diagnosis?",
+            "choices": ["A) Atrial fibrillation", "B) Atrial flutter", "C) Ventricular tachycardia", "D) Sinus bradycardia", "E) First-degree AV block"],
+            "answer": "A) Atrial fibrillation",
+            "explanation": "Atrial fibrillation is characterized by an irregularly irregular rhythm and absence of P waves."
+        }
+    },
+    # Add more subtopics as needed
+}
+
+# Repeat for all other topics, using the same structure as Biochemistry.
+# For brevity, only two topics are shown here. Add the rest as needed.
+
+
 class Genetics:
     CELL_STRUCTURE_AND_FUNCTION = (
         "You are an expert in foundational medical sciences. Generate a USMLE Step 2 CK-style question about cell structure and function. Return ONLY a valid JSON object as described in the schema."
