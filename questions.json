@@ -1,0 +1,564 @@
+{
+  "Biochemistry": [
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A 10-year-old boy is evaluated for developmental delay and progressive myopia. He has also been experiencing recurrent thromboembolic events. On examination, he has a tall stature, pectus excavatum, and dislocated lenses. Laboratory tests reveal increased plasma homocysteine. Which of the following enzyme deficiencies is most likely responsible for this presentation?",
+      "choices": [
+        "A) Cystathionine beta-synthase",
+        "B) Phenylalanine hydroxylase",
+        "C) Glutamine synthetase",
+        "D) Tyrosinase",
+        "E) Dihydropteridine reductase"
+      ],
+      "answer": "A) Cystathionine beta-synthase",
+      "explanation": "The clinical vignette describes a classic presentation of homocystinuria, characterized by developmental delay, ectopia lentis, and increased thromboembolic risk, all associated with elevated homocysteine levels. A deficiency in the enzyme cystathionine beta-synthase is the most common cause of homocystinuria."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A 7-year-old girl is brought to the clinic with frequent episodes of vomiting and lethargy. Her parents note that she also has delayed milestones. Lab analysis shows hyperammonemia and normal glucose levels. Which enzyme deficiency is likely causing her condition?",
+      "choices": [
+        "A) Ornithine transcarbamylase",
+        "B) Arginosuccinate synthetase",
+        "C) Phenylalanine hydroxylase",
+        "D) Uroporphyrinogen decarboxylase",
+        "E) Adenosine deaminase"
+      ],
+      "answer": "A) Ornithine transcarbamylase",
+      "explanation": "The patient's symptoms and lab findings are consistent with a urea cycle defect, characterized by hyperammonemia. Ornithine transcarbamylase deficiency is an X-linked recessive disorder and is the most common urea cycle disorder leading to hyperammonemia."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "An 18-month-old child is assessed for hepatosplenomegaly and failure to thrive. The parents report urine color darkening upon standing. Lab tests indicate elevated homogentisic acid levels in the urine. Which enzyme is deficient in this patient?",
+      "choices": [
+        "A) Homogentisate oxidase",
+        "B) Tyrosinase",
+        "C) Phenylalanine hydroxylase",
+        "D) Isocitrate dehydrogenase",
+        "E) Dihydropteridine reductase"
+      ],
+      "answer": "A) Homogentisate oxidase",
+      "explanation": "The child's clinical signs and urinary findings are indicative of alkaptonuria, a metabolic disorder caused by a deficiency in homogentisate oxidase, leading to the accumulation of homogentisic acid."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A 4-year-old boy presents with developmental delay and seizure-like episodes. Examination shows microcephaly and spasticity. Blood tests reveal elevated phenylalanine levels. Which dietary intervention could most benefit this patient?",
+      "choices": [
+        "A) Low-phenylalanine diet",
+        "B) High-tyrosine diet",
+        "C) High-tryptophan diet",
+        "D) High-lysine diet",
+        "E) Low-glucose diet"
+      ],
+      "answer": "A) Low-phenylalanine diet",
+      "explanation": "Elevated phenylalanine levels point to phenylketonuria (PKU). Dietary restriction of phenylalanine, found in protein-rich foods, is essential to prevent neurological damage."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A newborn has episodes of muscle stiffness and a notable strong body odor. Blood tests show elevated levels of leucine, isoleucine, and valine. Urine has a distinct sweet smell. Which of the following enzyme deficiencies is most likely responsible?",
+      "choices": [
+        "A) Branched-chain alpha-keto acid dehydrogenase complex",
+        "B) Methionine adenosyltransferase",
+        "C) Phenylalanine hydroxylase",
+        "D) Alanine aminotransferase",
+        "E) Arginosuccinate lyase"
+      ],
+      "answer": "A) Branched-chain alpha-keto acid dehydrogenase complex",
+      "explanation": "The findings are consistent with Maple Syrup Urine Disease (MSUD), characterized by elevated branched-chain amino acids and a sweet urine odor, due to a deficiency in the branched-chain alpha-keto acid dehydrogenase complex."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A 3-year-old boy is experiencing progressive arched foot deformities and difficulty walking. He is found to have brownish discoloration in the sclerae and ear cartilage. This presentation, along with elevated urine homogentisic acid, leads you to suspect a deficiency in which enzyme?",
+      "choices": [
+        "A) Homogentisate oxidase",
+        "B) Albodingin synthetase",
+        "C) Phenylalanine hydroxylase",
+        "D) Tyrosinase",
+        "E) Dihydropteridine reductase"
+      ],
+      "answer": "A) Homogentisate oxidase",
+      "explanation": "The combination of skeletal deformities and urine findings suggests alkaptonuria, which results from a deficiency in homogentisate oxidase."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A 2-year-old boy is seen for recurrent infantile spasms and developmental delay. Physical examination reveals sweet-smelling urine. Over time, he develops metabolic acidosis. Which of the following defects might be the underlying cause?",
+      "choices": [
+        "A) Branched-chain alpha-keto acid dehydrogenase complex",
+        "B) Cystathionine beta-synthase",
+        "C) Phenylalanine hydroxylase",
+        "D) Fumarylacetoacetate hydrolase",
+        "E) Glucose-6-phosphate dehydrogenase"
+      ],
+      "answer": "A) Branched-chain alpha-keto acid dehydrogenase complex",
+      "explanation": "The infant's symptoms are indicative of Maple Syrup Urine Disease (MSUD), involving a deficiency in the branched-chain alpha-keto acid dehydrogenase complex."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A newborn presents with severe fasting hypoglycemia, hepatomegaly, and unusual liver glycogen deposits. Lab results show elevated lactate and uric acid. Which enzyme deficiency is most likely present in this condition?",
+      "choices": [
+        "A) Glucose-6-phosphatase",
+        "B) Glycogen phosphorylase",
+        "C) Aldolase B",
+        "D) Galactose-1-phosphate uridylyltransferase",
+        "E) Aldose reductase"
+      ],
+      "answer": "A) Glucose-6-phosphatase",
+      "explanation": "The symptoms are consistent with glycogen storage disease type I, also known as Von Gierke's disease, which results from a deficiency in glucose-6-phosphatase."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A patient presents with asthenia and fatigue, enlarged liver, and xanthomas. Blood tests show elevated triglycerides and cholesterol. Histological examination reveals abnormal lipid deposits. What disorder should be suspected given these findings?",
+      "choices": [
+        "A) Hepatic lipase deficiency",
+        "B) Lipoprotein lipase deficiency",
+        "C) Phenylalanine hydroxylase deficiency",
+        "D) Homogentisate oxidase deficiency",
+        "E) Dihydropteridine reductase deficiency"
+      ],
+      "answer": "A) Hepatic lipase deficiency",
+      "explanation": "The presentation suggests hepatic lipase deficiency, characterized by the accumulation of fats in the liver and elevated blood lipid levels."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "AMINO_ACIDS_PROTEINS_AND_ENZYMES",
+      "question": "A child with fair skin and blue eyes is brought in due to developmental delays and recurrent eczema. Blood tests reveal increased levels of phenylalanine and a deficiency in which of the following enzymes is suspected?",
+      "choices": [
+        "A) Phenylalanine hydroxylase",
+        "B) Tyrosinase",
+        "C) Cystathionine beta-synthase",
+        "D) Dihydropteridine reductase",
+        "E) Arginase"
+      ],
+      "answer": "A) Phenylalanine hydroxylase",
+      "explanation": "This classic presentation of phenylketonuria (PKU), encompassing fair skin, developmental delay, and high phenylalanine levels, points to a deficiency in phenylalanine hydroxylase."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A 5-year-old boy presents to the clinic with exercise intolerance, muscle cramps, and dark-colored urine following physical activity. Laboratory tests reveal elevated creatine kinase levels and myoglobinuria. The lack of this enzyme impairs glycogenolysis in muscle tissues. What is the most likely diagnosis?",
+      "choices": [
+        "A) Pompe disease",
+        "B) McArdle disease",
+        "C) von Gierke disease",
+        "D) Cori disease",
+        "E) Hers disease"
+      ],
+      "answer": "B) McArdle disease",
+      "explanation": "McArdle disease (Glycogen Storage Disease Type V) is caused by a deficiency in muscle glycogen phosphorylase, leading to an inability to break down glycogen in muscles during exertion, resulting in exercise intolerance and muscle cramps."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A 10-month-old child is admitted with failure to thrive, hypotonia, and cardiomegaly. Biopsy of muscle tissue reveals excessive glycogen, especially affecting cardiac muscle. Which of the following enzymes is most likely deficient?",
+      "choices": [
+        "A) Acid maltase",
+        "B) Debranching enzyme",
+        "C) Glycogen phosphorylase",
+        "D) Glucokinase",
+        "E) Pyruvate carboxylase"
+      ],
+      "answer": "A) Acid maltase",
+      "explanation": "Pompe disease, characterized by hypotonia and cardiomegaly, is due to a deficiency in acid maltase, an enzyme responsible for breaking down glycogen in the lysosomes. Accumulation of glycogen in heart muscle causes cardiomyopathy."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A 12-year-old girl presents with recurrent episodes of mild hypoglycemia, discovered before breakfast and resolved by eating. Her liver biopsy reveals decreased activity of a specific debranching enzyme, leading to glycogen with abnormal structure. Which of the following enzymes is most likely deficient?",
+      "choices": [
+        "A) Glucose-6-phosphatase",
+        "B) Glycogen phosphorylase",
+        "C) Debranching enzyme",
+        "D) Glucose-1-phosphate uridylyltransferase",
+        "E) Phosphofructokinase"
+      ],
+      "answer": "C) Debranching enzyme",
+      "explanation": "The girl's symptoms and liver biopsy suggest Cori disease (Glycogen Storage Disease Type III), resulting from a deficiency in the debranching enzyme, essential for the proper breakdown of glycogen during fasting."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A 14-year-old boy fainted during a cross-country meet. He has a history of frequent fatigue that improves after resting. Blood tests after the event reveal abnormally high levels of lactate. Muscle biopsy indicates accumulation of glycogen. Which enzyme deficiency underlies these symptoms?",
+      "choices": [
+        "A) Muscle glycogen phosphorylase",
+        "B) Myophosphorylase",
+        "C) Liver glycogen phosphorylase",
+        "D) Triosephosphate isomerase",
+        "E) Aldolase B"
+      ],
+      "answer": "A) Muscle glycogen phosphorylase",
+      "explanation": "Symptoms described are consistent with McArdle disease, due to a deficiency in muscle glycogen phosphorylase, specifically myophosphorylase, leading to exercise-induced fatigue and high post-exertion lactate levels."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A 2-year-old presents with hepatomegaly and developmental delay. Blood work shows severe fasting hypoglycemia and elevated blood lactate. Liver biopsy uncovers accumulated glycogen with abnormal structure. Which of the following enzymes is deficient?",
+      "choices": [
+        "A) Phosphoglucomutase",
+        "B) Amylo-1,6-glucosidase",
+        "C) Alpha-glucose phosphomutase",
+        "D) Glycogen synthase",
+        "E) Glycogen phosphorylase"
+      ],
+      "answer": "B) Amylo-1,6-glucosidase",
+      "explanation": "The child displays signs of Cori disease, or Glycogen Storage Disease Type III, caused by a deficiency in amylo-1,6-glucosidase, the debranching enzyme necessary for glycogen breakdown resulting in abnormal glycogen structure and hypoglycemia."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A newborn is observed with a persistent lactic acidosis and hypoglycemia. The 2-week follow-up shows progressive hepatomegaly and hypotonic state. Which enzyme is likely deficient in this patient?",
+      "choices": [
+        "A) Pyruvate carboxylase",
+        "B) Glycogen synthase",
+        "C) Phosphoenolpyruvate carboxykinase",
+        "D) Fructose-1,6-bisphosphatase",
+        "E) Glucose-6-phosphate dehydrogenase"
+      ],
+      "answer": "A) Pyruvate carboxylase",
+      "explanation": "Deficiency in pyruvate carboxylase leads to impaired gluconeogenesis and resultant hypoglycemia and lactic acidosis due to the blocked conversion of pyruvate to oxaloacetate."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A 4-year-old presents with stunted growth, hepatomegaly, and fasting hypoglycemia. Blood and urine tests show hypoketonemia. Liver biopsy reveals normal structured glycogen accumulation. What is the most likely underlying deficiency?",
+      "choices": [
+        "A) Alpha-amylase",
+        "B) Glycogen phosphorylase",
+        "C) Fructose-1,6-bisphosphatase",
+        "D) Glucose-6-phosphatase",
+        "E) Phosphoglucomutase"
+      ],
+      "answer": "D) Glucose-6-phosphatase",
+      "explanation": "The child's symptoms are consistent with Von Gierke disease (Glycogen Storage Disease Type I), caused by a deficiency in glucose-6-phosphatase, affecting glycogen breakdown and gluconeogenesis."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "An 18-month-old boy has recently been diagnosed with hypotonia and mild cardiomegaly. His parents report poor feeding and fatigue on exertion. Enzyme assay points towards impaired glycogen breakdown in lysosomes. Which enzyme is deficient?",
+      "choices": [
+        "A) Glycogen phosphorylase",
+        "B) Aldose reductase",
+        "C) Acid alpha-glucosidase",
+        "D) Glucose-6-phosphate isomerase",
+        "E) Hexokinase"
+      ],
+      "answer": "C) Acid alpha-glucosidase",
+      "explanation": "The infant's presentation is indicative of Pompe disease (Glycogen Storage Disease Type II), due to a deficiency in acid alpha-glucosidase, required for lysosomal glycogen degradation leading to cardiomyopathy and muscle weakness."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A 15-year-old girl presents with. frequently occurring hypoglycemic episodes and elevated bilirubin levels. A liver biopsy reveals a defective enzyme involved in glycogen breakdown. Which enzyme is defective?",
+      "choices": [
+        "A) Glucose-6-phosphate dehydrogenase",
+        "B) Enolase",
+        "C) Glycogen phosphorylase",
+        "D) Transketolase",
+        "E) Pyruvate kinase"
+      ],
+      "answer": "C) Glycogen phosphorylase",
+      "explanation": "The patient's symptoms suggest Hers disease (Glycogen Storage Disease Type VI), due to a deficiency in hepatic glycogen phosphorylase, leading to impaired glycogen breakdown and resulting in hypoglycemia and liver dysfunction."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM",
+      "question": "A 6-year-old boy has increased appetite, poor growth, and recurrent episodes of hypoglycemia. Lab results show lactic acidosis and hyperuricemia. Genetic testing confirms a deficiency in an enzyme responsible for glycogenolysis and gluconeogenesis. What is the diagnosis?",
+      "choices": [
+        "A) Von Gierke disease",
+        "B) Cori disease",
+        "C) McArdle disease",
+        "D) Pompe disease",
+        "E) Hers disease"
+      ],
+      "answer": "A) Von Gierke disease",
+      "explanation": "The clinical features point to Von Gierke disease, characterized by fasting hypoglycemia, lactic acidosis, hyperuricemia, and growth retardation due to glucose-6-phosphatase deficiency, impeding both glycogenolysis and gluconeogenesis."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A 5-year-old girl is brought to the emergency department by her parents due to persistent vomiting, lethargy, and altered mental status. Her symptoms began after a period of fasting due to illness. Laboratory tests reveal hypoglycemia, hypoketonemia, and elevated levels of medium-chain dicarboxylic acids in the urine. Which of the following is the most likely diagnosis?",
+      "choices": [
+        "A) Primary carnitine deficiency",
+        "B) Glucose-6-phosphate dehydrogenase deficiency",
+        "C) Medium-chain acyl-CoA dehydrogenase deficiency",
+        "D) Carnitine palmitoyltransferase I deficiency",
+        "E) Familial hypercholesterolemia"
+      ],
+      "answer": "C) Medium-chain acyl-CoA dehydrogenase deficiency",
+      "explanation": "This patient presents with symptoms of hypoglycemia without significant ketone production after fasting, along with elevated medium-chain dicarboxylic acids, indicating impaired fatty acid oxidation. These findings are typical of medium-chain acyl-CoA dehydrogenase (MCAD) deficiency, which is an autosomal recessive disorder affecting fatty acid \u03b2-oxidation."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A 9-year-old boy is evaluated for muscle weakness and an inability to engage in sustained physical activity. His family history is significant for several relatives with similar symptoms. Blood work shows elevated creatine kinase levels during episodes of exercise intolerance. A muscle biopsy reveals the accumulation of lipid droplets. Which condition is consistent with these findings?",
+      "choices": [
+        "A) Systemic primary carnitine deficiency",
+        "B) Carnitine palmitoyltransferase II deficiency",
+        "C) Anderson-Fabry disease",
+        "D) Tay-Sachs disease",
+        "E) Abetalipoproteinemia"
+      ],
+      "answer": "B) Carnitine palmitoyltransferase II deficiency",
+      "explanation": "CPT II deficiency impairs the transport of long-chain fatty acids into the mitochondria, leading to their accumulation in muscle cells and resulting in exercise-induced muscle pain and weakness. Elevated creatine kinase and lipid deposits in muscle cells are characteristic."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A 45-year-old man with a history of elevated cholesterol levels presents with xanthomas and recurrent episodes of early-onset cardiovascular disease. Blood tests show a total cholesterol level of 400 mg/dL and a low-density lipoprotein (LDL) cholesterol level significantly above the normal range. Genetic testing reveals a mutation in the LDL receptor. Which condition does this patient likely have?",
+      "choices": [
+        "A) Abetalipoproteinemia",
+        "B) Tangier disease",
+        "C) Familial hypercholesterolemia",
+        "D) Niemann-Pick disease",
+        "E) Gaucher disease"
+      ],
+      "answer": "C) Familial hypercholesterolemia",
+      "explanation": "Familial hypercholesterolemia is an autosomal dominant disorder characterized by high LDL cholesterol levels due to mutations in the LDL receptor gene, leading to premature cardiovascular disease and physical findings such as xanthomas."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A newborn presents with rapidly progressive encephalopathy, seizures, and elevated liver transaminases. Genetic testing identifies a mutation affecting the synthesis of plasmalogens. Which peroxisomal disorder does this clinical presentation suggest?",
+      "choices": [
+        "A) Zellweger syndrome",
+        "B) Medium-chain acyl-CoA dehydrogenase deficiency",
+        "C) Familial hypercholesterolemia",
+        "D) MCAD deficiency",
+        "E) Niemann-Pick disease"
+      ],
+      "answer": "A) Zellweger syndrome",
+      "explanation": "Zellweger syndrome is a peroxisomal disorder resulting from impaired peroxisome biogenesis, affecting plasmalogen synthesis and leading to severe neurological symptoms, hepatomegaly, and early death. It presents in infancy with craniofacial anomalies, hypotonia, and other systemic manifestations."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "An 8-year-old girl is seen in the clinic for persistent steatorrhea, poor weight gain, and peripheral neuropathy. Her laboratory results show low serum cholesterol and triglyceride levels. Further testing reveals an absence of apolipoprotein B-containing lipoproteins. What is the likely diagnosis?",
+      "choices": [
+        "A) Abetalipoproteinemia",
+        "B) LPL (lipoprotein lipase) deficiency",
+        "C) Familial hypercholesterolemia",
+        "D) Niemann-Pick disease",
+        "E) Tay-Sachs disease"
+      ],
+      "answer": "A) Abetalipoproteinemia",
+      "explanation": "Abetalipoproteinemia is a rare genetic disorder resulting from defective VLDL and chylomicron formation due to the absence of apoprotein B, leading to fat malabsorption, neurological symptoms, and retinitis pigmentosa."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A 16-year-old boy is counseled after being diagnosed with familial hypercholesterolemia. Genetic analysis confirmed a mutation in the gene encoding the LDL receptor. If left untreated, which complication is he most at risk for?",
+      "choices": [
+        "A) Gallstones",
+        "B) Liver cirrhosis",
+        "C) Corneal clouding",
+        "D) Premature coronary artery disease",
+        "E) Anemia"
+      ],
+      "answer": "D) Premature coronary artery disease",
+      "explanation": "Familial hypercholesterolemia increases the risk of early coronary artery disease and myocardial infarction due to chronically elevated LDL cholesterol levels, leading to atherosclerosis if not managed with lifestyle changes and medications."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A 30-year-old woman presents to her physician with recurrent episodes of abdominal pain following fatty meals, along with failure to thrive since childhood. Laboratory studies show severe hypertriglyceridemia and tests reveal pancreatitis. Which genetic disorder could explain this condition?",
+      "choices": [
+        "A) Familial hypertriglyceridemia",
+        "B) Diabetes mellitus type 1",
+        "C) Carnitine deficiency",
+        "D) LPL (lipoprotein lipase) deficiency",
+        "E) Glucose-6-phosphatase deficiency"
+      ],
+      "answer": "D) LPL (lipoprotein lipase) deficiency",
+      "explanation": "LPL deficiency leads to the accumulation of chylomicrons and elevated triglycerides due to impaired clearance, resulting in recurrent pancreatitis and xanthomas. It's an autosomal recessive disorder and often presents with symptoms starting in childhood."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A 2-year-old boy presents with psychomotor regression, hepatomegaly, and cataracts. Blood work shows hypoglycemia and elevated galactose levels. Which enzyme deficiency is responsible for these findings?",
+      "choices": [
+        "A) Galactokinase",
+        "B) Galactose-1-phosphate uridyltransferase (GALT)",
+        "C) Aldolase B",
+        "D) Fructokinase",
+        "E) Glucose-6-phosphate dehydrogenase"
+      ],
+      "answer": "B) Galactose-1-phosphate uridyltransferase (GALT)",
+      "explanation": "Classical galactosemia is due to GALT deficiency, leading to the accumulation of galactose and its metabolites, causing liver damage, cataracts, and neurological symptoms. Early diagnosis and dietary management are crucial."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A patient is evaluated for muscle pain and weakness after moderate physical exertion. Biopsy reveals normal lipid content but myoglobinuria is noted. A defect in which metabolic pathway would most likely explain these findings?",
+      "choices": [
+        "A) Glycogen storage",
+        "B) \u03b2-oxidation of fatty acids",
+        "C) Amino acid catabolism",
+        "D) Gluconeogenesis",
+        "E) Lipoprotein synthesis"
+      ],
+      "answer": "B) \u03b2-oxidation of fatty acids",
+      "explanation": "A defect in \u03b2-oxidation, such as CPT II deficiency, can lead to exercise-induced muscle pain, weakness, and myoglobinuria due to insufficient energy production in muscle tissue, despite normal lipid storage."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "LIPID_METABOLISM",
+      "question": "A 7-year-old boy is brought to the clinic for chronic diarrhea and failure to thrive. Physical examination reveals a protruberant abdomen. Laboratory tests show acanthocytes on blood smear and low serum lipid levels. Which genetic lipid disorder is most likely associated with these findings?",
+      "choices": [
+        "A) Abetalipoproteinemia",
+        "B) Niemann-Pick disease",
+        "C) LPL deficiency",
+        "D) Familial hypercholesterolemia",
+        "E) Gaucher disease"
+      ],
+      "answer": "A) Abetalipoproteinemia",
+      "explanation": "Abetalipoproteinemia is characterized by fat malabsorption due to the absence of apolipoprotein B, leading to low serum lipid levels, acanthocytosis, and neurological symptoms. Treatment typically involves vitamin supplementation and dietary modifications."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "A 35-year-old man presents with photosensitivity, freckle-like pigmentary changes on sun-exposed areas, and a history of multiple skin cancers. Genetic testing reveals a defect in nucleotide excision repair. This condition has led to damage in which phase of DNA metabolism?",
+      "choices": [
+        "A) DNA replication",
+        "B) DNA transcription",
+        "C) DNA repair",
+        "D) RNA processing",
+        "E) Translation"
+      ],
+      "answer": "C) DNA repair",
+      "explanation": "The patient's condition is consistent with xeroderma pigmentosum, which is characterized by defects in the nucleotide excision repair pathway, a crucial DNA repair mechanism that removes DNA lesions caused by UV light. Primary damage affects the DNA repair phase."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "In a study on acute promyelocytic leukemia therapy, researchers investigate the effect of arsenic trioxide, which induces apoptosis by promoting the degradation of a specific protein complex. This complex interacts with DNA to affect transcription. Which protein is central to this pathway?",
+      "choices": [
+        "A) Retinoic acid receptor-alpha (RAR\u03b1)",
+        "B) Transcription factor Sp1",
+        "C) RNA polymerase II",
+        "D) BRCA1",
+        "E) DNA polymerase \u03b2"
+      ],
+      "answer": "A) Retinoic acid receptor-alpha (RAR\u03b1)",
+      "explanation": "Arsenic trioxide targets the fusion protein PML-RAR\u03b1, which affects transcription by altering retinoic acid signaling, ultimately inducing apoptosis in acute promyelocytic leukemia."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "A patient presents with developmental delays and coarse facial features. Laboratory findings suggest a defect in mannose-6-phosphate tagging. This condition affects which cellular process most directly?",
+      "choices": [
+        "A) Protein synthesis",
+        "B) Golgi apparatus function",
+        "C) Mitochondrial oxidation",
+        "D) Peroxisomal oxidation",
+        "E) DNA replication"
+      ],
+      "answer": "B) Golgi apparatus function",
+      "explanation": "The described condition is I-cell disease, where there is a failure to add the mannose-6-phosphate tag. This affects lysosomal enzyme sorting and function, a process occurring in the Golgi apparatus."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "A patient with suspected cystic fibrosis undergoes genetic testing. A mutation in the CFTR gene impairs protein targeting to the cell surface. Which stage of RNA processing can be directly implicated in the improper folding and transport of this protein?",
+      "choices": [
+        "A) 5' capping",
+        "B) Splicing",
+        "C) 3' polyadenylation",
+        "D) mRNA export",
+        "E) Nonsense-mediated decay"
+      ],
+      "answer": "B) Splicing",
+      "explanation": "CFTR gene mutations often affect splicing, particularly exon skipping, affecting mRNA processing and thus protein folding and transport, impairing proper expression at the cell surface."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "A research group studies a proton pump inhibitor used to treat gastric over-secretion. Inhibition of this enzyme leads to a decrease in a specific ion's transmembrane movement. Which of the following organelles is most directly involved in the action of this drug?",
+      "choices": [
+        "A) Mitochondria",
+        "B) Endoplasmic reticulum",
+        "C) Golgi apparatus",
+        "D) Lysosome",
+        "E) Secretory vesicle"
+      ],
+      "answer": "E) Secretory vesicle",
+      "explanation": "Proton pump inhibitors target the H+/K+ ATPase, which is located in the secretory vesicles of gastric parietal cells, reducing acid secretion by decreasing the exchange of H+ ions."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "A 6-year-old child presents with severe anemia and reticulocytopenia. Genetic testing identifies a mutation in one of the genes associated with ribosomal biogenesis leading to Diamond-Blackfan Anemia. Which cellular machine is most directly affected by this genetic defect?",
+      "choices": [
+        "A) Ribosome",
+        "B) Centrioles",
+        "C) Lysosome",
+        "D) Golgi apparatus",
+        "E) Spliceosome"
+      ],
+      "answer": "A) Ribosome",
+      "explanation": "Diamond-Blackfan Anemia is primarily due to defects in ribosomal protein genes affecting ribosome synthesis and function, leading to decreased erythropoiesis."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "A patient with a history of hepatocellular carcinoma undergoes targeted therapy inhibiting mTOR pathway. This pathway plays a crucial role in what cellular process?",
+      "choices": [
+        "A) Autophagy regulation",
+        "B) DNA replication",
+        "C) Apoptosis",
+        "D) RNA splicing",
+        "E) Lipid synthesis"
+      ],
+      "answer": "A) Autophagy regulation",
+      "explanation": "The mechanistic target of rapamycin (mTOR) pathway is a key regulator of cell growth and autophagy, and its inhibition helps manage growth proliferation in cancers."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "In a genetic screen for blood disorders, researchers identify a splice site mutation resulting in an extended exon. This causes improper protein function contributing to the disease phenotype. Which process is primarily disrupted by this mutation?",
+      "choices": [
+        "A) DNA methylation",
+        "B) Transcription",
+        "C) RNA processing",
+        "D) Translation termination",
+        "E) Protein folding"
+      ],
+      "answer": "C) RNA processing",
+      "explanation": "Splice site mutations often result in exon elongation or skipping, directly disrupting RNA processing by altering the splicing mechanism, affecting mRNA and resulting protein."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "A scientist is examining the mitochondrial electron transport chain in a neuropathology context. A particular disease increases ROS production due to a defect in Complex I. Which cellular compartment is directly experiencing increased oxidative stress?",
+      "choices": [
+        "A) Cytosol",
+        "B) Nucleus",
+        "C) Mitochondrial matrix",
+        "D) Peroxisomes",
+        "E) Endoplasmic reticulum"
+      ],
+      "answer": "C) Mitochondrial matrix",
+      "explanation": "Complex I of the electron transport chain is located in the inner mitochondrial membrane, affecting the mitochondrial matrix where increased ROS would primarily impose oxidative stress."
+    },
+    {
+      "topic": "Biochemistry",
+      "subtopic": "CELL_AND_MOLECULAR_BIOLOGY",
+      "question": "A patient presents with a suspected inborn error of metabolism. The genetics panel reveals a mutation affecting the HMG-CoA reductase. The enzymatic function of this enzyme affects the synthesis of which key biomolecule?",
+      "choices": [
+        "A) ATP",
+        "B) Cholesterol",
+        "C) Acetyl CoA",
+        "D) Ubiquinone",
+        "E) Cytidine triphosphate"
+      ],
+      "answer": "B) Cholesterol",
+      "explanation": "HMG-CoA reductase is a key regulatory enzyme in cholesterol biosynthesis, controlling the conversion of HMG-CoA to mevalonate, an essential precursor in the cholesterol synthesis pathway."
+    }
+  ]
+}
