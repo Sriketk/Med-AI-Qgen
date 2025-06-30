@@ -24,7 +24,11 @@ try:
     db = client["Qbank"]
     collection = db["Qbank"]   # Use your desired database name
     print("MongoDB client set up. Database name:", db.name)
-    collection.update_many(query_filter, update_operation)
+    # collection.update_many(query_filter, update_operation)
+
+    # Remove the 'questions' field from all documents
+    result = collection.update_many({}, {"$unset": {"questions": ""}})
+    print(f"Modified {result.modified_count} documents.")
 except Exception as e:
     print(f"Failed to connect to MongoDB: {e}")
     db = None
