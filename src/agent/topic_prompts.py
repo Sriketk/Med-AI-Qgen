@@ -12,8 +12,8 @@ Biochemistry = {
              Despite adequate dietary phenylalanine restriction, the patient continues to have neurological deficits.
             Further analysis reveals a deficiency in an enzyme responsible for the regeneration of tetrahydrobiopterin (BH₄) from dihydrobiopterin (BH₂). 
             Which of the following enzymes is most likely deficient in this patient?""",
-            "choices": ["A) Dihydropteridine reductase", "B) Phenylalanine hydroxylase", "C) Tyrosine hydroxylase", "D) Homogentisate oxidase", "E) Tryptophan hydroxylase"],
-            "answer": "A) Dihydropteridine reductase", 
+            "choices": ["Dihydropteridine reductase", "Phenylalanine hydroxylase", "Tyrosine hydroxylase", "Homogentisate oxidase", "Tryptophan hydroxylase"],
+            "answer": "Dihydropteridine reductase", 
             "explanation": """This infant presents with phenylketonuria (PKU) symptoms but does not improve with dietary phenylalanine restriction alone, suggesting atypical or malignant PKU.
             In classic PKU, the enzyme phenylalanine hydroxylase (PAH) is deficient. However, PAH also requires tetrahydrobiopterin (BH₄) as a cofactor to function properly.
             A defect in the enzyme dihydropteridine reductase (DHPR) impairs the regeneration of BH₄ from its oxidized form, dihydrobiopterin (BH₂). 
@@ -32,8 +32,8 @@ Biochemistry = {
         "sample_question": {
             "question": """A 3-month-old infant is brought to the clinic due to recurrent episodes of irritability and drowsiness, especially after missed feedings. Physical examination reveals hepatomegaly. Laboratory studies show hypoglycemia, elevated lactate, elevated triglycerides, and elevated uric acid. A liver biopsy reveals excessive glycogen accumulation with a normal structure. Genetic testing identifies a deficiency in glucose-6-phosphatase.
             Which of the following is the most likely diagnosis?""",
-            "choices": ["A) Pompe disease", "B) McArdle disease", "C) Cori disease", "D) Von Gierke disease", "E) Her's disease"],
-            "answer": "D) Von Gierke disease",
+            "choices": ["Pompe disease", "McArdle disease", "Cori disease", "Von Gierke disease", "Her's disease"],
+            "answer": "Von Gierke disease",
             "explanation": """This infant shows signs of impaired fasting tolerance, evidenced by hypoglycemia and lethargy during periods without food. The metabolic findings — hypoglycemia, lactic acidosis, hyperlipidemia, and hyperuricemia — are classic for a defect in glucose release during fasting. The key clue is the liver biopsy showing an excess of structurally normal glycogen, which indicates that glycogen is being synthesized correctly but cannot be broken down efficiently to maintain blood glucose.
             The enzyme glucose-6-phosphatase catalyzes the final step in both glycogenolysis and gluconeogenesis: converting glucose-6-phosphate into free glucose that can enter the bloodstream. A deficiency in this enzyme results in the accumulation of glucose-6-phosphate within hepatocytes. This leads to diversion into glycolysis (producing excess lactate), lipogenesis (causing hypertriglyceridemia), and the pentose phosphate pathway (producing purine degradation and hyperuricemia). Because glucose cannot be mobilized from the liver, the patient develops severe fasting hypoglycemia.
             This presentation is diagnostic of Von Gierke disease, also known as Glycogen Storage Disease Type I.""",
@@ -49,8 +49,8 @@ Biochemistry = {
         "sample_question": {
             "question": """A 4-month-old male is brought to the pediatrician due to failure to thrive and hepatomegaly. His parents report that he has had several episodes of vomiting and lethargy, especially after feeding. Laboratory studies reveal hypoglycemia, elevated liver transaminases, hyperammonemia, and elevated dicarboxylic acids in the urine. Further testing shows low levels of free carnitine in plasma.
             Which of the following is the most likely underlying cause of this patient's condition?""",
-            "choices": ["A) Medium-chain acyl-CoA dehydrogenase deficiency", "B) Primary carnitine deficiency", "C) Carnitine palmitoyltransferase II deficiency", "D) Systemic carnitine transporter overexpression", "E) Acetyl-CoA carboxylase deficiency"],
-            "answer": "B) Primary carnitine deficiency",
+            "choices": ["Medium-chain acyl-CoA dehydrogenase deficiency", "Primary carnitine deficiency", "Carnitine palmitoyltransferase II deficiency", "Systemic carnitine transporter overexpression", "Acetyl-CoA carboxylase deficiency"],
+            "answer": "Primary carnitine deficiency",
             "explanation": """This infant presents with signs of impaired fatty acid oxidation, such as fasting hypoglycemia without ketone production (hypoketotic hypoglycemia), hepatomegaly, and lethargy. The presence of elevated dicarboxylic acids in the urine indicates that omega-oxidation is being used as a backup pathway due to defective beta-oxidation.
             The key lab finding here is low plasma free carnitine, which suggests a defect in carnitine transport into cells. Carnitine is essential for the transport of long-chain fatty acids into the mitochondria for beta-oxidation. Without carnitine, fatty acids cannot be used as an energy source during fasting or metabolic stress, resulting in energy deficiency and toxic accumulation of fatty acid intermediates.
             Primary carnitine deficiency is caused by a defect in the OCTN2 carnitine transporter. This leads to low intracellular and plasma carnitine levels and manifests as hypoketotic hypoglycemia, hepatomegaly, muscle weakness, and cardiomyopathy, typically in infancy or early childhood.
@@ -65,8 +65,8 @@ Biochemistry = {
         ),
         "sample_question": {
             "question": """A researcher is studying the effects of proteasome inhibition on cell cycle progression. She treats cultured human fibroblasts with a small molecule that selectively inhibits the 26S proteasome. After treatment, the cells are found to accumulate in the G1 phase and fail to progress into S phase. Which of the following molecules is most likely responsible for this arrest?""",
-            "choices": ["A) Cyclin D", "B) p53", "C) Retinoblastoma protein (Rb)", "D) CDK4", "E) E2F"],
-            "answer": "C) Retinoblastoma protein (Rb)",
+            "choices": ["Cyclin D", "p53", "Retinoblastoma protein (Rb)", "CDK4", "E2F"],
+            "answer": "Retinoblastoma protein (Rb)",
             "explanation": """The 26S proteasome is responsible for degrading ubiquitinated proteins, a key mechanism for controlling levels of regulatory molecules in the cell cycle. In this scenario, inhibition of the proteasome prevents degradation of certain proteins, leading to accumulation or persistent activity.
             Progression from the G1 phase into the S phase of the cell cycle is tightly regulated by the interaction between the retinoblastoma protein (Rb) and the E2F family of transcription factors. In its unphosphorylated (active) state, Rb binds to E2F, preventing transcription of genes required for S phase entry. As the cell progresses through G1, cyclin D–CDK4/6 complexes phosphorylate Rb, inactivating it and releasing E2F to initiate S phase gene transcription.
             If the proteasome is inhibited, proteins like the active, hypophosphorylated form of Rb may accumulate because they are not being properly degraded or regulated. As a result, Rb continues to bind and inhibit E2F, blocking the G1-to-S transition and causing G1 arrest.
@@ -93,8 +93,7 @@ Genetics = {
         "prompt": "You are a genetics expert. Generate a USMLE Step 1 question about gene mutations. Return ONLY a valid JSON object as described in the schema.",
         "sample_question": {
             "question": "A 2-year-old boy presents with developmental delay and hypotonia. Genetic testing reveals a deletion on chromosome 15 inherited from his mother. Which syndrome is most likely?",
-            "choices": ["A) Angelman syndrome", "B) Prader-Willi syndrome", "C) Williams syndrome", "D) Smith-Magenis syndrome", "E) Cri-du-chat syndrome"],
-            "answer": "A) Angelman syndrome",
+            "choices": ["Angelman syndrome", "Prader-Willi syndrome", "Williams syndrome", "Smith-Magenis syndrome", "Cri-du-chat syndrome"],
             "explanation": "Angelman syndrome is caused by a deletion on the maternal chromosome 15q11-q13. Prader-Willi is the paternal deletion."
         }
     },
@@ -106,8 +105,8 @@ Cardiovascular = {
         "prompt": "You are a cardiology expert. Generate a USMLE Step 1 question about arrhythmias. Return ONLY a valid JSON object as described in the schema.",
         "sample_question": {
             "question": "A 65-year-old man presents with palpitations and an irregularly irregular pulse. ECG shows no discernible P waves. What is the most likely diagnosis?",
-            "choices": ["A) Atrial fibrillation", "B) Atrial flutter", "C) Ventricular tachycardia", "D) Sinus bradycardia", "E) First-degree AV block"],
-            "answer": "A) Atrial fibrillation",
+            "choices": ["Atrial fibrillation", "Atrial flutter", "Ventricular tachycardia", "Sinus bradycardia", "First-degree AV block"],
+            "answer": "Atrial fibrillation",
             "explanation": "Atrial fibrillation is characterized by an irregularly irregular rhythm and absence of P waves."
         }
     },

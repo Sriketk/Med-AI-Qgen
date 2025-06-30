@@ -11,7 +11,7 @@ import json
 import os
 import asyncio
 from time import sleep
-
+from datetime import datetime
 from langgraph.graph import StateGraph, START, END
 from langchain.chat_models import init_chat_model
 from pydantic import BaseModel, Field
@@ -20,7 +20,7 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from src.agent import topic_prompts
 
-llm = init_chat_model("openai:gpt-4o")
+llm = init_chat_model("openai:gpt-4.1", temperature=0.7)
 
 
 class State(TypedDict):
@@ -67,19 +67,12 @@ class Question(BaseModel):
     )
     answer: str = Field(description="The correct answer, must be one of the choices.")
     explanation: str = Field(description="A detailed explanation for the answer.")
+    source: str = Field(description="The source of the question.")
+    created_at: str = Field(description="The date and time the question was created.")
 
 
 class Questions(BaseModel):
     questions: list[Question] = Field(description="A list of 10 questions.")
-
-
-DEFAULT_SYSTEM_PROMPT = (
-    "You are a medical board exam question writer. "
-    "Write a USMLE Step 2 CK-style multiple-choice question for the topic: '{topic}'. "
-    "Return ONLY a valid JSON object that matches this schema: {format_instructions}. "
-    "The 'choices' field must be a list of exactly 5 answer choices, and the 'answer' must be one of those 5 choices. "
-    "Do not include any text except the JSON."
-)
 
 
 def generate_question_with_llm(state: State):
@@ -90,24 +83,36 @@ def generate_question_with_llm(state: State):
     question_llm = llm.with_structured_output(Questions)
     for subtopic in subtopics:
         print(subtopics[subtopic])
-        template_multiple = """You are a medical board exam question writer.
-        You are given a topic and a subtopic.
-        Topic: {topic}
-        SubTopic: {subtopic}
-        You are to write a USMLE Step 1 CK-style multiple-choice question for the topic and subtopic.
-        You are to generate 10 questions.
-        Make sure you generate unique questions
-        Make sure the questions differ in patient scenarios.
-        Make sure the questions test the patients clinical knowledge.
-        Here is the prompt for this subtopic:
-        {subtopic_prompt}
-        Here is a sample question for this subtopic:
-        Sample Question: {sample_question}
-        Sample Choices: {sample_choices}
-        Sample Answer: {sample_answer}
-        Sample Explanation: {sample_explanation}
-        
-        """
+        template_multiple = """
+            You are a professional medical board exam question writer.
+
+            You are tasked with generating high-quality USMLE **Step 1**–style **multiple-choice clinical vignette questions**. The questions must be conceptually accurate, test clinical understanding, and reflect realistic scenarios relevant to medical students preparing for Step 1.
+
+            ### Context:
+            - Topic: {topic}
+            - Subtopic: {subtopic}
+            - Prompt guidance: {subtopic_prompt}
+
+            ### Instructions:
+            - Generate 10 unique questions, each based on a different clinical vignette.
+            - Each vignette should reflect authentic Step 1 scenarios and test understanding of the concept.
+            - Vary the patient presentation (e.g., age, gender, symptoms).
+            - Emphasize clinical reasoning over fact recall.
+            - Questions must include vitals, labs, or relevant physical findings where appropriate.
+            - Ensure the questions are at an appropriate Step 1 difficulty level (not Step 2 CK).
+            - Do NOT reuse phrasing or explanations from the sample.
+            - Do NOT include letters or numbers (e.g., A, B, C or 1, 2, 3) in the answer choices or the answer.
+            - Provide a clear, concise explanation for the correct answer in no more than 5 sentences, focusing on the key clinical reasoning points.
+            - Do NOT repeat or reuse any sample content in your generation.
+
+            ### Reference Sample:
+            Sample Question: {sample_question}  
+            Sample Choices: {sample_choices}  
+            Sample Answer: {sample_answer}  
+            Sample Explanation: {sample_explanation}
+
+            
+            """
         prompt_multiple = ChatPromptTemplate.from_template(template_multiple)
         setTemplate = prompt_multiple.invoke(
             {
@@ -120,6 +125,8 @@ def generate_question_with_llm(state: State):
                 "sample_explanation": subtopics[subtopic]["sample_question"][
                     "explanation"
                 ],
+                "source": "gpt-4.1",
+                "created_at": datetime.now().isoformat(),
             }
         )
         print(setTemplate)
