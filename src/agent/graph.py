@@ -150,8 +150,8 @@ def generate_question_with_llm(state: State):
         question.embedding = embedding
     # After collecting all questions
 
-    with open("questions.json", "w") as f:
-        json.dump(total_questions, f, indent=2)
+    with open("questions.txt", "w") as f:
+        f.write(str(total_questions))
     return {"questions": total_questions}
 
 
