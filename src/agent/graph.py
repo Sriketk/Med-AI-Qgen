@@ -19,16 +19,23 @@ from langchain_core.messages import SystemMessage
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from src.agent import topic_prompts
-from pymongo import MongoClient
+from agent import topic_prompts
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+from dotenv import load_dotenv
+load_dotenv()
 
-# MongoDB connection URI (default to localhost)
-mongo_uri = os.getenv("MONGODB_URI", "mongodb://localhost:27017/")
-client = MongoClient(mongo_uri)
-
-db = client["med_study_app"]  # Use your desired database name
-
-print("MongoDB client set up. Database name:", db.name)
+try:
+    # MongoDB connection URI (default to localhost)
+    mongo_uri = os.getenv("MONGODB_URI")
+    client = MongoClient(mongo_uri)
+    db = client["Qbank"]
+    collection = db["Qbank"]   # Use your desired database name
+    print("MongoDB client set up. Database name:", db.name)
+except Exception as e:
+    print(f"Failed to connect to MongoDB: {e}")
+    db = None
+    collection = None
 
 llm = init_chat_model("openai:gpt-4.1", temperature=0.7)
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
@@ -137,21 +144,23 @@ def generate_question_with_llm(state: State):
                 "sample_explanation": subtopics[subtopic]["sample_question"][
                     "explanation"
                 ],
-                "source": "gpt-4.1",
-                "created_at": datetime.now().isoformat(),
+                
             }
         )
         print(setTemplate)
         answer = question_llm.invoke(setTemplate)
         total_questions.extend(answer.questions)
     for question in total_questions:
+        question.source = "gpt-4.1"
+        question.created_at = datetime.now().isoformat()
         text_to_embed = question.question + " " + " ".join(question.choices)
         embedding = embeddings.embed_query(text_to_embed)
         question.embedding = embedding
     # After collecting all questions
-
     with open("questions.txt", "w") as f:
         f.write(str(total_questions))
+
+    
     return {"questions": total_questions}
 
 

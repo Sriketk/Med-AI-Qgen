@@ -1,10 +1,36 @@
 from langchain.chat_models import init_chat_model
+import os
+from pymongo import MongoClient
+from agent.newquestions import questions
+from dotenv import load_dotenv
+from datetime import datetime
+load_dotenv()
 
-llm = init_chat_model("openai:gpt-4.1", temperature=0.7)
+# MongoDB connection URI (default to localhost)
+try:
+    # MongoDB connection URI (default to localhost)
+    mongo_uri = os.getenv("MONGODB_URI")
+    print(mongo_uri)
+    client = MongoClient(mongo_uri)
+    query_filter = {
+        "topic": "Biochemistry"
+    }
+    update_operation = {
+        "$set": {
+            "created_at": datetime.now().isoformat(),
+            "source": "gpt-4.1"
+        }
+    }
+    db = client["Qbank"]
+    collection = db["Qbank"]   # Use your desired database name
+    print("MongoDB client set up. Database name:", db.name)
+    collection.update_many(query_filter, update_operation)
+except Exception as e:
+    print(f"Failed to connect to MongoDB: {e}")
+    db = None
+    collection = None
 
 
-
-print(llm.invoke("give me a step 1 question about biochemistry"))
 
 
 
