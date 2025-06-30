@@ -16,6 +16,7 @@ from langgraph.graph import StateGraph, START, END
 from langchain.chat_models import init_chat_model
 from pydantic import BaseModel, Field
 from langchain_core.messages import SystemMessage
+from langchain_openai import OpenAIEmbeddings
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from src.agent import topic_prompts
@@ -30,6 +31,7 @@ db = client["med_study_app"]  # Use your desired database name
 print("MongoDB client set up. Database name:", db.name)
 
 llm = init_chat_model("openai:gpt-4.1", temperature=0.7)
+embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 
 
 class State(TypedDict):
@@ -78,6 +80,7 @@ class Question(BaseModel):
     explanation: str = Field(description="A detailed explanation for the answer.")
     source: str = Field(description="The source of the question.")
     created_at: str = Field(description="The date and time the question was created.")
+    embedding: list[float] = Field(description="The embedding of the question.")
 
 
 class Questions(BaseModel):
@@ -141,12 +144,15 @@ def generate_question_with_llm(state: State):
         print(setTemplate)
         answer = question_llm.invoke(setTemplate)
         total_questions.extend(answer.questions)
-
+    for question in total_questions:
+        text_to_embed = question.question + " " + " ".join(question.choices)
+        embedding = embeddings.embed_query(text_to_embed)
+        question.embedding = embedding
     # After collecting all questions
-    
+
     with open("questions.json", "w") as f:
         json.dump(total_questions, f, indent=2)
-    return total_questions
+    return {"questions": total_questions}
 
 
 workflow = StateGraph(State)
