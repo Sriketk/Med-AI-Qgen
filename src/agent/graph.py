@@ -19,6 +19,15 @@ from langchain_core.messages import SystemMessage
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from src.agent import topic_prompts
+from pymongo import MongoClient
+
+# MongoDB connection URI (default to localhost)
+mongo_uri = os.getenv("MONGODB_URI", "mongodb://localhost:27017/")
+client = MongoClient(mongo_uri)
+
+db = client["med_study_app"]  # Use your desired database name
+
+print("MongoDB client set up. Database name:", db.name)
 
 llm = init_chat_model("openai:gpt-4.1", temperature=0.7)
 
@@ -134,11 +143,10 @@ def generate_question_with_llm(state: State):
         total_questions.extend(answer.questions)
 
     # After collecting all questions
-    json_ready_questions = [q.model_dump() for q in total_questions]
-    topic_json = {state["topic"]: json_ready_questions}
+    
     with open("questions.json", "w") as f:
-        json.dump(topic_json, f, indent=2)
-    return topic_json
+        json.dump(total_questions, f, indent=2)
+    return total_questions
 
 
 workflow = StateGraph(State)
