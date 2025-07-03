@@ -23,7 +23,6 @@ from agent import topic_prompts
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
-
 load_dotenv()
 
 try:
@@ -31,7 +30,7 @@ try:
     mongo_uri = os.getenv("MONGODB_URI")
     client = MongoClient(mongo_uri)
     db = client["Qbank"]
-    collection = db["Qbank"]  # Use your desired database name
+    collection = db["Qbank"]   # Use your desired database name
     print("MongoDB client set up. Database name:", db.name)
 except Exception as e:
     print(f"Failed to connect to MongoDB: {e}")
@@ -40,26 +39,6 @@ except Exception as e:
 
 llm = init_chat_model("openai:gpt-4.1", temperature=0.7)
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
-
-
-class QuestionState(BaseModel):
-    """Questions Structure for Step 2 Exams"""
-
-    context: str
-    question: str
-    answer: str
-    medications: list[str] = []
-    allergies: list[str] = []
-    familyHistory: list[str] = []
-    labResults: list[str] = []
-    options: list[str] = []
-    bloodPresure: str = ""
-    respirations: str = ""
-    pulse: str = ""
-    physicalExamination: str = ""
-    temperature: str = ""
-    history: str = ""
-    demographics: str = ""
 
 
 class State(TypedDict):
@@ -93,8 +72,7 @@ class State(TypedDict):
         "RenalAndUrinary",
         "RheumatologyAndOrthopedics",
     ]
-    exam: Literal["Step 1", "Step 2"]
-    questions: list[Question] | list[QuestionState]
+    questions: list[Question]
     answer: any
 
 
@@ -124,7 +102,7 @@ def generate_question_with_llm(state: State):
     question_llm = llm.with_structured_output(Questions)
     for subtopic in subtopics:
         print(subtopics[subtopic])
-        template_step1 = """
+        template_multiple = """
             You are a professional medical board exam question writer.
 
             You are tasked with generating high-quality USMLE **Step 1**–style **multiple-choice clinical vignette questions**. The questions must be conceptually accurate, test clinical understanding, and reflect realistic scenarios relevant to medical students preparing for Step 1.
@@ -154,8 +132,8 @@ def generate_question_with_llm(state: State):
 
             
             """
-        prompt_step1 = ChatPromptTemplate.from_template(template_step1)
-        setTemplate = prompt_step1.invoke(
+        prompt_multiple = ChatPromptTemplate.from_template(template_multiple)
+        setTemplate = prompt_multiple.invoke(
             {
                 "topic": state["topic"],
                 "subtopic": subtopic,
@@ -166,6 +144,7 @@ def generate_question_with_llm(state: State):
                 "sample_explanation": subtopics[subtopic]["sample_question"][
                     "explanation"
                 ],
+                
             }
         )
         print(setTemplate)
@@ -181,6 +160,7 @@ def generate_question_with_llm(state: State):
     with open("questions.txt", "w") as f:
         f.write(str(total_questions))
 
+    
     return {"questions": total_questions}
 
 
