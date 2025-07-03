@@ -23,6 +23,7 @@ from agent import topic_prompts
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
+
 load_dotenv()
 
 try:
@@ -30,7 +31,7 @@ try:
     mongo_uri = os.getenv("MONGODB_URI")
     client = MongoClient(mongo_uri)
     db = client["Qbank"]
-    collection = db["Qbank"]   # Use your desired database name
+    collection = db["Qbank"]  # Use your desired database name
     print("MongoDB client set up. Database name:", db.name)
 except Exception as e:
     print(f"Failed to connect to MongoDB: {e}")
@@ -39,6 +40,26 @@ except Exception as e:
 
 llm = init_chat_model("openai:gpt-4.1", temperature=0.7)
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+
+
+class QuestionState(BaseModel):
+    """Questions Structure for Step 2 Exams"""
+
+    context: str
+    question: str
+    answer: str
+    medications: list[str] = []
+    allergies: list[str] = []
+    familyHistory: list[str] = []
+    labResults: list[str] = []
+    options: list[str] = []
+    bloodPresure: str = ""
+    respirations: str = ""
+    pulse: str = ""
+    physicalExamination: str = ""
+    temperature: str = ""
+    history: str = ""
+    demographics: str = ""
 
 
 class State(TypedDict):
@@ -72,8 +93,8 @@ class State(TypedDict):
         "RenalAndUrinary",
         "RheumatologyAndOrthopedics",
     ]
-    exam: Literal["Step 1", "Step 2 CK", "Step 2 CS", "Step 3", "Step 4"]
-    questions: list[Question]
+    exam: Literal["Step 1", "Step 2"]
+    questions: list[Question] | list[QuestionState]
     answer: any
 
 
@@ -145,7 +166,6 @@ def generate_question_with_llm(state: State):
                 "sample_explanation": subtopics[subtopic]["sample_question"][
                     "explanation"
                 ],
-                
             }
         )
         print(setTemplate)
@@ -161,7 +181,6 @@ def generate_question_with_llm(state: State):
     with open("questions.txt", "w") as f:
         f.write(str(total_questions))
 
-    
     return {"questions": total_questions}
 
 
