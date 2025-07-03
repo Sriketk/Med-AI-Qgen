@@ -72,6 +72,7 @@ class State(TypedDict):
         "RenalAndUrinary",
         "RheumatologyAndOrthopedics",
     ]
+    exam: Literal["Step 1", "Step 2 CK", "Step 2 CS", "Step 3", "Step 4"]
     questions: list[Question]
     answer: any
 
@@ -102,7 +103,7 @@ def generate_question_with_llm(state: State):
     question_llm = llm.with_structured_output(Questions)
     for subtopic in subtopics:
         print(subtopics[subtopic])
-        template_multiple = """
+        template_step1 = """
             You are a professional medical board exam question writer.
 
             You are tasked with generating high-quality USMLE **Step 1**–style **multiple-choice clinical vignette questions**. The questions must be conceptually accurate, test clinical understanding, and reflect realistic scenarios relevant to medical students preparing for Step 1.
@@ -132,8 +133,8 @@ def generate_question_with_llm(state: State):
 
             
             """
-        prompt_multiple = ChatPromptTemplate.from_template(template_multiple)
-        setTemplate = prompt_multiple.invoke(
+        prompt_step1 = ChatPromptTemplate.from_template(template_step1)
+        setTemplate = prompt_step1.invoke(
             {
                 "topic": state["topic"],
                 "subtopic": subtopic,
