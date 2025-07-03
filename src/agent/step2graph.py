@@ -20,10 +20,11 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from agent import topic_prompts
-from prompts import template_step2_ck 
+from prompts import template_step2_ck
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
+
 load_dotenv()
 
 try:
@@ -31,7 +32,7 @@ try:
     mongo_uri = os.getenv("MONGODB_URI")
     client = MongoClient(mongo_uri)
     db = client["Qbank"]
-    collection = db["Qbank"]   # Use your desired database name
+    collection = db["qbanks"]  # Use your desired database name
     print("MongoDB client set up. Database name:", db.name)
 except Exception as e:
     print(f"Failed to connect to MongoDB: {e}")
@@ -50,28 +51,25 @@ class State(TypedDict):
 
     topic: Literal[
         "Biochemistry",
-        "Genetics",
-        "AllergiesAndImmunology",
-        "Cardiovascular",
-        "Microbiology",
-        "Dermatology",
-        "Pathology",
-        "Pharmacology",
-        "EarNoseAndThroat",
         "BiostatsAndEpidemiology",
-        "EndocrineAndDiabetesAndMetabolism",
-        "PosioningAndEnviromentalExposure",
-        "PsychiatricAndSubstanceUseDisorders",
-        "SocialSciences",
-        "HematologyAndOncology",
-        "InfectiousDiseases",
+        "Cardiovascular",
         "MaleReproductiveSystem",
         "NervousSystem",
-        "Ophthalmology",
+        "Dermatology",
+        "EarNoseAndThroat",
+        "EndocrineAndDiabetesAndMetabolism",
+        "PosioningAndEnviromentalExposure",
         "PregnancyChildbirthAndPuerperium",
-        "CriticalCare",
+        "PsychiatricAndSubstanceUseDisorders",
+        "FemaleReproductiveSystem",
+        "GastrointestinalAndNutrition",
+        "PulmonaryAndCriticalCare",
+        "HematologyAndOncology",
+        "AllergiesAndImmunology",
         "RenalAndUrinary",
+        "InfectiousDiseases",
         "RheumatologyAndOrthopedics",
+        "SocialSciences",
     ]
     questions: list[Question]
     answer: any
@@ -81,6 +79,17 @@ class Question(BaseModel):
     topic: str = Field(description="The topic of the question.")
     subtopic: str = Field(description="The subtopic of the question.")
     question: str = Field(description="The question text.")
+    shelfSubject: Literal[
+        "Ambulatory Medicine",
+        "Clinical Neurology",
+        "Emergency Medicine",
+        "Family Medicine",
+        "Medicine",
+        "OBGYN",
+        "Pediatrics",
+        "Psychiatry",
+        "Surgery",
+    ] = Field(description="The shelf subject of the question.")
     choices: list[str] = Field(
         description="A list of 5 answer choices.", min_length=5, max_length=5
     )
@@ -115,7 +124,6 @@ def generate_question_with_llm(state: State):
                 "sample_explanation": subtopics[subtopic]["sample_question"][
                     "explanation"
                 ],
-                
             }
         )
         print(setTemplate)
@@ -128,10 +136,9 @@ def generate_question_with_llm(state: State):
         embedding = embeddings.embed_query(text_to_embed)
         question.embedding = embedding
     # After collecting all questions
-    with open("questions.txt", "w") as f:
+    with open("step2_questions.txt", "w") as f:
         f.write(str(total_questions))
 
-    
     return {"questions": total_questions}
 
 

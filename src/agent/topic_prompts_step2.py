@@ -1,430 +1,1731 @@
-Biochemistry = {
-    "AMINO_ACIDS_PROTEINS_AND_ENZYMES": {
-        "prompt": (
-            "You are a biochemistry expert. Generate a USMLE Step 1 question about amino acid metabolism or enzyme defects (e.g., PKU, homocystinuria, urea cycle defects). "
-            "Include a clinical vignette, relevant labs, 5 answer options, correct answer, and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
-        ),
-        "sample_question": {
-            "question": """A 5-month-old infant is brought to the emergency department due to poor feeding, vomiting, and lethargy. 
-            On physical examination, the child is hypotonic and exhibits a mousy body odor. 
-            Blood analysis reveals elevated phenylalanine and low tyrosine levels. Genetic analysis confirms a mutation in the PAH gene.
-             Despite adequate dietary phenylalanine restriction, the patient continues to have neurological deficits.
-            Further analysis reveals a deficiency in an enzyme responsible for the regeneration of tetrahydrobiopterin (BH₄) from dihydrobiopterin (BH₂). 
-            Which of the following enzymes is most likely deficient in this patient?""",
-            "choices": ["Dihydropteridine reductase", "Phenylalanine hydroxylase", "Tyrosine hydroxylase", "Homogentisate oxidase", "Tryptophan hydroxylase"],
-            "answer": "Dihydropteridine reductase", 
-            "explanation": """This infant presents with phenylketonuria (PKU) symptoms but does not improve with dietary phenylalanine restriction alone, suggesting atypical or malignant PKU.
-            In classic PKU, the enzyme phenylalanine hydroxylase (PAH) is deficient. However, PAH also requires tetrahydrobiopterin (BH₄) as a cofactor to function properly.
-            A defect in the enzyme dihydropteridine reductase (DHPR) impairs the regeneration of BH₄ from its oxidized form, dihydrobiopterin (BH₂). 
-            Without sufficient BH₄, several important hydroxylase reactions fail. These include the conversion of phenylalanine to tyrosine by PAH, the conversion of tyrosine to DOPA by tyrosine hydroxylase, and the conversion of tryptophan to 5-hydroxytryptophan (5-HTP) by tryptophan hydroxylase.
-            The failure of these reactions leads to sa broader neurotransmitter deficiency, which explains the continued neurological deterioration despite adequate dietary management. 
-            Therefore, a deficiency in DHPR is the underlying cause of malignant PKU in this case.""",
-        }
-    },
-
-    "BIOENERGETICS_AND_CARBOHYDRATE_METABOLISM": {
-        "prompt": (
-            "You are a biochemistry expert. Create a USMLE Step 1 vignette-style question testing glycolysis, gluconeogenesis, or a glycogen storage disease. "
-            "Include age, symptoms (e.g., fasting hypoglycemia, hepatomegaly), and relevant metabolic labs. "
-            "Provide 5 choices, correct answer, and brief explanation. Return ONLY a valid JSON object as described in the schema."
-        ),
-        "sample_question": {
-            "question": """A 3-month-old infant is brought to the clinic due to recurrent episodes of irritability and drowsiness, especially after missed feedings. Physical examination reveals hepatomegaly. Laboratory studies show hypoglycemia, elevated lactate, elevated triglycerides, and elevated uric acid. A liver biopsy reveals excessive glycogen accumulation with a normal structure. Genetic testing identifies a deficiency in glucose-6-phosphatase.
-            Which of the following is the most likely diagnosis?""",
-            "choices": ["Pompe disease", "McArdle disease", "Cori disease", "Von Gierke disease", "Her's disease"],
-            "answer": "Von Gierke disease",
-            "explanation": """This infant shows signs of impaired fasting tolerance, evidenced by hypoglycemia and lethargy during periods without food. The metabolic findings — hypoglycemia, lactic acidosis, hyperlipidemia, and hyperuricemia — are classic for a defect in glucose release during fasting. The key clue is the liver biopsy showing an excess of structurally normal glycogen, which indicates that glycogen is being synthesized correctly but cannot be broken down efficiently to maintain blood glucose.
-            The enzyme glucose-6-phosphatase catalyzes the final step in both glycogenolysis and gluconeogenesis: converting glucose-6-phosphate into free glucose that can enter the bloodstream. A deficiency in this enzyme results in the accumulation of glucose-6-phosphate within hepatocytes. This leads to diversion into glycolysis (producing excess lactate), lipogenesis (causing hypertriglyceridemia), and the pentose phosphate pathway (producing purine degradation and hyperuricemia). Because glucose cannot be mobilized from the liver, the patient develops severe fasting hypoglycemia.
-            This presentation is diagnostic of Von Gierke disease, also known as Glycogen Storage Disease Type I.""",
-        }
-    },
-    
-
-    "LIPID_METABOLISM": {
-        "prompt": (
-            "You are a biochemistry expert. Write a Step 1-style question on fatty acid oxidation, ketone production, or lipoprotein disorders (e.g., MCAD, abetalipoproteinemia, familial hypercholesterolemia). "
-            "Include a clinical vignette and 5 plausible answer choices with explanation. Return ONLY a valid JSON object as described in the schema."
-        ),
-        "sample_question": {
-            "question": """A 4-month-old male is brought to the pediatrician due to failure to thrive and hepatomegaly. His parents report that he has had several episodes of vomiting and lethargy, especially after feeding. Laboratory studies reveal hypoglycemia, elevated liver transaminases, hyperammonemia, and elevated dicarboxylic acids in the urine. Further testing shows low levels of free carnitine in plasma.
-            Which of the following is the most likely underlying cause of this patient's condition?""",
-            "choices": ["Medium-chain acyl-CoA dehydrogenase deficiency", "Primary carnitine deficiency", "Carnitine palmitoyltransferase II deficiency", "Systemic carnitine transporter overexpression", "Acetyl-CoA carboxylase deficiency"],
-            "answer": "Primary carnitine deficiency",
-            "explanation": """This infant presents with signs of impaired fatty acid oxidation, such as fasting hypoglycemia without ketone production (hypoketotic hypoglycemia), hepatomegaly, and lethargy. The presence of elevated dicarboxylic acids in the urine indicates that omega-oxidation is being used as a backup pathway due to defective beta-oxidation.
-            The key lab finding here is low plasma free carnitine, which suggests a defect in carnitine transport into cells. Carnitine is essential for the transport of long-chain fatty acids into the mitochondria for beta-oxidation. Without carnitine, fatty acids cannot be used as an energy source during fasting or metabolic stress, resulting in energy deficiency and toxic accumulation of fatty acid intermediates.
-            Primary carnitine deficiency is caused by a defect in the OCTN2 carnitine transporter. This leads to low intracellular and plasma carnitine levels and manifests as hypoketotic hypoglycemia, hepatomegaly, muscle weakness, and cardiomyopathy, typically in infancy or early childhood.
-            Medium-chain acyl-CoA dehydrogenase (MCAD) deficiency can present similarly but would have normal or elevated carnitine levels and typically does not show elevated dicarboxylic acids to the same extent as a transport defect. CPT-II deficiency more commonly presents in muscle tissue with exercise-induced pain in older children or adults.""",
-        }
-    },
-     "CELL_AND_MOLECULAR_BIOLOGY": {
-        "prompt": (
-            "You are a cell and molecular biology expert. Generate a USMLE Step 1 question focused on DNA replication, transcription, RNA processing, or cell organelles. "
-            "Use a genetic disorder or cell biology concept (e.g., xeroderma pigmentosum, I-cell disease). Include correct answer and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
-        ),
-        "sample_question": {
-            "question": """A researcher is studying the effects of proteasome inhibition on cell cycle progression. She treats cultured human fibroblasts with a small molecule that selectively inhibits the 26S proteasome. After treatment, the cells are found to accumulate in the G1 phase and fail to progress into S phase. Which of the following molecules is most likely responsible for this arrest?""",
-            "choices": ["Cyclin D", "p53", "Retinoblastoma protein (Rb)", "CDK4", "E2F"],
-            "answer": "Retinoblastoma protein (Rb)",
-            "explanation": """The 26S proteasome is responsible for degrading ubiquitinated proteins, a key mechanism for controlling levels of regulatory molecules in the cell cycle. In this scenario, inhibition of the proteasome prevents degradation of certain proteins, leading to accumulation or persistent activity.
-            Progression from the G1 phase into the S phase of the cell cycle is tightly regulated by the interaction between the retinoblastoma protein (Rb) and the E2F family of transcription factors. In its unphosphorylated (active) state, Rb binds to E2F, preventing transcription of genes required for S phase entry. As the cell progresses through G1, cyclin D–CDK4/6 complexes phosphorylate Rb, inactivating it and releasing E2F to initiate S phase gene transcription.
-            If the proteasome is inhibited, proteins like the active, hypophosphorylated form of Rb may accumulate because they are not being properly degraded or regulated. As a result, Rb continues to bind and inhibit E2F, blocking the G1-to-S transition and causing G1 arrest.
-            While cyclin D, CDK4, and E2F are important regulators, the key inhibitory checkpoint being affected here is the persistent activity of Rb, making it the correct answer."""
-        }
-    },
-
-    # "MISCELLANEOUS": {
-    #     "prompt": (
-    #         "You are a biochemistry expert. Create a Step 1 MCQ that tests understanding of vitamin/cofactor deficiencies (e.g., B1, B12, biotin) or integrated metabolism (e.g., alcohol metabolism, starvation, fasting). "
-    #         "Include a short clinical vignette, answer choices, correct answer, and explanation. Return ONLY a valid JSON object as described in the schema."
-    #     ),
-    #     "sample_question": {
-    #         "question": "What is the correct answer?",
-    #         "answer": "A",
-    #         "explanation": "This is the explanation for the answer."
-    #     }
-    # }
-}
-
-
-Genetics = {
-    "GENE_MUTATIONS": {
-        "prompt": "You are a genetics expert. Generate a USMLE Step 1 question about gene mutations. Return ONLY a valid JSON object as described in the schema.",
-        "sample_question": {
-            "question": "A 2-year-old boy presents with developmental delay and hypotonia. Genetic testing reveals a deletion on chromosome 15 inherited from his mother. Which syndrome is most likely?",
-            "choices": ["Angelman syndrome", "Prader-Willi syndrome", "Williams syndrome", "Smith-Magenis syndrome", "Cri-du-chat syndrome"],
-            "explanation": "Angelman syndrome is caused by a deletion on the maternal chromosome 15q11-q13. Prader-Willi is the paternal deletion."
-        }
-    },
-    # Add more subtopics as needed
-}
-
 AllergyAndImmunology = {
-    "AnaphylaxisandAllergicReactions": {
-        "prompt": "You are a cardiology expert. Generate a USMLE Step 1 question about arrhythmias. Return ONLY a valid JSON object as described in the schema.",
+    "ANAPHYLAXIS_AND_ALLERGIC_REACTIONS": {
+        "prompt": (
+            "You are an allergy and immunology expert. Generate a USMLE Step 2 CK question about anaphylaxis and allergic reactions. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
         "sample_question": {
-            "question": "A 65-year-old man presents with palpitations and an irregularly irregular pulse. ECG shows no discernible P waves. What is the most likely diagnosis?",
+            "question": """A 25-year-old woman develops sudden onset of difficulty breathing, hives, and hypotension 5 minutes after eating peanuts at a restaurant. On examination, she is anxious, has stridor, widespread urticaria, and a blood pressure of 80/40 mmHg. Her pulse is 120 bpm. Which of the following is the most appropriate immediate management?""",
+            "choices": ["Intravenous corticosteroids", "Intramuscular epinephrine", "Intravenous diphenhydramine", "Nebulized albuterol", "Intravenous fluids"],
+            "answer": "Intramuscular epinephrine",
+            "explanation": """This patient presents with classic signs of anaphylaxis: rapid onset after allergen exposure, respiratory compromise (stridor), cutaneous symptoms (urticaria), and cardiovascular collapse (hypotension). Anaphylaxis is a life-threatening emergency requiring immediate treatment. Intramuscular epinephrine is the first-line treatment and should be administered immediately. Epinephrine counteracts the massive histamine release by causing vasoconstriction, bronchodilation, and positive inotropic effects. While corticosteroids, antihistamines, and supportive care are important adjuvant therapies, epinephrine is the only treatment that can rapidly reverse the cardiovascular and respiratory collapse seen in anaphylaxis."""
+        }
+    },
+    "AUTOIMMUNE_DISEASES": {
+        "prompt": (
+            "You are an allergy and immunology expert. Generate a USMLE Step 2 CK question about autoimmune diseases. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": """A 35-year-old woman presents with a 6-month history of joint pain affecting her hands, wrists, and knees. She reports morning stiffness lasting 2 hours and fatigue. Physical examination reveals swelling and tenderness of the metacarpophalangeal and proximal interphalangeal joints bilaterally. Laboratory studies show elevated ESR and CRP. Rheumatoid factor is positive. Which of the following is the most appropriate initial treatment?""",
+            "choices": ["NSAIDs only", "Methotrexate", "Prednisone", "Physical therapy only", "Hydroxychloroquine"],
+            "answer": "Methotrexate",
+            "explanation": """This patient presents with classic rheumatoid arthritis: symmetric polyarthritis affecting small joints, prolonged morning stiffness, elevated inflammatory markers, and positive rheumatoid factor. Early aggressive treatment with disease-modifying antirheumatic drugs (DMARDs) is crucial to prevent joint destruction. Methotrexate is the first-line DMARD for rheumatoid arthritis due to its efficacy in slowing disease progression and preventing joint damage. While NSAIDs provide symptomatic relief and corticosteroids can be used for short-term control, they do not modify disease progression. Early initiation of methotrexate improves long-term outcomes."""
+        }
+    },
+    "IMMUNE_DEFICIENCIES": {
+        "prompt": (
+            "You are an allergy and immunology expert. Generate a USMLE Step 2 CK question about immune deficiencies. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": """A 3-year-old boy presents with recurrent pneumonia, chronic diarrhea, and failure to thrive. He has had multiple infections with Pneumocystis jiroveci and cytomegalovirus. Laboratory studies show severe lymphopenia with absent T cells, normal B cell numbers, and low immunoglobulin levels. Which of the following is the most likely diagnosis?""",
+            "choices": ["DiGeorge syndrome", "Severe combined immunodeficiency", "Common variable immunodeficiency", "X-linked agammaglobulinemia", "Chronic granulomatous disease"],
+            "answer": "Severe combined immunodeficiency",
+            "explanation": """This patient presents with severe combined immunodeficiency (SCID), characterized by profound T cell deficiency leading to severe opportunistic infections early in life. The key features include recurrent severe infections with opportunistic pathogens (Pneumocystis, CMV), failure to thrive, and laboratory findings of severe lymphopenia with absent or very low T cells. SCID is a pediatric emergency requiring immediate isolation and urgent hematopoietic stem cell transplantation. The opportunistic infections and early age of presentation distinguish SCID from other immunodeficiencies."""
+        }
+    },
+    "TRANSPLANT_MEDICINE": {
+        "prompt": (
+            "You are an allergy and immunology expert. Generate a USMLE Step 2 CK question about transplant medicine. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": """A 45-year-old man who received a kidney transplant 6 months ago presents with fever, decreased urine output, and rising serum creatinine from 1.2 to 2.8 mg/dL over the past week. He has been adherent to his immunosuppressive regimen of tacrolimus, mycophenolate, and prednisone. A kidney biopsy shows lymphocytic infiltration of tubules and interstitium. Which of the following is the most likely diagnosis?""",
+            "choices": ["Acute tubular necrosis", "Acute rejection", "Chronic rejection", "Calcineurin inhibitor toxicity", "Urinary tract infection"],
+            "answer": "Acute rejection",
+            "explanation": """This patient presents with acute rejection of his kidney transplant. The key features include rapid deterioration in kidney function (rising creatinine), fever, and decreased urine output occurring months after transplantation. The biopsy finding of lymphocytic infiltration is characteristic of acute cellular rejection. Despite adherence to immunosuppressive therapy, breakthrough rejection can occur and requires prompt recognition and treatment. Acute rejection typically presents with rapid functional decline and inflammatory changes on biopsy, distinguishing it from chronic rejection which develops gradually over years."""
+        }
+    },
+    "PRINCIPLES_OF_IMMUNOLOGY": {
+        "prompt": (
+            "You are an allergy and immunology expert. Generate a USMLE Step 2 CK question about principles of immunology. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": """A 28-year-old woman receives her first dose of a new medication and develops fever, joint pain, lymphadenopathy, and a maculopapular rash 10 days later. Laboratory studies show proteinuria and low complement levels (C3 and C4). Which of the following immunologic mechanisms is most likely responsible for her symptoms?""",
+            "choices": ["Type I hypersensitivity", "Type II hypersensitivity", "Type III hypersensitivity", "Type IV hypersensitivity", "Complement deficiency"],
+            "answer": "Type III hypersensitivity",
+            "explanation": """This patient presents with serum sickness-like syndrome, which is a classic example of Type III hypersensitivity reaction. The key features include the delayed onset (7-14 days), fever, arthralgia, lymphadenopathy, rash, and low complement levels. Type III reactions involve immune complex formation between antigen (medication) and antibodies, leading to complement activation and tissue deposition of immune complexes. The 10-day delay allows time for antibody production and immune complex formation. Low complement levels result from consumption during the inflammatory process."""
+        }
+    }
+}
+
+BiostatsAndEpidemiology = {
+    "EPIDEMIOLOGY_AND_POPULATION_HEALTH": {
+        "prompt": (
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about epidemiology and population health. "
+            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A study is conducted to assess the prevalence of hypertension in a population. The sample includes 1000 individuals, and 150 are found to have hypertension. What is the prevalence of hypertension in this population?",
+            "choices": ["10%", "15%", "20%", "25%", "30%"],
+            "answer": "15%",
+            "explanation": "Prevalence is calculated as the number of cases divided by the total population. Here, 150 out of 1000 individuals have hypertension, resulting in a prevalence of 15%."
+        }
+    },
+    "MEASURES_AND_DISTRIBUTION_OF_DATA": {
+        "prompt": (
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about measures and distribution of data. "
+            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A researcher is analyzing the distribution of cholesterol levels in a sample of 200 adults. The mean cholesterol level is 200 mg/dL with a standard deviation of 20 mg/dL. Assuming a normal distribution, what percentage of individuals have cholesterol levels between 180 mg/dL and 220 mg/dL?",
+            "choices": ["68%", "75%", "80%", "85%", "90%"],
+            "answer": "68%",
+            "explanation": "In a normal distribution, approximately 68% of the data falls within one standard deviation of the mean. Here, 180 mg/dL to 220 mg/dL represents one standard deviation from the mean of 200 mg/dL."
+        }
+    },
+    "PROBABILITY_AND_PRINCIPLES_OF_TESTING": {
+        "prompt": (
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about probability and principles of testing. "
+            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A new diagnostic test for diabetes has a sensitivity of 90% and a specificity of 95%. In a population where the prevalence of diabetes is 10%, what is the positive predictive value of the test?",
+            "choices": ["50%", "60%", "70%", "80%", "90%"],
+            "answer": "70%",
+            "explanation": "Positive predictive value (PPV) is the probability that subjects with a positive screening test truly have the disease. It is influenced by the prevalence of the disease in the population. Here, the PPV is calculated using the sensitivity, specificity, and prevalence."
+        }
+    },
+    "STUDY_DESIGN_AND_INTERPRETATION": {
+        "prompt": (
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about study design and interpretation. "
+            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A randomized controlled trial is conducted to evaluate the efficacy of a new antihypertensive drug. The trial includes 500 participants, with 250 receiving the drug and 250 receiving a placebo. After 6 months, the mean reduction in blood pressure is 10 mmHg in the drug group and 5 mmHg in the placebo group. What is the absolute risk reduction?",
+            "choices": ["1%", "2%", "3%", "4%", "5%"],
+            "answer": "5%",
+            "explanation": "Absolute risk reduction (ARR) is the difference in event rates between two groups. Here, the ARR is the difference in mean blood pressure reduction between the drug and placebo groups, which is 5 mmHg."
+        }
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about miscellaneous topics in biostatistics and epidemiology. "
+            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A cohort study is conducted to investigate the association between smoking and lung cancer. The study follows 1000 smokers and 1000 non-smokers for 10 years. At the end of the study, 100 smokers and 10 non-smokers develop lung cancer. What is the relative risk of lung cancer in smokers compared to non-smokers?",
+            "choices": ["5", "10", "15", "20", "25"],
+            "answer": "10",
+            "explanation": "Relative risk (RR) is the ratio of the probability of an event occurring in the exposed group versus a non-exposed group. Here, the RR is calculated as (100/1000) / (10/1000) = 10, indicating smokers are 10 times more likely to develop lung cancer compared to non-smokers."
+        }
+    }
+}
+
+Cardiovascular = {
+    "AORTIC_AND_PERIPHERAL_ARTERY_DISEASES": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about aortic and peripheral artery diseases. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 65-year-old man presents with leg pain while walking that resolves with rest. Physical examination reveals diminished pulses in the lower extremities. Ankle-brachial index is 0.6. What is the most likely diagnosis?",
+            "choices": ["Deep vein thrombosis", "Peripheral artery disease", "Chronic venous insufficiency", "Acute arterial occlusion", "Varicose veins"],
+            "answer": "Peripheral artery disease",
+            "explanation": "The patient's symptoms and ankle-brachial index suggest peripheral artery disease, characterized by intermittent claudication and reduced blood flow to the extremities."
+        }
+    },
+    "CARDIAC_ARRHYTHMIAS_AND_SYNCOPE": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about cardiac arrhythmias and syncope. "
+            "Include a clinical vignette, relevant symptoms, ECG findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 70-year-old woman presents with palpitations and dizziness. ECG shows an irregularly irregular rhythm with no discernible P waves. What is the most likely diagnosis?",
             "choices": ["Atrial fibrillation", "Atrial flutter", "Ventricular tachycardia", "Sinus bradycardia", "First-degree AV block"],
             "answer": "Atrial fibrillation",
-            "explanation": "Atrial fibrillation is characterized by an irregularly irregular rhythm and absence of P waves."
+            "explanation": "Atrial fibrillation is characterized by an irregularly irregular rhythm and absence of P waves on ECG."
         }
     },
-    "AutoimmuneDiseases": {
-        "prompt": "You are a cardiology expert. Generate a USMLE Step 1 question about arrhythmias. Return ONLY a valid JSON object as described in the schema.",
+    "CONGENITAL_HEART_DISEASE": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about congenital heart disease. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
         "sample_question": {
-            "question": "A 65-year-old man presents with palpitations and an irregularly irregular pulse. ECG shows no discernible P waves. What is the most likely diagnosis?",
-            "choices": ["Atrial fibrillation", "Atrial flutter", "Ventricular tachycardia", "Sinus bradycardia", "First-degree AV block", "Second-degree AV block"],
-            "answer": "Atrial fibrillation",
-            "explanation": "Atrial fibrillation is characterized by an irregularly irregular rhythm and absence of P waves."
+            "question": "A 2-month-old infant presents with cyanosis and difficulty feeding. Echocardiogram reveals a right-to-left shunt. What is the most likely diagnosis?",
+            "choices": ["Tetralogy of Fallot", "Ventricular septal defect", "Atrial septal defect", "Patent ductus arteriosus", "Coarctation of the aorta"],
+            "answer": "Tetralogy of Fallot",
+            "explanation": "Tetralogy of Fallot is a congenital heart defect that causes cyanosis due to a right-to-left shunt."
         }
     },
-    "Immunodeficiencies": {
-        "prompt": "You are a cardiology expert. Generate a USMLE Step 1 question about arrhythmias. Return ONLY a valid JSON object as described in the schema.",
+    "CORONARY_HEART_DISEASE": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about coronary heart disease. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
         "sample_question": {
-            "question": "A 65-year-old man presents with palpitations and an irregularly irregular pulse. ECG shows no discernible P waves. What is the most likely diagnosis?",
-            "choices": ["Atrial fibrillation", "Atrial flutter", "Ventricular tachycardia", "Sinus bradycardia", "First-degree AV block", "Second-degree AV block"],
-            "answer": "Atrial fibrillation",
-            "explanation": "Atrial fibrillation is characterized by an irregularly irregular rhythm and absence of P waves."
+            "question": "A 55-year-old man presents with chest pain on exertion that is relieved by rest. What is the most likely diagnosis?",
+            "choices": ["Stable angina", "Unstable angina", "Myocardial infarction", "Pericarditis", "Aortic dissection"],
+            "answer": "Stable angina",
+            "explanation": "Stable angina is characterized by chest pain on exertion that is relieved by rest, indicating a fixed coronary artery stenosis."
         }
     },
-    "TransplantMedicine": {
-        "prompt": "You are a cardiology expert. Generate a USMLE Step 1 question about arrhythmias. Return ONLY a valid JSON object as described in the schema.",
+    "HEART_FAILURE_AND_SHOCK": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about heart failure and shock. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
         "sample_question": {
-            "question": "A 65-year-old man presents with palpitations and an irregularly irregular pulse. ECG shows no discernible P waves. What is the most likely diagnosis?",
-            "choices": ["Atrial fibrillation", "Atrial flutter", "Ventricular tachycardia", "Sinus bradycardia", "First-degree AV block", "Second-degree AV block"],
-            "answer": "Atrial fibrillation",
-            "explanation": "Atrial fibrillation is characterized by an irregularly irregular rhythm and absence of P waves."
-        }
-    },  
-    "ImmunologyPrinciples": {
-        "prompt": "You are a cardiology expert. Generate a USMLE Step 1 question about arrhythmias. Return ONLY a valid JSON object as described in the schema.",
-        "sample_question": {
-            "question": "A 65-year-old man presents with palpitations and an irregularly irregular pulse. ECG shows no discernible P waves. What is the most likely diagnosis?",
-            "choices": ["Atrial fibrillation", "Atrial flutter", "Ventricular tachycardia", "Sinus bradycardia", "First-degree AV block", "Second-degree AV block"],
-            "answer": "Atrial fibrillation",
-            "explanation": "Atrial fibrillation is characterized by an irregularly irregular rhythm and absence of P waves."
+            "question": "A 60-year-old woman presents with shortness of breath, orthopnea, and leg swelling. Echocardiogram shows reduced ejection fraction. What is the most likely diagnosis?",
+            "choices": ["Heart failure with reduced ejection fraction", "Heart failure with preserved ejection fraction", "Acute coronary syndrome", "Pulmonary embolism", "Chronic obstructive pulmonary disease"],
+            "answer": "Heart failure with reduced ejection fraction",
+            "explanation": "The patient's symptoms and echocardiogram findings are consistent with heart failure with reduced ejection fraction, also known as systolic heart failure."
         }
     },
-    # Add more subtopics as needed
+    "HYPERTENSION": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about hypertension. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old man is diagnosed with hypertension. His blood pressure is 150/95 mmHg. What is the first-line treatment?",
+            "choices": ["Lifestyle modification", "ACE inhibitors", "Beta-blockers", "Calcium channel blockers", "Diuretics"],
+            "answer": "Lifestyle modification",
+            "explanation": "Lifestyle modification is the first-line treatment for hypertension, including dietary changes, exercise, and weight loss."
+        }
+    },
+    "MYOPERICARDIAL_DISEASES": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about myopericardial diseases. "
+            "Include a clinical vignette, relevant symptoms, ECG findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old man presents with chest pain that worsens with inspiration and is relieved by sitting forward. ECG shows diffuse ST elevation. What is the most likely diagnosis?",
+            "choices": ["Pericarditis", "Myocarditis", "Acute coronary syndrome", "Pulmonary embolism", "Aortic dissection"],
+            "answer": "Pericarditis",
+            "explanation": "Pericarditis is characterized by chest pain that worsens with inspiration and is relieved by sitting forward, along with diffuse ST elevation on ECG."
+        }
+    },
+    "VALVULAR_HEART_DISEASES": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about valvular heart diseases. "
+            "Include a clinical vignette, relevant symptoms, auscultation findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 70-year-old woman presents with exertional dyspnea and a systolic ejection murmur heard best at the right second intercostal space. What is the most likely diagnosis?",
+            "choices": ["Aortic stenosis", "Mitral regurgitation", "Aortic regurgitation", "Mitral stenosis", "Tricuspid regurgitation"],
+            "answer": "Aortic stenosis",
+            "explanation": "Aortic stenosis is characterized by a systolic ejection murmur heard best at the right second intercostal space, often associated with exertional dyspnea."
+        }
+    },
+    "CARDIOVASCULAR_DRUGS": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about cardiovascular drugs. "
+            "Include a clinical vignette, relevant symptoms, drug interactions, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man with a history of atrial fibrillation is started on warfarin. What is the most important dietary advice to give this patient?",
+            "choices": ["Avoid grapefruit", "Limit vitamin K intake", "Increase calcium intake", "Avoid dairy products", "Increase fiber intake"],
+            "answer": "Limit vitamin K intake",
+            "explanation": "Patients on warfarin should limit vitamin K intake as it can affect the drug's anticoagulant effect."
+        }
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are a cardiology expert. Generate a USMLE Step 2 CK question about miscellaneous cardiovascular topics. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with palpitations and anxiety. Her thyroid function tests reveal hyperthyroidism. What is the most likely cardiovascular manifestation of her condition?",
+            "choices": ["Atrial fibrillation", "Bradycardia", "Heart block", "Ventricular tachycardia", "Sinus arrhythmia"],
+            "answer": "Atrial fibrillation",
+            "explanation": "Hyperthyroidism can lead to atrial fibrillation due to increased sympathetic activity and metabolic rate."
+        }
+    }
 }
 
-# Repeat for all other topics, using the same structure as Biochemistry.
-# For brevity, only two topics are shown here. Add the rest as needed.
+Dermatology = {
+    "NORMAL_STRUCTURE_AND_FUNCTION_OF_SKIN": {
+        "prompt": (
+            "You are a dermatology expert. Generate a USMLE Step 2 CK question about the normal structure and function of skin. "
+            "Include a clinical vignette, relevant symptoms, histological findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old woman presents with dry, itchy skin. Examination reveals fine scaling and lichenification. What is the most likely underlying cause of her symptoms?",
+            "choices": ["Epidermal barrier dysfunction", "Autoimmune reaction", "Bacterial infection", "Fungal infection", "Viral infection"],
+            "answer": "Epidermal barrier dysfunction",
+            "explanation": "The patient's symptoms are consistent with atopic dermatitis, which is often due to epidermal barrier dysfunction leading to dry, itchy skin."
+        }
+    },
+    "DISORDERS_OF_EPDERMAL_APPENDAGES": {
+        "prompt": (
+            "You are a dermatology expert. Generate a USMLE Step 2 CK question about disorders of epidermal appendages. "
+            "Include a clinical vignette, relevant symptoms, histological findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old man presents with multiple painful nodules on his axillae. Examination reveals inflamed nodules and sinus tracts. What is the most likely diagnosis?",
+            "choices": ["Hidradenitis suppurativa", "Acne vulgaris", "Folliculitis", "Psoriasis", "Eczema"],
+            "answer": "Hidradenitis suppurativa",
+            "explanation": "Hidradenitis suppurativa is characterized by painful nodules and sinus tracts in areas with apocrine glands, such as the axillae."
+        }
+    },
+    "INFLAMMATORY_DERMATOSES_AND_BULLOUS_DISEASES": {
+        "prompt": (
+            "You are a dermatology expert. Generate a USMLE Step 2 CK question about inflammatory dermatoses and bullous diseases. "
+            "Include a clinical vignette, relevant symptoms, histological findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with tense blisters on her abdomen and thighs. Biopsy shows subepidermal blisters with eosinophils. What is the most likely diagnosis?",
+            "choices": ["Bullous pemphigoid", "Pemphigus vulgaris", "Dermatitis herpetiformis", "Erythema multiforme", "Stevens-Johnson syndrome"],
+            "answer": "Bullous pemphigoid",
+            "explanation": "Bullous pemphigoid is characterized by tense blisters and subepidermal blisters with eosinophils on biopsy."
+        }
+    },
+    "SKIN_AND_SOFT_TISSUE_INFECTIONS": {
+        "prompt": (
+            "You are a dermatology expert. Generate a USMLE Step 2 CK question about skin and soft tissue infections. "
+            "Include a clinical vignette, relevant symptoms, microbiological findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man presents with a painful, swollen leg. Examination reveals erythema, warmth, and tenderness. What is the most likely causative organism?",
+            "choices": ["Staphylococcus aureus", "Streptococcus pyogenes", "Pseudomonas aeruginosa", "Escherichia coli", "Candida albicans"],
+            "answer": "Streptococcus pyogenes",
+            "explanation": "Cellulitis is commonly caused by Streptococcus pyogenes, presenting with erythema, warmth, and tenderness."
+        }
+    },
+    "SKIN_TUMORS_AND_TUMOR_LIKE_LESIONS": {
+        "prompt": (
+            "You are a dermatology expert. Generate a USMLE Step 2 CK question about skin tumors and tumor-like lesions. "
+            "Include a clinical vignette, relevant symptoms, histological findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old woman presents with a pearly papule on her nose. Biopsy shows nests of basaloid cells. What is the most likely diagnosis?",
+            "choices": ["Basal cell carcinoma", "Squamous cell carcinoma", "Melanoma", "Actinic keratosis", "Seborrheic keratosis"],
+            "answer": "Basal cell carcinoma",
+            "explanation": "Basal cell carcinoma is characterized by a pearly papule and nests of basaloid cells on biopsy."
+        }
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are a dermatology expert. Generate a USMLE Step 2 CK question about miscellaneous dermatology topics. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 35-year-old woman presents with a butterfly-shaped rash on her face. What is the most likely associated condition?",
+            "choices": ["Systemic lupus erythematosus", "Rosacea", "Psoriasis", "Seborrheic dermatitis", "Contact dermatitis"],
+            "answer": "Systemic lupus erythematosus",
+            "explanation": "A butterfly-shaped rash on the face is characteristic of systemic lupus erythematosus."
+        }
+    }
+}
 
+MaleReproductiveSystem = {
+    "DISORDERS_OF_THE_MALE_REPRODUCTIVE_SYSTEM": {
+        "prompt": (
+            "You are a urology expert. Generate a USMLE Step 2 CK question about disorders of the male reproductive system. "
+            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man presents with difficulty urinating and a weak stream. Digital rectal examination reveals an enlarged, non-tender prostate. What is the most likely diagnosis?",
+            "choices": ["Benign prostatic hyperplasia", "Prostate cancer", "Prostatitis", "Urethral stricture", "Bladder cancer"],
+            "answer": "Benign prostatic hyperplasia",
+            "explanation": "The patient's symptoms and examination findings are consistent with benign prostatic hyperplasia, a common condition in older men."
+        }
+    }
+}
 
-class Genetics:
-    CELL_STRUCTURE_AND_FUNCTION = (
-        "You are an expert in foundational medical sciences. Generate a USMLE Step 2 CK-style question about cell structure and function. Return ONLY a valid JSON object as described in the schema."
-    )
-    BIOCHEMISTRY = (
-        "You are an expert in foundational medical sciences. Generate a USMLE Step 2 CK-style question about biochemistry. Return ONLY a valid JSON object as described in the schema."
-    )
-    GENETICS = (
-        "You are an expert in foundational medical sciences. Generate a USMLE Step 2 CK-style question about genetics. Return ONLY a valid JSON object as described in the schema."
-    )
-    MOLECULAR_BIOLOGY = (
-        "You are an expert in foundational medical sciences. Generate a USMLE Step 2 CK-style question about molecular biology. Return ONLY a valid JSON object as described in the schema."
-    )
+NervousSystem = {
+    "NORMAL_STRUCTURE_AND_FUNCTION_OF_THE_NERVOUS_SYSTEM": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about the normal structure and function of the nervous system. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old woman presents with muscle weakness and fatigue. Neurological examination reveals decreased deep tendon reflexes. MRI of the brain is normal. What is the most likely diagnosis?",
+            "choices": ["Multiple sclerosis", "Myasthenia gravis", "Guillain-Barré syndrome", "Amyotrophic lateral sclerosis", "Muscular dystrophy"],
+            "answer": "Myasthenia gravis",
+        },
+    },
+    "CONGENITAL_AND_DEVELOPMENTAL_ANOMALIES": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about congenital and developmental anomalies of the nervous system. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A newborn is noted to have a sac-like protrusion in the lumbar region. MRI reveals a defect in the vertebral arches. What is the most likely diagnosis?",
+            "choices": ["Spina bifida", "Anencephaly", "Hydrocephalus", "Cerebral palsy", "Microcephaly"],
+            "answer": "Spina bifida",
+        },
+    },
+    "CEREBROVASCULAR_DISEASE": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about cerebrovascular disease. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 70-year-old man presents with sudden onset of right-sided weakness and slurred speech. CT scan of the head shows an ischemic stroke in the left middle cerebral artery territory. What is the most appropriate initial treatment?",
+            "choices": ["Aspirin", "Thrombolysis", "Heparin", "Warfarin", "Clopidogrel"],
+            "answer": "Thrombolysis",
+        },
+    },
+    "CNS_INFECTIONS": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about CNS infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old man presents with fever, headache, and neck stiffness. Lumbar puncture reveals elevated white blood cell count with lymphocytic predominance. What is the most likely diagnosis?",
+            "choices": ["Bacterial meningitis", "Viral meningitis", "Tuberculous meningitis", "Fungal meningitis", "Encephalitis"],
+            "answer": "Viral meningitis",
+        },
+    },
+    "DEMYELINATING_DISEASES": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about demyelinating diseases. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 28-year-old woman presents with blurred vision and weakness in her right leg. MRI of the brain shows multiple white matter lesions. What is the most likely diagnosis?",
+            "choices": ["Multiple sclerosis", "Guillain-Barré syndrome", "Neuromyelitis optica", "Chronic inflammatory demyelinating polyneuropathy", "Acute disseminated encephalomyelitis"],
+            "answer": "Multiple sclerosis",
+        },
+    },
+    "DISORDERS_OF_PERIPHERAL_NERVES_AND_MUSCLES": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about disorders of peripheral nerves and muscles. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old man presents with progressive weakness and muscle atrophy. Electromyography shows evidence of denervation. What is the most likely diagnosis?",
+            "choices": ["Amyotrophic lateral sclerosis", "Myasthenia gravis", "Guillain-Barré syndrome", "Muscular dystrophy", "Peripheral neuropathy"],
+            "answer": "Amyotrophic lateral sclerosis",
+        },
+    },
+    "HEADACHE": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about headaches. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old woman presents with recurrent, throbbing headaches associated with nausea and photophobia. What is the most likely diagnosis?",
+            "choices": ["Migraine", "Tension headache", "Cluster headache", "Sinus headache", "Trigeminal neuralgia"],
+            "answer": "Migraine",
+        },
+    },
+    "NEURODEGENERATIVE_DISORDERS_AND_DEMENTIAS": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about neurodegenerative disorders and dementias. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 70-year-old man presents with memory loss and difficulty performing daily activities. MRI of the brain shows cortical atrophy. What is the most likely diagnosis?",
+            "choices": ["Alzheimer's disease", "Parkinson's disease", "Lewy body dementia", "Frontotemporal dementia", "Vascular dementia"],
+            "answer": "Alzheimer's disease",
+        },
+    },
+    "SEIZURES_AND_EPILEPSY": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about seizures and epilepsy. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 20-year-old man presents with episodes of loss of consciousness and convulsions. EEG shows generalized spike-and-wave discharges. What is the most likely diagnosis?",
+            "choices": ["Generalized tonic-clonic seizure", "Absence seizure", "Focal seizure", "Myoclonic seizure", "Atonic seizure"],
+            "answer": "Generalized tonic-clonic seizure",
+        },
+    },
+    "SPINAL_CORD_DISORDERS": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about spinal cord disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with sudden onset of back pain and weakness in her legs. MRI of the spine shows a herniated disc compressing the spinal cord. What is the most likely diagnosis?",
+            "choices": ["Herniated disc", "Spinal stenosis", "Transverse myelitis", "Spinal cord tumor", "Cauda equina syndrome"],
+            "answer": "Herniated disc",
+        },
+    },
+    "TRAUMATIC_BRAIN_INJURIES": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about traumatic brain injuries. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old man presents with confusion and headache after a motor vehicle accident. CT scan of the head shows a subdural hematoma. What is the most likely diagnosis?",
+            "choices": ["Subdural hematoma", "Epidural hematoma", "Concussion", "Contusion", "Diffuse axonal injury"],
+            "answer": "Subdural hematoma",
+        },
+    },
+    "TUMORS_OF_THE_NERVOUS_SYSTEM": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about tumors of the nervous system. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old woman presents with headaches and seizures. MRI of the brain shows a mass in the frontal lobe. What is the most likely diagnosis?",
+            "choices": ["Glioblastoma", "Meningioma", "Astrocytoma", "Oligodendroglioma", "Metastatic tumor"],
+            "answer": "Glioblastoma",
+        },
+    },
+    "HYDROCEPHALUS": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about hydrocephalus. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old man presents with gait instability and urinary incontinence. MRI of the brain shows enlarged ventricles. What is the most likely diagnosis?",
+            "choices": ["Normal pressure hydrocephalus", "Obstructive hydrocephalus", "Communicating hydrocephalus", "Congenital hydrocephalus", "Idiopathic intracranial hypertension"],
+            "answer": "Normal pressure hydrocephalus",
+        },
+    },
+    "ANESTHESIA_PHARMACOTHERAPY": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about anesthesia and pharmacotherapy. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old woman undergoing surgery develops malignant hyperthermia. What is the most appropriate treatment?",
+            "choices": ["Dantrolene", "Lidocaine", "Propofol", "Midazolam", "Fentanyl"],
+            "answer": "Dantrolene",
+        },
+    },
+    "SLEEP_DISORDERS": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about sleep disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 35-year-old man presents with excessive daytime sleepiness and cataplexy. What is the most likely diagnosis?",
+            "choices": ["Narcolepsy", "Obstructive sleep apnea", "Insomnia", "Restless legs syndrome", "Circadian rhythm disorder"],
+            "answer": "Narcolepsy",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are a neurology expert. Generate a USMLE Step 2 CK question about miscellaneous neurological conditions. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with sudden onset of facial droop on the right side. What is the most likely diagnosis?",
+            "choices": ["Bell's palsy", "Stroke", "Trigeminal neuralgia", "Multiple sclerosis", "Myasthenia gravis"],
+            "answer": "Bell's palsy",
+        },
+    },
+}
 
+Ophthalmology = {
+    "DISORDERS_OF_THE_EYE_AND_ASSOCIATED_STRUCTURES": {
+        "prompt": (
+            "You are an ophthalmology expert. Generate a USMLE Step 2 CK question about disorders of the eye and associated structures. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old woman presents with gradual loss of vision in her right eye. Fundoscopic examination reveals drusen deposits in the macula. What is the most likely diagnosis?",
+            "choices": ["Age-related macular degeneration", "Diabetic retinopathy", "Retinal detachment", "Glaucoma", "Cataract"],
+            "answer": "Age-related macular degeneration",
+        },
+    },
+}
 
-class AllergiesAndImmunology:
-    INNATE_IMMUNITY = (
-        "You are an immunology expert. Generate a USMLE Step 2 CK-style question about innate immunity. Return ONLY a valid JSON object as described in the schema."
-    )
-    ADAPTIVE_IMMUNITY = (
-        "You are an immunology expert. Generate a USMLE Step 2 CK-style question about adaptive immunity. Return ONLY a valid JSON object as described in the schema."
-    )
-    IMMUNODEFICIENCIES = (
-        "You are an immunology expert. Generate a USMLE Step 2 CK-style question about immunodeficiencies. Return ONLY a valid JSON object as described in the schema."
-    )
-    AUTOIMMUNE_DISORDERS = (
-        "You are an immunology expert. Generate a USMLE Step 2 CK-style question about autoimmune disorders. Return ONLY a valid JSON object as described in the schema."
-    )
+PoisoningAndEnvironmentalExposure = {
+    "ENVIRONMENTAL_EXPOSURE": {
+        "prompt": (
+            "You are an environmental medicine expert. Generate a USMLE Step 2 CK question about environmental exposure. "
+            "Include a clinical vignette, relevant symptoms, exposure history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old man presents with cough and shortness of breath after working in a factory with asbestos exposure. Chest X-ray shows pleural plaques. What is the most likely diagnosis?",
+            "choices": ["Asbestosis", "Silicosis", "Coal worker's pneumoconiosis", "Chronic bronchitis", "Lung cancer"],
+            "answer": "Asbestosis",
+        },
+    },
+    "TOXICOLOGY": {
+        "prompt": (
+            "You are a toxicology expert. Generate a USMLE Step 2 CK question about toxicology. "
+            "Include a clinical vignette, relevant symptoms, substance exposure, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old woman presents with confusion and metabolic acidosis after ingesting antifreeze. What is the most appropriate antidote?",
+            "choices": ["Fomepizole", "N-acetylcysteine", "Activated charcoal", "Sodium bicarbonate", "Atropine"],
+            "answer": "Fomepizole",
+        },
+    },
+}
 
+PsychiatricBehavioralAndSubstanceUseDisorder = {
+    "NORMAL_BEHAVIOR_AND_DEVELOPMENT": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about normal behavior and development. "
+            "Include a clinical vignette, relevant symptoms, developmental milestones, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 2-year-old child is brought in for a routine check-up. The child can walk up stairs with assistance and uses two-word phrases. What developmental milestone is expected next?",
+            "choices": ["Riding a tricycle", "Using three-word sentences", "Drawing a circle", "Skipping", "Tying shoelaces"],
+            "answer": "Using three-word sentences",
+        },
+    },
+    "ANXIETY_AND_TRAUMA_RELATED_DISORDERS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about anxiety and trauma-related disorders. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old woman presents with excessive worry about various aspects of her life for the past 6 months. She also reports muscle tension and difficulty sleeping. What is the most likely diagnosis?",
+            "choices": ["Generalized anxiety disorder", "Panic disorder", "Post-traumatic stress disorder", "Obsessive-compulsive disorder", "Social anxiety disorder"],
+            "answer": "Generalized anxiety disorder",
+        },
+    },
+    "MOOD_DISORDERS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about mood disorders. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old man presents with a 2-week history of depressed mood, loss of interest in activities, and fatigue. He denies any history of manic episodes. What is the most likely diagnosis?",
+            "choices": ["Major depressive disorder", "Bipolar disorder", "Dysthymia", "Cyclothymia", "Adjustment disorder"],
+            "answer": "Major depressive disorder",
+        },
+    },
+    "NEURODEVELOPMENTAL_AND_NEUROCOGNITIVE_DISORDERS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about neurodevelopmental and neurocognitive disorders. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 5-year-old boy is brought in for evaluation due to difficulty in social interactions and repetitive behaviors. He has limited eye contact and prefers solitary play. What is the most likely diagnosis?",
+            "choices": ["Autism spectrum disorder", "Attention-deficit/hyperactivity disorder", "Intellectual disability", "Specific learning disorder", "Social communication disorder"],
+            "answer": "Autism spectrum disorder",
+        },
+    },
+    "PERSONALITY_IMPULSE_CONTROL_AND_SEXUAL_DISORDERS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about personality, impulse control, and sexual disorders. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 35-year-old man presents with a long-standing pattern of unstable relationships, impulsivity, and intense emotions. He has a history of self-harm. What is the most likely diagnosis?",
+            "choices": ["Borderline personality disorder", "Antisocial personality disorder", "Histrionic personality disorder", "Narcissistic personality disorder", "Obsessive-compulsive personality disorder"],
+            "answer": "Borderline personality disorder",
+        },
+    },
+    "PSYCHOTIC_DISORDERS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about psychotic disorders. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 22-year-old man presents with auditory hallucinations and delusions of persecution for the past 6 months. He has no history of mood symptoms. What is the most likely diagnosis?",
+            "choices": ["Schizophrenia", "Schizoaffective disorder", "Bipolar disorder with psychotic features", "Major depressive disorder with psychotic features", "Brief psychotic disorder"],
+            "answer": "Schizophrenia",
+        },
+    },
+    "SUBSTANCE_USE_DISORDERS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about substance use disorders. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old man presents with tremors, sweating, and agitation 12 hours after his last drink. He has a history of alcohol dependence. What is the most appropriate treatment?",
+            "choices": ["Benzodiazepines", "Antipsychotics", "Antidepressants", "Beta-blockers", "Anticonvulsants"],
+            "answer": "Benzodiazepines",
+        },
+    },
+    "EATING_DISORDERS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about eating disorders. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 19-year-old woman presents with a 6-month history of binge eating followed by self-induced vomiting. She is concerned about her weight and body shape. What is the most likely diagnosis?",
+            "choices": ["Bulimia nervosa", "Anorexia nervosa", "Binge eating disorder", "Body dysmorphic disorder", "Avoidant/restrictive food intake disorder"],
+            "answer": "Bulimia nervosa",
+        },
+    },
+    "SOMATOFORM_DISORDERS_AND_SLEEP_DISORDERS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about somatoform disorders and sleep disorders. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 28-year-old woman presents with excessive daytime sleepiness and cataplexy. She has a history of vivid hallucinations upon falling asleep. What is the most likely diagnosis?",
+            "choices": ["Narcolepsy", "Insomnia", "Sleep apnea", "Restless legs syndrome", "Circadian rhythm sleep disorder"],
+            "answer": "Narcolepsy",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are a psychiatry expert. Generate a USMLE Step 2 CK question about miscellaneous psychiatric conditions. "
+            "Include a clinical vignette, relevant symptoms, history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with sudden onset of facial droop on the right side. What is the most likely diagnosis?",
+            "choices": ["Bell's palsy", "Stroke", "Trigeminal neuralgia", "Multiple sclerosis", "Myasthenia gravis"],
+            "answer": "Bell's palsy",
+        },
+    },
+}
 
-class Cardiovascular:
-    ANEMIAS = (
-        "You are a hematology expert. Generate a USMLE Step 2 CK-style question about anemias. Return ONLY a valid JSON object as described in the schema."
-    )
-    LEUKEMIAS_AND_LYMPHOMAS = (
-        "You are a hematology expert. Generate a USMLE Step 2 CK-style question about leukemias and lymphomas. Return ONLY a valid JSON object as described in the schema."
-    )
-    HEMOSTASIS_AND_COAGULATION_DISORDERS = (
-        "You are a hematology expert. Generate a USMLE Step 2 CK-style question about hemostasis and coagulation disorders. Return ONLY a valid JSON object as described in the schema."
-    )
+FemaleReproductiveSystemAndBreast = {
+    "NORMAL_STRUCTURE_AND_FUNCTION_OF_THE_FEMALE_REPRODUCTIVE_SYSTEM_AND_BREAST": {
+        "prompt": (
+            "You are a gynecology expert. Generate a USMLE Step 2 CK question about the normal structure and function of the female reproductive system and breast. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old woman presents for a routine check-up. She has regular menstrual cycles and no complaints. What is the most likely phase of her menstrual cycle if her endometrial lining is thick and glandular?",
+            "choices": ["Proliferative phase", "Secretory phase", "Menstrual phase", "Follicular phase", "Luteal phase"],
+            "answer": "Secretory phase",
+        },
+    },
+    "CONGENITAL_AND_DEVELOPMENTAL_ANOMALIES": {
+        "prompt": (
+            "You are a gynecology expert. Generate a USMLE Step 2 CK question about congenital and developmental anomalies of the female reproductive system. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 16-year-old girl presents with primary amenorrhea and cyclic abdominal pain. Physical examination reveals a bulging hymen. What is the most likely diagnosis?",
+            "choices": ["Imperforate hymen", "Müllerian agenesis", "Androgen insensitivity syndrome", "Turner syndrome", "Polycystic ovary syndrome"],
+            "answer": "Imperforate hymen",
+        },
+    },
+    "BREAST_DISORDERS": {
+        "prompt": (
+            "You are a gynecology expert. Generate a USMLE Step 2 CK question about breast disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old woman presents with a painless lump in her breast. Mammography shows a spiculated mass. What is the most likely diagnosis?",
+            "choices": ["Breast cancer", "Fibroadenoma", "Breast cyst", "Mastitis", "Fat necrosis"],
+            "answer": "Breast cancer",
+        },
+    },
+    "GENITAL_TRACT_TUMORS_AND_TUMOR_LIKE_LESIONS": {
+        "prompt": (
+            "You are a gynecology expert. Generate a USMLE Step 2 CK question about genital tract tumors and tumor-like lesions. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old woman presents with postmenopausal bleeding. Ultrasound reveals a thickened endometrial lining. What is the most likely diagnosis?",
+            "choices": ["Endometrial cancer", "Cervical cancer", "Ovarian cyst", "Uterine fibroid", "Endometrial hyperplasia"],
+            "answer": "Endometrial cancer",
+        },
+    },
+    "GENITOURINARY_TRACT_INFECTIONS": {
+        "prompt": (
+            "You are a gynecology expert. Generate a USMLE Step 2 CK question about genitourinary tract infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old woman presents with dysuria and increased urinary frequency. Urinalysis shows pyuria and bacteriuria. What is the most likely diagnosis?",
+            "choices": ["Urinary tract infection", "Pyelonephritis", "Interstitial cystitis", "Vaginitis", "Urethritis"],
+            "answer": "Urinary tract infection",
+        },
+    },
+    "MENSTRUAL_DISORDERS_AND_CONTRACEPTION": {
+        "prompt": (
+            "You are a gynecology expert. Generate a USMLE Step 2 CK question about menstrual disorders and contraception. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 22-year-old woman presents with irregular menstrual cycles and hirsutism. Ultrasound shows polycystic ovaries. What is the most likely diagnosis?",
+            "choices": ["Polycystic ovary syndrome", "Hypothyroidism", "Hyperprolactinemia", "Premature ovarian failure", "Cushing's syndrome"],
+            "answer": "Polycystic ovary syndrome",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are a gynecology expert. Generate a USMLE Step 2 CK question about miscellaneous conditions of the female reproductive system and breast. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with sudden onset of facial droop on the right side. What is the most likely diagnosis?",
+            "choices": ["Bell's palsy", "Stroke", "Trigeminal neuralgia", "Multiple sclerosis", "Myasthenia gravis"],
+            "answer": "Bell's palsy",
+        },
+    },
+}
 
+PulmonaryAndCriticalCare = {
+    "NORMAL_PULMONARY_STRUCTURE_AND_FUNCTION": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about normal pulmonary structure and function. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old man presents for a routine check-up. Pulmonary function tests show normal lung volumes and diffusion capacity. What is the most likely interpretation?",
+            "choices": ["Normal lung function", "Obstructive lung disease", "Restrictive lung disease", "Pulmonary hypertension", "Interstitial lung disease"],
+            "answer": "Normal lung function",
+        },
+    },
+    "CONGENITAL_AND_DEVELOPMENTAL_ANOMALIES": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about congenital and developmental anomalies of the pulmonary system. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A newborn is noted to have respiratory distress shortly after birth. Chest X-ray shows a diaphragmatic hernia. What is the most likely diagnosis?",
+            "choices": ["Congenital diaphragmatic hernia", "Tracheoesophageal fistula", "Pulmonary hypoplasia", "Bronchopulmonary dysplasia", "Cystic fibrosis"],
+            "answer": "Congenital diaphragmatic hernia",
+        },
+    },
+    "CRITICAL_CARE_AND_TRAUMA_MEDICINE": {
+        "prompt": (
+            "You are a critical care expert. Generate a USMLE Step 2 CK question about critical care and trauma medicine. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old man is admitted to the ICU after a motor vehicle accident. He is intubated and on mechanical ventilation. What is the most appropriate initial ventilator setting?",
+            "choices": ["Volume control ventilation", "Pressure control ventilation", "High-frequency oscillatory ventilation", "Non-invasive ventilation", "Spontaneous breathing trial"],
+            "answer": "Volume control ventilation",
+        },
+    },
+    "INTERSTITIAL_PULMONARY_AND_OTHER_SYSTEMIC_DISORDERS": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about interstitial pulmonary and other systemic disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 55-year-old woman presents with progressive dyspnea and dry cough. High-resolution CT scan shows reticular opacities and honeycombing. What is the most likely diagnosis?",
+            "choices": ["Idiopathic pulmonary fibrosis", "Sarcoidosis", "Hypersensitivity pneumonitis", "Pulmonary edema", "Bronchiectasis"],
+            "answer": "Idiopathic pulmonary fibrosis",
+        },
+    },
+    "CANCER_AND_PULMONARY_MEDIASTINAL_MASSES": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about cancer and pulmonary/mediastinal masses. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old man presents with cough and weight loss. Chest X-ray shows a mass in the right upper lobe. What is the most likely diagnosis?",
+            "choices": ["Lung cancer", "Tuberculosis", "Lung abscess", "Pulmonary embolism", "Pneumonia"],
+            "answer": "Lung cancer",
+        },
+    },
+    "OBSTRUCTIVE_AND_RESTRICTIVE_LUNG_DISEASE": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about obstructive and restrictive lung disease. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old woman presents with shortness of breath and wheezing. Pulmonary function tests show decreased FEV1/FVC ratio. What is the most likely diagnosis?",
+            "choices": ["Chronic obstructive pulmonary disease", "Asthma", "Pulmonary fibrosis", "Sarcoidosis", "Pleural effusion"],
+            "answer": "Chronic obstructive pulmonary disease",
+        },
+    },
+    "PULMONARY_INFECTIONS": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about pulmonary infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 35-year-old man presents with fever, cough, and pleuritic chest pain. Chest X-ray shows a lobar consolidation. What is the most likely diagnosis?",
+            "choices": ["Pneumonia", "Tuberculosis", "Lung abscess", "Pulmonary embolism", "Bronchitis"],
+            "answer": "Pneumonia",
+        },
+    },
+    "PULMONARY_VASCULAR_AND_CARDIOPULMONARY_DISEASE": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about pulmonary vascular and cardiopulmonary disease. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old woman presents with shortness of breath and chest pain. CT angiography shows a filling defect in the pulmonary artery. What is the most likely diagnosis?",
+            "choices": ["Pulmonary embolism", "Pulmonary hypertension", "Aortic dissection", "Myocardial infarction", "Pneumothorax"],
+            "answer": "Pulmonary embolism",
+        },
+    },
+    "SLEEP_DISORDERS": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about sleep disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man presents with excessive daytime sleepiness and loud snoring. Polysomnography shows apneic episodes. What is the most likely diagnosis?",
+            "choices": ["Obstructive sleep apnea", "Insomnia", "Narcolepsy", "Restless legs syndrome", "Circadian rhythm sleep disorder"],
+            "answer": "Obstructive sleep apnea",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are a pulmonology expert. Generate a USMLE Step 2 CK question about miscellaneous pulmonary conditions. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with sudden onset of facial droop on the right side. What is the most likely diagnosis?",
+            "choices": ["Bell's palsy", "Stroke", "Trigeminal neuralgia", "Multiple sclerosis", "Myasthenia gravis"],
+            "answer": "Bell's palsy",
+        },
+    },
+}
 
-class Microbiology:
-    PSYCHIATRIC_DISORDERS = (
-        "You are a behavioral health expert. Generate a USMLE Step 2 CK-style question about psychiatric disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-    SUBSTANCE_USE_DISORDERS = (
-        "You are a behavioral health expert. Generate a USMLE Step 2 CK-style question about substance use disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-    THERAPEUTIC_INTERVENTIONS = (
-        "You are a behavioral health expert. Generate a USMLE Step 2 CK-style question about therapeutic interventions. Return ONLY a valid JSON object as described in the schema."
-    )
+GastrointestinalAndNutrition = {
+    "NORMAL_STRUCTURE_AND_FUNCTION_OF_THE_GI_TRACT": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about the normal structure and function of the GI tract. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 28-year-old man presents for a routine check-up. Endoscopy shows normal mucosa throughout the GI tract. What is the most likely interpretation?",
+            "choices": ["Normal GI function", "Gastritis", "Peptic ulcer disease", "Celiac disease", "Crohn's disease"],
+            "answer": "Normal GI function",
+        },
+    },
+    "CONGENITAL_AND_DEVELOPMENTAL_ANOMALIES": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about congenital and developmental anomalies of the GI tract. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A newborn is noted to have bilious vomiting and abdominal distension. An upper GI series shows a 'double bubble' sign. What is the most likely diagnosis?",
+            "choices": ["Duodenal atresia", "Pyloric stenosis", "Hirschsprung's disease", "Malrotation", "Intussusception"],
+            "answer": "Duodenal atresia",
+        },
+    },
+    "BILIARY_TRACT_DISORDERS": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about biliary tract disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old woman presents with right upper quadrant pain and jaundice. Ultrasound shows gallstones and a dilated common bile duct. What is the most likely diagnosis?",
+            "choices": ["Choledocholithiasis", "Cholecystitis", "Cholangitis", "Gallbladder cancer", "Pancreatitis"],
+            "answer": "Choledocholithiasis",
+        },
+    },
+    "DISORDERS_OF_NUTRITION": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about disorders of nutrition. "
+            "Include a clinical vignette, relevant symptoms, dietary history, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old man presents with fatigue and pallor. Blood tests reveal microcytic anemia. What is the most likely nutritional deficiency?",
+            "choices": ["Iron deficiency", "Vitamin B12 deficiency", "Folate deficiency", "Vitamin D deficiency", "Calcium deficiency"],
+            "answer": "Iron deficiency",
+        },
+    },
+    "GASTROESOPHAGEAL_DISORDERS": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about gastroesophageal disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man presents with heartburn and regurgitation. Endoscopy shows erosive esophagitis. What is the most likely diagnosis?",
+            "choices": ["Gastroesophageal reflux disease", "Peptic ulcer disease", "Barrett's esophagus", "Achalasia", "Esophageal cancer"],
+            "answer": "Gastroesophageal reflux disease",
+        },
+    },
+    "HEPATIC_DISORDERS": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about hepatic disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old man presents with jaundice and ascites. Liver biopsy shows cirrhosis. What is the most likely underlying cause?",
+            "choices": ["Alcoholic liver disease", "Hepatitis B", "Hepatitis C", "Non-alcoholic fatty liver disease", "Hemochromatosis"],
+            "answer": "Alcoholic liver disease",
+        },
+    },
+    "INTESTINAL_AND_COLORECTAL_DISORDERS": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about intestinal and colorectal disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with abdominal pain and bloody diarrhea. Colonoscopy shows continuous colonic inflammation. What is the most likely diagnosis?",
+            "choices": ["Ulcerative colitis", "Crohn's disease", "Diverticulitis", "Irritable bowel syndrome", "Colorectal cancer"],
+            "answer": "Ulcerative colitis",
+        },
+    },
+    "PANCREATIC_DISORDERS": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about pancreatic disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 55-year-old man presents with epigastric pain radiating to the back. Serum lipase is elevated. What is the most likely diagnosis?",
+            "choices": ["Acute pancreatitis", "Chronic pancreatitis", "Pancreatic cancer", "Peptic ulcer disease", "Gallstones"],
+            "answer": "Acute pancreatitis",
+        },
+    },
+    "TUMORS_OF_THE_GI_TRACT": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about tumors of the GI tract. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 70-year-old woman presents with weight loss and anemia. Endoscopy reveals a mass in the stomach. What is the most likely diagnosis?",
+            "choices": ["Gastric cancer", "Colorectal cancer", "Esophageal cancer", "Pancreatic cancer", "Liver cancer"],
+            "answer": "Gastric cancer",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are a gastroenterology expert. Generate a USMLE Step 2 CK question about miscellaneous gastrointestinal conditions. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with sudden onset of facial droop on the right side. What is the most likely diagnosis?",
+            "choices": ["Bell's palsy", "Stroke", "Trigeminal neuralgia", "Multiple sclerosis", "Myasthenia gravis"],
+            "answer": "Bell's palsy",
+        },
+    },
+}
 
+RheumatologyOrthopedicsSports = {
+    "CONGENITAL_AND_DEVELOPMENTAL_ANOMALIES": {
+        "prompt": (
+            "You are an expert in rheumatology and orthopedics. Generate a USMLE Step 2 CK question about congenital and developmental anomalies. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 5-year-old boy presents with bowing of the legs and a waddling gait. X-ray shows widening of the growth plates. What is the most likely diagnosis?",
+            "choices": ["Rickets", "Blount's disease", "Achondroplasia", "Osteogenesis imperfecta", "Developmental dysplasia of the hip"],
+            "answer": "Rickets",
+        },
+    },
+    "ARTHRITIS_AND_SPONDYLOARTHROPATHIES": {
+        "prompt": (
+            "You are an expert in rheumatology and orthopedics. Generate a USMLE Step 2 CK question about arthritis and spondyloarthropathies. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old woman presents with joint pain and morning stiffness lasting more than an hour. X-ray shows joint space narrowing and erosions. What is the most likely diagnosis?",
+            "choices": ["Rheumatoid arthritis", "Osteoarthritis", "Ankylosing spondylitis", "Psoriatic arthritis", "Reactive arthritis"],
+            "answer": "Rheumatoid arthritis",
+        },
+    },
+    "AUTOIMMUNE_DISORDERS_AND_VASCULITIDES": {
+        "prompt": (
+            "You are an expert in rheumatology and orthopedics. Generate a USMLE Step 2 CK question about autoimmune disorders and vasculitides. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old man presents with fatigue, weight loss, and a new rash on his legs. Laboratory tests show elevated ESR and positive ANCA. What is the most likely diagnosis?",
+            "choices": ["Granulomatosis with polyangiitis", "Systemic lupus erythematosus", "Rheumatoid arthritis", "Polyarteritis nodosa", "Giant cell arteritis"],
+            "answer": "Granulomatosis with polyangiitis",
+        },
+    },
+    "BONE_JOINT_AND_SOFT_TISSUE_INJURIES_AND_INFECTIONS": {
+        "prompt": (
+            "You are an expert in rheumatology and orthopedics. Generate a USMLE Step 2 CK question about bone, joint, and soft tissue injuries and infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old man presents with fever and severe pain in his right knee. Synovial fluid analysis shows high white blood cell count with neutrophil predominance. What is the most likely diagnosis?",
+            "choices": ["Septic arthritis", "Gout", "Pseudogout", "Rheumatoid arthritis", "Osteoarthritis"],
+            "answer": "Septic arthritis",
+        },
+    },
+    "BONE_TUMORS_AND_TUMOR_LIKE_LESIONS": {
+        "prompt": (
+            "You are an expert in rheumatology and orthopedics. Generate a USMLE Step 2 CK question about bone tumors and tumor-like lesions. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 20-year-old man presents with pain and swelling in his left femur. X-ray shows a sunburst pattern and Codman's triangle. What is the most likely diagnosis?",
+            "choices": ["Osteosarcoma", "Ewing's sarcoma", "Chondrosarcoma", "Osteoid osteoma", "Giant cell tumor"],
+            "answer": "Osteosarcoma",
+        },
+    },
+    "SPINAL_PERIPHERAL_NERVE_DISORDERS_AND_BACK_PAIN": {
+        "prompt": (
+            "You are an expert in rheumatology and orthopedics. Generate a USMLE Step 2 CK question about spinal/peripheral nerve disorders and back pain. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old woman presents with lower back pain radiating to her left leg. MRI shows a herniated disc at L5-S1. What is the most likely diagnosis?",
+            "choices": ["Herniated disc", "Spinal stenosis", "Sciatica", "Spondylolisthesis", "Ankylosing spondylitis"],
+            "answer": "Herniated disc",
+        },
+    },
+    "METABOLIC_BONE_DISORDERS": {
+        "prompt": (
+            "You are an expert in rheumatology and orthopedics. Generate a USMLE Step 2 CK question about metabolic bone disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 70-year-old woman presents with a hip fracture after a minor fall. DEXA scan shows decreased bone density. What is the most likely diagnosis?",
+            "choices": ["Osteoporosis", "Osteomalacia", "Paget's disease", "Hyperparathyroidism", "Osteogenesis imperfecta"],
+            "answer": "Osteoporosis",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are an expert in rheumatology and orthopedics. Generate a USMLE Step 2 CK question about miscellaneous rheumatology/orthopedics conditions. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old man presents with heel pain and morning stiffness. X-ray shows calcaneal spur. What is the most likely diagnosis?",
+            "choices": ["Plantar fasciitis", "Achilles tendinitis", "Ankylosing spondylitis", "Gout", "Rheumatoid arthritis"],
+            "answer": "Plantar fasciitis",
+        },
+    },
+}
 
-class Dermatology:
-    CENTRAL_NERVOUS_SYSTEM = (
-        "You are a neurology expert. Generate a USMLE Step 2 CK-style question about the central nervous system. Return ONLY a valid JSON object as described in the schema."
-    )
-    PERIPHERAL_NERVOUS_SYSTEM = (
-        "You are a neurology expert. Generate a USMLE Step 2 CK-style question about the peripheral nervous system. Return ONLY a valid JSON object as described in the schema."
-    )
-    SPECIAL_SENSES = (
-        "You are a neurology expert. Generate a USMLE Step 2 CK-style question about special senses. Return ONLY a valid JSON object as described in the schema."
-    )
+SocialSciencesEthicsLegalProfessional = {
+    "COMMUNICATION_AND_INTERPERSONAL_SKILLS": {
+        "prompt": (
+            "You are an expert in medical ethics and communication. Generate a USMLE Step 2 CK question about communication and interpersonal skills. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old man is upset about his recent diagnosis and is not willing to listen to the treatment options. What is the most appropriate initial step in communication?",
+            "choices": ["Acknowledge his feelings", "Provide detailed treatment options", "Refer to a specialist", "Schedule a follow-up", "Discuss prognosis"],
+            "answer": "Acknowledge his feelings",
+        },
+    },
+    "HEALTHCARE_POLICY_AND_ECONOMICS": {
+        "prompt": (
+            "You are an expert in healthcare policy. Generate a USMLE Step 2 CK question about healthcare policy and economics. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A hospital is implementing a new policy to reduce readmission rates. What is the most effective strategy to achieve this goal?",
+            "choices": ["Enhanced discharge planning", "Increased staffing", "New electronic health records", "Patient satisfaction surveys", "Extended visiting hours"],
+            "answer": "Enhanced discharge planning",
+        },
+    },
+    "MEDICAL_ETHICS_AND_JURISPRUDENCE": {
+        "prompt": (
+            "You are an expert in medical ethics. Generate a USMLE Step 2 CK question about medical ethics and jurisprudence. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A patient refuses a life-saving blood transfusion due to religious beliefs. What is the most appropriate action?",
+            "choices": ["Respect the patient's wishes", "Seek a court order", "Administer the transfusion", "Consult the ethics committee", "Discuss with family"],
+            "answer": "Respect the patient's wishes",
+        },
+    },
+    "PATIENT_SAFETY": {
+        "prompt": (
+            "You are an expert in patient safety. Generate a USMLE Step 2 CK question about patient safety. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A nurse notices a medication error before administration. What is the most appropriate next step?",
+            "choices": ["Report the error immediately", "Administer the correct dose", "Document the error", "Inform the patient", "Consult with a pharmacist"],
+            "answer": "Report the error immediately",
+        },
+    },
+    "SYSTEM_BASED_PRACTICE_AND_QUALITY_IMPROVEMENT": {
+        "prompt": (
+            "You are an expert in quality improvement. Generate a USMLE Step 2 CK question about system-based practice and quality improvement. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A clinic is looking to improve patient wait times. What is the most effective initial step?",
+            "choices": ["Analyze current workflow", "Hire more staff", "Extend clinic hours", "Upgrade technology", "Increase appointment slots"],
+            "answer": "Analyze current workflow",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK question about miscellaneous social sciences topics. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A medical student witnesses unprofessional behavior by a colleague. What is the most appropriate action?",
+            "choices": ["Report to a supervisor", "Confront the colleague", "Ignore the behavior", "Discuss with peers", "Seek advice from a mentor"],
+            "answer": "Report to a supervisor",
+        },
+    },
+}
 
+InfectiousDiseases = {
+    "ANTIMICROBIAL_DRUGS": {
+        "prompt": (
+            "You are an expert in infectious diseases. Generate a USMLE Step 2 CK question about antimicrobial drugs. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old man with a history of chronic kidney disease is prescribed an antibiotic for a urinary tract infection. Which antibiotic requires dose adjustment in renal impairment?",
+            "choices": ["Ciprofloxacin", "Azithromycin", "Doxycycline", "Clindamycin", "Metronidazole"],
+            "answer": "Ciprofloxacin",
+        },
+    },
+    "BACTERIAL_INFECTIONS": {
+        "prompt": (
+            "You are an expert in infectious diseases. Generate a USMLE Step 2 CK question about bacterial infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old woman presents with fever, chills, and a productive cough. Chest X-ray shows lobar consolidation. What is the most likely causative organism?",
+            "choices": ["Streptococcus pneumoniae", "Mycoplasma pneumoniae", "Legionella pneumophila", "Chlamydia pneumoniae", "Klebsiella pneumoniae"],
+            "answer": "Streptococcus pneumoniae",
+        },
+    },
+    "FUNGAL_INFECTIONS": {
+        "prompt": (
+            "You are an expert in infectious diseases. Generate a USMLE Step 2 CK question about fungal infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old man with HIV presents with fever and cough. Sputum culture grows yeast with a thick capsule. What is the most likely diagnosis?",
+            "choices": ["Cryptococcosis", "Histoplasmosis", "Candidiasis", "Aspergillosis", "Blastomycosis"],
+            "answer": "Cryptococcosis",
+        },
+    },
+    "HIV_AND_SEXUALLY_TRANSMITTED_INFECTIONS": {
+        "prompt": (
+            "You are an expert in infectious diseases. Generate a USMLE Step 2 CK question about HIV and sexually transmitted infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old man presents with a painless ulcer on his genitalia. Serology tests are positive for Treponema pallidum. What is the most likely diagnosis?",
+            "choices": ["Primary syphilis", "Secondary syphilis", "Tertiary syphilis", "Chancroid", "Genital herpes"],
+            "answer": "Primary syphilis",
+        },
+    },
+    "INFECTION_CONTROL": {
+        "prompt": (
+            "You are an expert in infectious diseases. Generate a USMLE Step 2 CK question about infection control. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A hospital is experiencing an outbreak of Clostridium difficile infection. What is the most effective method to prevent the spread?",
+            "choices": ["Hand hygiene with soap and water", "Use of alcohol-based hand sanitizers", "Isolation of affected patients", "Routine use of antibiotics", "Increased cleaning of common areas"],
+            "answer": "Hand hygiene with soap and water",
+        },
+    },
+    "PARASITIC_AND_HELMINTHIC_INFECTIONS": {
+        "prompt": (
+            "You are an expert in infectious diseases. Generate a USMLE Step 2 CK question about parasitic and helminthic infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 10-year-old boy presents with abdominal pain and diarrhea. Stool examination reveals eggs with a rough surface. What is the most likely diagnosis?",
+            "choices": ["Ascariasis", "Trichuriasis", "Hookworm infection", "Strongyloidiasis", "Enterobiasis"],
+            "answer": "Ascariasis",
+        },
+    },
+    "VIRAL_INFECTIONS": {
+        "prompt": (
+            "You are an expert in infectious diseases. Generate a USMLE Step 2 CK question about viral infections. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 5-year-old girl presents with fever, cough, and a maculopapular rash. Koplik spots are noted on examination. What is the most likely diagnosis?",
+            "choices": ["Measles", "Rubella", "Varicella", "Roseola", "Fifth disease"],
+            "answer": "Measles",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are an expert in infectious diseases. Generate a USMLE Step 2 CK question about miscellaneous infectious diseases topics. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 35-year-old woman presents with fever and a new heart murmur. Blood cultures grow Staphylococcus aureus. What is the most likely diagnosis?",
+            "choices": ["Infective endocarditis", "Rheumatic fever", "Pericarditis", "Myocarditis", "Aortic stenosis"],
+            "answer": "Infective endocarditis",
+        },
+    },
+}
 
-class Pathology:
-    BONES_AND_JOINTS = (
-        "You are an expert in musculoskeletal and skin systems. Generate a USMLE Step 2 CK-style question about bones and joints. Return ONLY a valid JSON object as described in the schema."
-    )
-    MUSCLE_DISORDERS = (
-        "You are an expert in musculoskeletal and skin systems. Generate a USMLE Step 2 CK-style question about muscle disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-    SKIN_DISORDERS = (
-        "You are an expert in musculoskeletal and skin systems. Generate a USMLE Step 2 CK-style question about skin disorders. Return ONLY a valid JSON object as described in the schema."
-    )
+RenalUrinarySystemsElectrolytes = {
+    "NORMAL_STRUCTURE_AND_FUNCTION_OF_THE_KIDNEYS_AND_URINARY_SYSTEM": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about the normal structure and function of the kidneys and urinary system. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old man presents with flank pain and hematuria. Imaging shows normal kidney structure. What is the most likely diagnosis?",
+            "choices": ["Renal colic", "Pyelonephritis", "Glomerulonephritis", "Polycystic kidney disease", "Renal artery stenosis"],
+            "answer": "Renal colic",
+        },
+    },
+    "CONGENITAL_AND_DEVELOPMENTAL_ANOMALIES": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about congenital and developmental anomalies of the kidneys and urinary system. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A newborn is found to have a palpable abdominal mass. Ultrasound reveals a multicystic dysplastic kidney. What is the most likely diagnosis?",
+            "choices": ["Multicystic dysplastic kidney", "Polycystic kidney disease", "Wilms tumor", "Hydronephrosis", "Neuroblastoma"],
+            "answer": "Multicystic dysplastic kidney",
+        },
+    },
+    "ACUTE_KIDNEY_INJURY": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about acute kidney injury. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 70-year-old woman presents with oliguria and elevated creatinine after starting an ACE inhibitor. What is the most likely cause of her acute kidney injury?",
+            "choices": ["Prerenal azotemia", "Acute tubular necrosis", "Acute interstitial nephritis", "Postrenal obstruction", "Glomerulonephritis"],
+            "answer": "Prerenal azotemia",
+        },
+    },
+    "CHRONIC_KIDNEY_DISEASE": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about chronic kidney disease. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old man with diabetes presents with fatigue and anemia. Laboratory tests show decreased GFR. What is the most likely diagnosis?",
+            "choices": ["Chronic kidney disease", "Acute kidney injury", "Diabetic nephropathy", "Hypertensive nephrosclerosis", "Polycystic kidney disease"],
+            "answer": "Chronic kidney disease",
+        },
+    },
+    "CYSTIC_KIDNEY_DISEASES": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about cystic kidney diseases. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old woman presents with hypertension and hematuria. Ultrasound shows multiple cysts in both kidneys. What is the most likely diagnosis?",
+            "choices": ["Polycystic kidney disease", "Multicystic dysplastic kidney", "Simple renal cyst", "Medullary sponge kidney", "Nephronophthisis"],
+            "answer": "Polycystic kidney disease",
+        },
+    },
+    "FLUID_ELECTROLYTES_AND_ACID_BASE": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about fluid, electrolytes, and acid-base disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old man presents with muscle cramps and weakness. Laboratory tests show hypokalemia and metabolic alkalosis. What is the most likely cause?",
+            "choices": ["Diuretic use", "Renal tubular acidosis", "Hyperaldosteronism", "Bartter syndrome", "Gitelman syndrome"],
+            "answer": "Diuretic use",
+        },
+    },
+    "GLOMERULAR_DISEASES_NEPHOTIC_NEPHRITIC_SYNDROME": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about glomerular diseases, nephrotic/nephritic syndrome. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 10-year-old boy presents with edema and proteinuria. Laboratory tests show hypoalbuminemia and hyperlipidemia. What is the most likely diagnosis?",
+            "choices": ["Minimal change disease", "Focal segmental glomerulosclerosis", "Membranous nephropathy", "IgA nephropathy", "Post-streptococcal glomerulonephritis"],
+            "answer": "Minimal change disease",
+        },
+    },
+    "NEOPLASMS_AND_TRAUMA_OF_THE_KIDNEYS_AND_URINARY_TRACT": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about neoplasms and trauma of the kidneys and urinary tract. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man presents with hematuria and flank pain. CT scan shows a mass in the left kidney. What is the most likely diagnosis?",
+            "choices": ["Renal cell carcinoma", "Transitional cell carcinoma", "Wilms tumor", "Angiomyolipoma", "Oncocytoma"],
+            "answer": "Renal cell carcinoma",
+        },
+    },
+    "NEPHROLITHIASIS_HEMATURIA_AND_URINARY_TRACT_OBSTRUCTION": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about nephrolithiasis, hematuria, and urinary tract obstruction. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 35-year-old woman presents with severe flank pain and hematuria. CT scan shows a 5mm stone in the ureter. What is the most likely diagnosis?",
+            "choices": ["Nephrolithiasis", "Pyelonephritis", "Renal cell carcinoma", "Bladder cancer", "Ureteral stricture"],
+            "answer": "Nephrolithiasis",
+        },
+    },
+    "DIABETES_INSIPIDUS": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about diabetes insipidus. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old man presents with polyuria and polydipsia. Laboratory tests show low urine osmolality and high serum osmolality. What is the most likely diagnosis?",
+            "choices": ["Diabetes insipidus", "Diabetes mellitus", "Primary polydipsia", "SIADH", "Hypercalcemia"],
+            "answer": "Diabetes insipidus",
+        },
+    },
+    "URINARY_INCONTINENCE_RETENTION_GU_INFECTION": {
+        "prompt": (
+            "You are an expert in nephrology. Generate a USMLE Step 2 CK question about urinary incontinence, retention, and GU infection. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 65-year-old woman presents with urinary urgency and frequency. Urinalysis shows pyuria and bacteriuria. What is the most likely diagnosis?",
+            "choices": ["Urinary tract infection", "Interstitial cystitis", "Overactive bladder", "Bladder cancer", "Vaginitis"],
+            "answer": "Urinary tract infection",
+        },
+    },
+}
 
+PregnancyChildbirthPuerperium = {
+    "NORMAL_PREGNANCY_CHILDBIRTH_AND_PUERPERIUM": {
+        "prompt": (
+            "You are an expert in obstetrics. Generate a USMLE Step 2 CK question about normal pregnancy, childbirth, and puerperium. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 28-year-old woman at 39 weeks of gestation presents with regular uterine contractions. Cervical examination shows 5 cm dilation. What is the most appropriate next step in management?",
+            "choices": ["Admit to labor and delivery", "Perform a cesarean section", "Administer oxytocin", "Discharge home", "Perform an amniotomy"],
+            "answer": "Admit to labor and delivery",
+        },
+    },
+    "DISORDERS_OF_PREGNANCY_CHILDBIRTH_AND_PUERPERIUM": {
+        "prompt": (
+            "You are an expert in obstetrics. Generate a USMLE Step 2 CK question about disorders of pregnancy, childbirth, and puerperium. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 32-year-old woman at 28 weeks of gestation presents with severe headache and visual disturbances. Blood pressure is 160/110 mmHg. What is the most likely diagnosis?",
+            "choices": ["Preeclampsia", "Gestational hypertension", "Eclampsia", "Chronic hypertension", "HELLP syndrome"],
+            "answer": "Preeclampsia",
+        },
+    },
+}
 
-class Pharmacology:
-    ARRHYTHMIAS = (
-        "You are a cardiology expert. Generate a USMLE Step 2 CK-style question about arrhythmias. Return ONLY a valid JSON object as described in the schema."
-    )
-    HEART_FAILURE = (
-        "You are a cardiology expert. Generate a USMLE Step 2 CK-style question about heart failure. Return ONLY a valid JSON object as described in the schema."
-    )
-    VASCULAR_DISEASES = (
-        "You are a cardiology expert. Generate a USMLE Step 2 CK-style question about vascular diseases. Return ONLY a valid JSON object as described in the schema."
-    )
+EarNoseThroatENT = {
+    "DISORDERS_OF_THE_EAR_NOSE_AND_THROAT": {
+        "prompt": (
+            "You are an expert in otolaryngology. Generate a USMLE Step 2 CK question about disorders of the ear, nose, and throat. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old man presents with hearing loss and a sensation of fullness in his right ear. Otoscopic examination reveals a retracted tympanic membrane. What is the most likely diagnosis?",
+            "choices": ["Eustachian tube dysfunction", "Otitis media", "Cholesteatoma", "Otosclerosis", "Acoustic neuroma"],
+            "answer": "Eustachian tube dysfunction",
+        },
+    },
+}
 
+EndocrineDiabetesMetabolism = {
+    "NORMAL_STRUCTURE_AND_FUNCTION_OF_ENDOCRINE_GLANDS": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about the normal structure and function of endocrine glands. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old woman presents with fatigue and weight gain. Laboratory tests show low T3 and T4 levels with elevated TSH. What is the most likely diagnosis?",
+            "choices": ["Primary hypothyroidism", "Secondary hypothyroidism", "Hyperthyroidism", "Subclinical hypothyroidism", "Euthyroid sick syndrome"],
+            "answer": "Primary hypothyroidism",
+        },
+    },
+    "CONGENITAL_AND_DEVELOPMENTAL_ANOMALIES": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about congenital and developmental anomalies of the endocrine system. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A newborn is noted to have ambiguous genitalia and hyponatremia. Laboratory tests show elevated 17-hydroxyprogesterone. What is the most likely diagnosis?",
+            "choices": ["Congenital adrenal hyperplasia", "Androgen insensitivity syndrome", "Turner syndrome", "Klinefelter syndrome", "Hypopituitarism"],
+            "answer": "Congenital adrenal hyperplasia",
+        },
+    },
+    "ADRENAL_DISORDERS": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about adrenal disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man presents with hypertension and hypokalemia. Laboratory tests show elevated aldosterone and low renin levels. What is the most likely diagnosis?",
+            "choices": ["Primary hyperaldosteronism", "Secondary hyperaldosteronism", "Cushing's syndrome", "Addison's disease", "Pheochromocytoma"],
+            "answer": "Primary hyperaldosteronism",
+        },
+    },
+    "DIABETES_MELLITUS": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about diabetes mellitus. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old woman presents with polyuria and polydipsia. Laboratory tests show fasting glucose of 180 mg/dL. What is the most likely diagnosis?",
+            "choices": ["Type 2 diabetes mellitus", "Type 1 diabetes mellitus", "Gestational diabetes", "Diabetes insipidus", "Maturity-onset diabetes of the young"],
+            "answer": "Type 2 diabetes mellitus",
+        },
+    },
+    "ENDOCRINE_TUMORS": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about endocrine tumors. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old man presents with headaches and sweating. Laboratory tests show elevated catecholamines. Imaging reveals an adrenal mass. What is the most likely diagnosis?",
+            "choices": ["Pheochromocytoma", "Adrenal adenoma", "Adrenal carcinoma", "Cushing's syndrome", "Neuroblastoma"],
+            "answer": "Pheochromocytoma",
+        },
+    },
+    "HYPOTHALAMUS_AND_PITUITARY_DISORDERS": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about hypothalamus and pituitary disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 35-year-old woman presents with amenorrhea and galactorrhea. Laboratory tests show elevated prolactin levels. What is the most likely diagnosis?",
+            "choices": ["Prolactinoma", "Hypothyroidism", "Cushing's disease", "Acromegaly", "Sheehan's syndrome"],
+            "answer": "Prolactinoma",
+        },
+    },
+    "OBESITY_AND_DYSLIPIDEMIA": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about obesity and dyslipidemia. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man presents with obesity and elevated cholesterol levels. What is the most appropriate initial lifestyle modification?",
+            "choices": ["Dietary changes", "Exercise", "Medication", "Surgery", "Behavioral therapy"],
+            "answer": "Dietary changes",
+        },
+    },
+    "REPRODUCTIVE_ENDOCRINOLOGY": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about reproductive endocrinology. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old woman presents with irregular menstrual cycles and hirsutism. Laboratory tests show elevated testosterone levels. What is the most likely diagnosis?",
+            "choices": ["Polycystic ovary syndrome", "Hypothyroidism", "Hyperprolactinemia", "Cushing's syndrome", "Androgen insensitivity syndrome"],
+            "answer": "Polycystic ovary syndrome",
+        },
+    },
+    "THYROID_DISORDERS": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about thyroid disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman presents with weight loss and palpitations. Laboratory tests show low TSH and elevated T3 and T4 levels. What is the most likely diagnosis?",
+            "choices": ["Graves' disease", "Hashimoto's thyroiditis", "Subacute thyroiditis", "Toxic adenoma", "Thyroid storm"],
+            "answer": "Graves' disease",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are an expert in endocrinology. Generate a USMLE Step 2 CK question about miscellaneous endocrine topics. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 55-year-old woman presents with fatigue and hyperpigmentation. Laboratory tests show hyponatremia and hyperkalemia. What is the most likely diagnosis?",
+            "choices": ["Addison's disease", "Cushing's syndrome", "Hypothyroidism", "Hyperparathyroidism", "Pheochromocytoma"],
+            "answer": "Addison's disease",
+        },
+    },
+}
 
-class EarNoseAndThroat:
-    OBSTRUCTIVE_LUNG_DISEASES = (
-        "You are a pulmonology expert. Generate a USMLE Step 2 CK-style question about obstructive lung diseases. Return ONLY a valid JSON object as described in the schema."
-    )
-    RESTRICTIVE_LUNG_DISEASES = (
-        "You are a pulmonology expert. Generate a USMLE Step 2 CK-style question about restrictive lung diseases. Return ONLY a valid JSON object as described in the schema."
-    )
-    PULMONARY_INFECTIONS = (
-        "You are a pulmonology expert. Generate a USMLE Step 2 CK-style question about pulmonary infections. Return ONLY a valid JSON object as described in the schema."
-    )
+HematologyOncology = {
+    "HEMOSTASIS_AND_THROMBOSIS": {
+        "prompt": (
+            "You are an expert in hematology. Generate a USMLE Step 2 CK question about hemostasis and thrombosis. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 60-year-old man presents with leg swelling and pain. Doppler ultrasound shows a deep vein thrombosis. What is the most appropriate initial treatment?",
+            "choices": ["Heparin", "Warfarin", "Aspirin", "Clopidogrel", "Rivaroxaban"],
+            "answer": "Heparin",
+        },
+    },
+    "PLASMA_CELL_DISORDERS": {
+        "prompt": (
+            "You are an expert in hematology. Generate a USMLE Step 2 CK question about plasma cell disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 70-year-old woman presents with bone pain and fatigue. Laboratory tests show hypercalcemia and elevated serum protein. What is the most likely diagnosis?",
+            "choices": ["Multiple myeloma", "Waldenström's macroglobulinemia", "MGUS", "Amyloidosis", "Chronic lymphocytic leukemia"],
+            "answer": "Multiple myeloma",
+        },
+    },
+    "PLATELET_DISORDERS": {
+        "prompt": (
+            "You are an expert in hematology. Generate a USMLE Step 2 CK question about platelet disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 25-year-old woman presents with petechiae and mucosal bleeding. Laboratory tests show thrombocytopenia. What is the most likely diagnosis?",
+            "choices": ["Immune thrombocytopenic purpura", "Thrombotic thrombocytopenic purpura", "Hemolytic uremic syndrome", "Disseminated intravascular coagulation", "Aplastic anemia"],
+            "answer": "Immune thrombocytopenic purpura",
+        },
+    },
+    "RED_BLOOD_CELL_DISORDERS": {
+        "prompt": (
+            "You are an expert in hematology. Generate a USMLE Step 2 CK question about red blood cell disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 30-year-old man presents with fatigue and pallor. Laboratory tests show microcytic anemia. What is the most likely cause?",
+            "choices": ["Iron deficiency anemia", "Thalassemia", "Sideroblastic anemia", "Anemia of chronic disease", "Lead poisoning"],
+            "answer": "Iron deficiency anemia",
+        },
+    },
+    "TRANSFUSION_MEDICINE": {
+        "prompt": (
+            "You are an expert in hematology. Generate a USMLE Step 2 CK question about transfusion medicine. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 40-year-old woman requires a blood transfusion. She has a history of multiple transfusions. What is the most likely complication?",
+            "choices": ["Alloimmunization", "Transfusion-related acute lung injury", "Febrile non-hemolytic transfusion reaction", "Acute hemolytic transfusion reaction", "Iron overload"],
+            "answer": "Alloimmunization",
+        },
+    },
+    "WHITE_BLOOD_CELL_DISORDERS": {
+        "prompt": (
+            "You are an expert in hematology. Generate a USMLE Step 2 CK question about white blood cell disorders. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 50-year-old man presents with fatigue and night sweats. Laboratory tests show leukocytosis with a left shift. What is the most likely diagnosis?",
+            "choices": ["Chronic myeloid leukemia", "Acute myeloid leukemia", "Chronic lymphocytic leukemia", "Acute lymphoblastic leukemia", "Infectious mononucleosis"],
+            "answer": "Chronic myeloid leukemia",
+        },
+    },
+    "PRINCIPLES_OF_ONCOLOGY": {
+        "prompt": (
+            "You are an expert in oncology. Generate a USMLE Step 2 CK question about the principles of oncology. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 65-year-old woman presents with a breast lump. Biopsy shows invasive ductal carcinoma. What is the most appropriate next step in management?",
+            "choices": ["Surgical resection", "Chemotherapy", "Radiation therapy", "Hormonal therapy", "Observation"],
+            "answer": "Surgical resection",
+        },
+    },
+    "MISCELLANEOUS": {
+        "prompt": (
+            "You are an expert in hematology and oncology. Generate a USMLE Step 2 CK question about miscellaneous topics in hematology and oncology. "
+            "Include a clinical vignette, relevant symptoms, imaging findings, 5 answer options, correct answer, and short explanation. "
+            "Return ONLY a valid JSON object as described in the schema."
+        ),
+        "sample_question": {
+            "question": "A 45-year-old man presents with fatigue and splenomegaly. Laboratory tests show pancytopenia. What is the most likely diagnosis?",
+            "choices": ["Myelodysplastic syndrome", "Aplastic anemia", "Chronic myeloid leukemia", "Hairy cell leukemia", "Lymphoma"],
+            "answer": "Myelodysplastic syndrome",
+        },
+    },
+}
 
-
-class BiostatsAndEpidemiology:
-    UPPER_GI_DISORDERS = (
-        "You are a gastroenterology expert. Generate a USMLE Step 2 CK-style question about upper GI disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-    LOWER_GI_DISORDERS = (
-        "You are a gastroenterology expert. Generate a USMLE Step 2 CK-style question about lower GI disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-    LIVER_AND_PANCREAS = (
-        "You are a gastroenterology expert. Generate a USMLE Step 2 CK-style question about the liver and pancreas. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class EndocrineAndDiabetesAndMetabolism:
-    GLOMERULAR_DISEASES = (
-        "You are a nephrology and urology expert. Generate a USMLE Step 2 CK-style question about glomerular diseases. Return ONLY a valid JSON object as described in the schema."
-    )
-    TUBULAR_DISORDERS = (
-        "You are a nephrology and urology expert. Generate a USMLE Step 2 CK-style question about tubular disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-    MALE_REPRODUCTIVE_DISORDERS = (
-        "You are a nephrology and urology expert. Generate a USMLE Step 2 CK-style question about male reproductive disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class PosioningAndEnviromentalExposure:
-    NORMAL_PREGNANCY = (
-        "You are an obstetrics expert. Generate a USMLE Step 2 CK-style question about normal pregnancy. Return ONLY a valid JSON object as described in the schema."
-    )
-    PREGNANCY_COMPLICATIONS = (
-        "You are an obstetrics expert. Generate a USMLE Step 2 CK-style question about pregnancy complications. Return ONLY a valid JSON object as described in the schema."
-    )
-    POSTPARTUM_CARE = (
-        "You are an obstetrics expert. Generate a USMLE Step 2 CK-style question about postpartum care. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class FemaleReproductiveSystemAndBreastPrompt:
-    MENSTRUAL_DISORDERS = (
-        "You are a gynecology and breast health expert. Generate a USMLE Step 2 CK-style question about menstrual disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-    GYNECOLOGIC_ONCOLOGY = (
-        "You are a gynecology and breast health expert. Generate a USMLE Step 2 CK-style question about gynecologic oncology. Return ONLY a valid JSON object as described in the schema."
-    )
-    BREAST_DISORDERS = (
-        "You are a gynecology and breast health expert. Generate a USMLE Step 2 CK-style question about breast disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class PsychiatricAndSubstanceUseDisorders:
-    DIABETES_MELLITUS = (
-        "You are an endocrinology expert. Generate a USMLE Step 2 CK-style question about diabetes mellitus. Return ONLY a valid JSON object as described in the schema."
-    )
-    THYROID_DISORDERS = (
-        "You are an endocrinology expert. Generate a USMLE Step 2 CK-style question about thyroid disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-    ADRENAL_DISORDERS = (
-        "You are an endocrinology expert. Generate a USMLE Step 2 CK-style question about adrenal disorders. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class SocialSciences:
-    SEPSIS = (
-        "You are an expert in multisystem disorders. Generate a USMLE Step 2 CK-style question about sepsis. Return ONLY a valid JSON object as described in the schema."
-    )
-    SHOCK = (
-        "You are an expert in multisystem disorders. Generate a USMLE Step 2 CK-style question about shock. Return ONLY a valid JSON object as described in the schema."
-    )
-    SYSTEMIC_INFLAMMATORY_RESPONSE_SYNDROME = (
-        "You are an expert in multisystem disorders. Generate a USMLE Step 2 CK-style question about systemic inflammatory response syndrome. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class HematologyAndOncology:
-    STUDY_DESIGN = (
-        "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK-style question about study design. Return ONLY a valid JSON object as described in the schema."
-    )
-    STATISTICAL_ANALYSIS = (
-        "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK-style question about statistical analysis. Return ONLY a valid JSON object as described in the schema."
-    )
-    POPULATION_HEALTH = (
-        "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK-style question about population health. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class InfectiousDiseases:
-    MEDICAL_ETHICS = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about medical ethics. Return ONLY a valid JSON object as described in the schema."
-    )
-    PATIENT_SAFETY = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about patient safety. Return ONLY a valid JSON object as described in the schema."
-    )
-    PROFESSIONALISM = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about professionalism. Return ONLY a valid JSON object as described in the schema."
-    )
-
-class MaleReproductiveSystem:
-    MEDICAL_ETHICS = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about medical ethics. Return ONLY a valid JSON object as described in the schema."
-    )
-    PATIENT_SAFETY = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about patient safety. Return ONLY a valid JSON object as described in the schema."
-    )
-    PROFESSIONALISM = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about professionalism. Return ONLY a valid JSON object as described in the schema."
-    )
-
-class NervousSystem:
-    MEDICAL_ETHICS = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about medical ethics. Return ONLY a valid JSON object as described in the schema."
-    )
-    PATIENT_SAFETY = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about patient safety. Return ONLY a valid JSON object as described in the schema."
-    )
-    PROFESSIONALISM = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about professionalism. Return ONLY a valid JSON object as described in the schema."
-    )
-
-class Ophthalmology:
-    MEDICAL_ETHICS = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about medical ethics. Return ONLY a valid JSON object as described in the schema."
-    )
-    PATIENT_SAFETY = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about patient safety. Return ONLY a valid JSON object as described in the schema."
-    )
-    PROFESSIONALISM = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about professionalism. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class PregnancyChildbirthAndPuerperium:
-    MEDICAL_ETHICS = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about medical ethics. Return ONLY a valid JSON object as described in the schema."
-    )
-    PATIENT_SAFETY = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about patient safety. Return ONLY a valid JSON object as described in the schema."
-    )
-    PROFESSIONALISM = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about professionalism. Return ONLY a valid JSON object as described in the schema."
-    )
-
-class CriticalCare:
-    MEDICAL_ETHICS = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about medical ethics. Return ONLY a valid JSON object as described in the schema."
-    )
-    PATIENT_SAFETY = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about patient safety. Return ONLY a valid JSON object as described in the schema."
-    )
-    PROFESSIONALISM = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about professionalism. Return ONLY a valid JSON object as described in the schema."
-    )
-
-class RenalAndUrinary:
-    MEDICAL_ETHICS = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about medical ethics. Return ONLY a valid JSON object as described in the schema."
-    )
-    PATIENT_SAFETY = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about patient safety. Return ONLY a valid JSON object as described in the schema."
-    )
-    PROFESSIONALISM = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about professionalism. Return ONLY a valid JSON object as described in the schema."
-    )
-
-
-class RheumatologyAndOrthopedics:
-    MEDICAL_ETHICS = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about medical ethics. Return ONLY a valid JSON object as described in the schema."
-    )
-    PATIENT_SAFETY = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about patient safety. Return ONLY a valid JSON object as described in the schema."
-    )
-    PROFESSIONALISM = (
-        "You are an expert in medical ethics and professionalism. Generate a USMLE Step 2 CK-style question about professionalism. Return ONLY a valid JSON object as described in the schema."
-    )
