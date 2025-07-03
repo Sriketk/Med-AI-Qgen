@@ -30,7 +30,7 @@ try:
     mongo_uri = os.getenv("MONGODB_URI")
     client = MongoClient(mongo_uri)
     db = client["Qbank"]
-    collection = db["Qbank"]   # Use your desired database name
+    collection = db["qbanks"]   # Use your desired database name
     print("MongoDB client set up. Database name:", db.name)
 except Exception as e:
     print(f"Failed to connect to MongoDB: {e}")
