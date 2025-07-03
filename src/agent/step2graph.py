@@ -50,7 +50,6 @@ class State(TypedDict):
     """
 
     topic: Literal[
-        "Biochemistry",
         "BiostatsAndEpidemiology",
         "Cardiovascular",
         "MaleReproductiveSystem",
@@ -65,7 +64,7 @@ class State(TypedDict):
         "GastrointestinalAndNutrition",
         "PulmonaryAndCriticalCare",
         "HematologyAndOncology",
-        "AllergiesAndImmunology",
+        "AllergyAndImmunology",
         "RenalAndUrinary",
         "InfectiousDiseases",
         "RheumatologyAndOrthopedics",
