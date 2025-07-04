@@ -20,6 +20,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from agent import topic_prompts
+from agent import topic_prompts_step2
 from prompts import template_step2_ck
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
@@ -55,20 +56,22 @@ class State(TypedDict):
         "MaleReproductiveSystem",
         "NervousSystem",
         "Dermatology",
-        "EarNoseAndThroat",
-        "EndocrineAndDiabetesAndMetabolism",
+        "Ophthalmology"
+        "EarNoseThroatENT",
+        "EndocrineDiabetesMetabolism",
         "PosioningAndEnviromentalExposure",
-        "PregnancyChildbirthAndPuerperium",
-        "PsychiatricAndSubstanceUseDisorders",
-        "FemaleReproductiveSystem",
+        "PregnancyChildbirthPuerperium",
+        "PsychiatricBehavioralAndSubstanceUseDisorder",
+        "FemaleReproductiveSystemAndBreast",
         "GastrointestinalAndNutrition",
         "PulmonaryAndCriticalCare",
-        "HematologyAndOncology",
+        "HematologyOncology",
         "AllergyAndImmunology",
-        "RenalAndUrinary",
+        "RenalUrinarySystemsElectrolytes",
         "InfectiousDiseases",
-        "RheumatologyAndOrthopedics",
-        "SocialSciences",
+        "RheumatologyOrthopedicsSports",
+        "SocialSciencesEthicsLegalProfessional",
+        
     ]
     questions: list[Question]
     answer: any
@@ -104,7 +107,7 @@ class Questions(BaseModel):
 
 
 def generate_question_with_llm(state: State):
-    subtopics = getattr(topic_prompts, state["topic"])
+    subtopics = getattr(topic_prompts_step2, state["topic"])
     total_questions: list[Question] = []
     # print(subtopics)
     # subtopics = topic_prompts.Biochemistry
