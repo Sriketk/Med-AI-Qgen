@@ -21,7 +21,7 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from agent import topic_prompts
 from agent import topic_prompts_step2
-from prompts import template_step2_ck
+from agent.prompts import template_step2_ck
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
@@ -56,8 +56,7 @@ class State(TypedDict):
         "MaleReproductiveSystem",
         "NervousSystem",
         "Dermatology",
-        "Ophthalmology"
-        "EarNoseThroatENT",
+        "Ophthalmology" "EarNoseThroatENT",
         "EndocrineDiabetesMetabolism",
         "PosioningAndEnviromentalExposure",
         "PregnancyChildbirthPuerperium",
@@ -71,16 +70,49 @@ class State(TypedDict):
         "InfectiousDiseases",
         "RheumatologyOrthopedicsSports",
         "SocialSciencesEthicsLegalProfessional",
-        
     ]
     questions: list[Question]
-    answer: any
+
+
+class PatientDetails(BaseModel):
+    medications: list[str] = Field(
+        description="List of patient's current medications", default=[]
+    )
+    allergies: list[str] = Field(
+        description="List of patient's known allergies", default=[]
+    )
+    familyHistory: list[str] = Field(
+        description="List of relevant family medical history", default=[]
+    )
+    labResults: list[str] = Field(
+        description="List of laboratory test results", default=[]
+    )
+    options: list[str] = Field(
+        description="List of treatment or diagnostic options", default=[]
+    )
+    bloodPresure: str = Field(
+        description="Patient's blood pressure reading", default=""
+    )
+    respirations: str = Field(description="Patient's respiratory rate", default="")
+    pulse: str = Field(description="Patient's heart rate/pulse", default="")
+    physicalExamination: str = Field(
+        description="Findings from physical examination", default=""
+    )
+    temperature: str = Field(description="Patient's body temperature", default="")
+    history: str = Field(description="Patient's medical history", default="")
+    demographics: str = Field(description="Patient demographic information", default="")
 
 
 class Question(BaseModel):
     topic: str = Field(description="The topic of the question.")
     subtopic: str = Field(description="The subtopic of the question.")
-    question: str = Field(description="The question text.")
+    patientDetails: PatientDetails = Field(description="Patient details")
+    entireQuestion: str = Field(
+        description="The question including all of the patient details and all of the details .."
+    )
+    baseQuestion: str = Field(
+        description="The bare context and question of the case. Should be enought to point the user in the right direction. The minimum information for the user to ask a follow up question."
+    )
     shelfSubject: Literal[
         "Ambulatory Medicine",
         "Clinical Neurology",
@@ -100,6 +132,7 @@ class Question(BaseModel):
     source: str = Field(description="The source of the question.")
     created_at: str = Field(description="The date and time the question was created.")
     embedding: list[float] = Field(description="The embedding of the question.")
+    examType: str = Field(description="The type of exam the question is for.")
 
 
 class Questions(BaseModel):
@@ -134,12 +167,14 @@ def generate_question_with_llm(state: State):
     for question in total_questions:
         question.source = "gpt-4.1"
         question.created_at = datetime.now().isoformat()
-        text_to_embed = question.question + " " + " ".join(question.choices)
+        text_to_embed = question.entireQuestion + " " + " ".join(question.choices)
         embedding = embeddings.embed_query(text_to_embed)
         question.embedding = embedding
+        question.examType = "Step-2"
     # After collecting all questions
     with open("step2_questions.txt", "w") as f:
         f.write(str(total_questions))
+    # collection.insert_many(total_questions)
 
     return {"questions": total_questions}
 

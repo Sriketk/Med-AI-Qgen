@@ -73,7 +73,6 @@ class State(TypedDict):
         "RheumatologyAndOrthopedics",
     ]
     questions: list[Question]
-    answer: any
 
 
 class Question(BaseModel):
@@ -88,6 +87,7 @@ class Question(BaseModel):
     source: str = Field(description="The source of the question.")
     created_at: str = Field(description="The date and time the question was created.")
     embedding: list[float] = Field(description="The embedding of the question.")
+    examType: str = Field(description="The type of exam the question is for.")
 
 
 class Questions(BaseModel):
@@ -123,6 +123,8 @@ def generate_question_with_llm(state: State):
             - Do NOT include letters or numbers (e.g., A, B, C or 1, 2, 3) in the answer choices or the answer.
             - Provide a clear, concise explanation for the correct answer in no more than 5 sentences, focusing on the key clinical reasoning points.
             - Do NOT repeat or reuse any sample content in your generation.
+            - Make sure all of the questions are worded differently. Dont format all of the questions the same.
+            - ONLY Include Patient Details that are relevant to the question. 
 
             ### Reference Sample:
             Sample Question: {sample_question}  
@@ -156,6 +158,7 @@ def generate_question_with_llm(state: State):
         text_to_embed = question.question + " " + " ".join(question.choices)
         embedding = embeddings.embed_query(text_to_embed)
         question.embedding = embedding
+        question.examType = "Step-1"
     # After collecting all questions
     with open("questions.txt", "w") as f:
         f.write(str(total_questions))

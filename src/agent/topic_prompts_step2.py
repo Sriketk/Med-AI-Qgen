@@ -25,16 +25,16 @@ AllergyAndImmunology = {
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": """A 35-year-old woman presents with a 6-month history of joint pain affecting her hands, wrists, and knees. She reports morning stiffness lasting 2 hours and fatigue. Physical examination reveals swelling and tenderness of the metacarpophalangeal and proximal interphalangeal joints bilaterally. Laboratory studies show elevated ESR and CRP. Rheumatoid factor is positive. Which of the following is the most appropriate initial treatment?""",
+            "question": """A 32-year-old woman comes to the clinic because of a 3-month history of joint pain, fatigue, and a facial rash. She reports morning stiffness in her hands and wrists lasting over an hour and swelling in multiple finger joints. She also notes increased sensitivity to sunlight and intermittent low-grade fevers. On examination, she has tenderness and swelling of the metacarpophalangeal and proximal interphalangeal joints bilaterally, as well as a well-demarcated, erythematous rash over her cheeks and nasal bridge that spares the nasolabial folds. Laboratory studies show hemoglobin 10.2 g/dL, leukocytes 3,200/μL, and platelets 120,000/μL. Urinalysis reveals proteinuria and red blood cell casts. ANA and anti-dsDNA antibodies are positive.Which of the following is the most appropriate initial treatment for this patient’s current condition?""",
             "choices": [
-                "NSAIDs only",
+                "Hydroxychloroquine",
                 "Methotrexate",
                 "Prednisone",
-                "Physical therapy only",
-                "Hydroxychloroquine",
+                "Mycophenolate mofetil",
+                "Infliximab",
             ],
-            "answer": "Methotrexate",
-            "explanation": """This patient presents with classic rheumatoid arthritis: symmetric polyarthritis affecting small joints, prolonged morning stiffness, elevated inflammatory markers, and positive rheumatoid factor. Early aggressive treatment with disease-modifying antirheumatic drugs (DMARDs) is crucial to prevent joint destruction. Methotrexate is the first-line DMARD for rheumatoid arthritis due to its efficacy in slowing disease progression and preventing joint damage. While NSAIDs provide symptomatic relief and corticosteroids can be used for short-term control, they do not modify disease progression. Early initiation of methotrexate improves long-term outcomes.""",
+            "answer": "Prednisone",
+            "explanation": """This patient meets criteria for systemic lupus erythematosus (SLE), presenting with arthritis, malar rash, hematologic abnormalities, and renal involvement (proteinuria and RBC casts). The presence of nephritis and cytopenias indicates a moderate to severe flare. Systemic corticosteroids (prednisone) are the most appropriate initial treatment to quickly control active inflammation and prevent organ damage. Hydroxychloroquine (A) is used for mild disease and as maintenance therapy. Methotrexate (B) is more appropriate for isolated joint involvement. Mycophenolate mofetil (D) is used for maintenance or steroid-sparing in lupus nephritis but not as initial therapy. Infliximab (E) is not used for SLE.""",
         },
     },
     "IMMUNE_DEFICIENCIES": {
@@ -44,16 +44,30 @@ AllergyAndImmunology = {
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": """A 3-year-old boy presents with recurrent pneumonia, chronic diarrhea, and failure to thrive. He has had multiple infections with Pneumocystis jiroveci and cytomegalovirus. Laboratory studies show severe lymphopenia with absent T cells, normal B cell numbers, and low immunoglobulin levels. Which of the following is the most likely diagnosis?""",
+            "question": """A 6-month-old boy is brought to the pediatrician by his parents due to recurrent infections. He has had four episodes of otitis media, two episodes of pneumonia, and a hospitalization for bacterial meningitis since birth. He was born at term with no complications. Family history reveals that a maternal uncle died in infancy from a severe infection. On examination, the child appears well-nourished but has absent tonsillar tissue and no palpable lymph nodes. Laboratory studies show:
+
+    Hemoglobin: 12.0 g/dL
+
+    White blood cell count: 7,800/μL
+
+    Platelets: 250,000/μL
+
+    Immunoglobulin G: < 100 mg/dL (normal: 200–800 mg/dL)
+
+    Immunoglobulin M: undetectable
+
+    Immunoglobulin A: undetectable
+    Which of the following is the most likely diagnosis?
+""",
             "choices": [
-                "DiGeorge syndrome",
                 "Severe combined immunodeficiency",
-                "Common variable immunodeficiency",
                 "X-linked agammaglobulinemia",
+                "Common variable immunodeficiency",
+                "DiGeorge syndrome",
                 "Chronic granulomatous disease",
             ],
-            "answer": "Severe combined immunodeficiency",
-            "explanation": """This patient presents with severe combined immunodeficiency (SCID), characterized by profound T cell deficiency leading to severe opportunistic infections early in life. The key features include recurrent severe infections with opportunistic pathogens (Pneumocystis, CMV), failure to thrive, and laboratory findings of severe lymphopenia with absent or very low T cells. SCID is a pediatric emergency requiring immediate isolation and urgent hematopoietic stem cell transplantation. The opportunistic infections and early age of presentation distinguish SCID from other immunodeficiencies.""",
+            "answer": "X-linked agammaglobulinemia",
+            "explanation": """This infant has a history of recurrent bacterial infections, absent tonsils and lymph nodes, and markedly decreased immunoglobulin levels, which are classic findings of X-linked agammaglobulinemia (Bruton’s disease). This disorder is caused by a defect in B-cell maturation, leading to very low or absent B cells and immunoglobulins. The X-linked inheritance pattern is supported by the family history of an affected maternal uncle. Severe combined immunodeficiency (A) would present with both T and B cell defects and more severe, opportunistic infections. Common variable immunodeficiency (C) typically presents later in childhood or adulthood. DiGeorge syndrome (D) is associated with cardiac defects, hypocalcemia, and facial anomalies. Chronic granulomatous disease (E) presents with recurrent catalase-positive bacterial and fungal infections, but immunoglobulin levels are normal.""",
         },
     },
     "TRANSPLANT_MEDICINE": {
@@ -63,16 +77,40 @@ AllergyAndImmunology = {
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": """A 45-year-old man who received a kidney transplant 6 months ago presents with fever, decreased urine output, and rising serum creatinine from 1.2 to 2.8 mg/dL over the past week. He has been adherent to his immunosuppressive regimen of tacrolimus, mycophenolate, and prednisone. A kidney biopsy shows lymphocytic infiltration of tubules and interstitium. Which of the following is the most likely diagnosis?""",
+            "question": """A 45-year-old woman with end-stage renal disease due to hypertension underwent a living-donor kidney transplant three weeks ago. She is maintained on tacrolimus, mycophenolate mofetil, and prednisone. She now presents with a 2-day history of fever, malaise, and decreased urine output. Her temperature is 38.4°C (101.1°F), blood pressure is 135/80 mm Hg, and pulse is 92/min. Physical examination reveals mild tenderness over the transplanted kidney. Laboratory studies show:
+
+    Serum creatinine: 2.5 mg/dL (baseline: 1.1 mg/dL)
+
+    Blood urea nitrogen: 34 mg/dL
+
+    Urinalysis: 2+ protein, 10–15 WBCs/hpf, no bacteria
+
+    BK virus PCR: negative
+
+A renal biopsy is performed.
+
+Which of the following is the most likely finding on histological examination?
+
+""",
             "choices": [
-                "Acute tubular necrosis",
-                "Acute rejection",
-                "Chronic rejection",
-                "Calcineurin inhibitor toxicity",
-                "Urinary tract infection",
+                "Neutrophilic infiltration with fibrinoid necrosis of small arteries",
+                "Dense mononuclear infiltration of the interstitium and arterial wall necrosis",
+                "Interstitial fibrosis with tubular atrophy",
+                "Interstitial inflammation with basophilic intranuclear inclusions",
+                "Widespread thrombosis of graft vessels",
             ],
-            "answer": "Acute rejection",
-            "explanation": """This patient presents with acute rejection of his kidney transplant. The key features include rapid deterioration in kidney function (rising creatinine), fever, and decreased urine output occurring months after transplantation. The biopsy finding of lymphocytic infiltration is characteristic of acute cellular rejection. Despite adherence to immunosuppressive therapy, breakthrough rejection can occur and requires prompt recognition and treatment. Acute rejection typically presents with rapid functional decline and inflammatory changes on biopsy, distinguishing it from chronic rejection which develops gradually over years.""",
+            "answer": "Dense mononuclear infiltration of the interstitium and arterial wall necrosis",
+            "explanation": """This patient is presenting with acute renal transplant rejection, which typically occurs within weeks to months after transplantation. The clinical features include fever, graft tenderness, and rising creatinine. The most characteristic histological finding is dense mononuclear (lymphocytic) infiltration of the interstitium and necrosis of the arterial wall (vasculitis).
+
+    (A) Neutrophilic infiltration with fibrinoid necrosis is seen in hyperacute rejection.
+
+    (C) Interstitial fibrosis with tubular atrophy is seen in chronic rejection.
+
+    (D) Basophilic intranuclear inclusions are seen in BK virus nephropathy (ruled out by negative PCR).
+
+    (E) Widespread thrombosis of graft vessels is also seen in hyperacute rejection
+
+.""",
         },
     },
     "PRINCIPLES_OF_IMMUNOLOGY": {
@@ -82,16 +120,41 @@ AllergyAndImmunology = {
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": """A 28-year-old woman receives her first dose of a new medication and develops fever, joint pain, lymphadenopathy, and a maculopapular rash 10 days later. Laboratory studies show proteinuria and low complement levels (C3 and C4). Which of the following immunologic mechanisms is most likely responsible for her symptoms?""",
+            "question": """A 24-year-old man comes to the clinic because of a 2-month history of recurrent sinus infections and persistent eczema. He also reports frequent respiratory tract infections since childhood. Physical examination reveals dry, scaly patches on the flexural surfaces of his arms and mild swelling of the nasal mucosa. Laboratory studies show:
+
+    Absolute neutrophil count: 4,500/μL (normal)
+
+    Serum IgE: 2,500 IU/mL (normal < 100 IU/mL)
+
+    Serum IgA: 120 mg/dL (normal)
+
+    Serum IgG: 1,200 mg/dL (normal)
+
+    Serum IgM: 90 mg/dL (normal)
+
+    Eosinophil count: 800/μL (elevated)
+
+Which of the following best explains the pathophysiology underlying this patient’s condition?""",
             "choices": [
-                "Type I hypersensitivity",
-                "Type II hypersensitivity",
-                "Type III hypersensitivity",
-                "Type IV hypersensitivity",
-                "Complement deficiency",
+                "Defective phagocyte oxidative burst",
+                "Impaired B cell maturation",
+                "Defective T cell-mediated cytokine signaling",
+                "Absence of thymic tissue",
+                "Complement C1 esterase inhibitor deficiency",
             ],
-            "answer": "Type III hypersensitivity",
-            "explanation": """This patient presents with serum sickness-like syndrome, which is a classic example of Type III hypersensitivity reaction. The key features include the delayed onset (7-14 days), fever, arthralgia, lymphadenopathy, rash, and low complement levels. Type III reactions involve immune complex formation between antigen (medication) and antibodies, leading to complement activation and tissue deposition of immune complexes. The 10-day delay allows time for antibody production and immune complex formation. Low complement levels result from consumption during the inflammatory process.""",
+            "answer": "Defective T cell-mediated cytokine signaling",
+            "explanation": """This patient’s history of recurrent infections, severe eczema, and markedly elevated IgE is characteristic of Hyper-IgE syndrome (Job syndrome). The underlying pathophysiology is a defect in T cell-mediated cytokine signaling, specifically mutations affecting STAT3, which impairs Th17 cell differentiation. This leads to defective recruitment of neutrophils to sites of infection, resulting in recurrent bacterial infections and eczematous dermatitis.
+
+    (A) Defective phagocyte oxidative burst is seen in chronic granulomatous disease.
+
+    (B) Impaired B cell maturation is seen in X-linked agammaglobulinemia.
+
+    (D) Absence of thymic tissue is seen in DiGeorge syndrome.
+
+    (E) C1 esterase inhibitor deficiency causes hereditary angioedema, not eczema or recurrent infections.
+
+This question assesses understanding of immunological principles, including the role of cytokines and T cell subsets in immune system function
+.""",
         },
     },
 }

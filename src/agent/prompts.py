@@ -43,6 +43,7 @@ template_step2_ck = """
             ### Instructions:
             - Generate 10 unique questions, each based on a different clinical vignette.
             - Present detailed clinical vignettes, including relevant patient demographics, history, physical exam findings, and laboratory or imaging results.
+            - Each patient should vary in age, gender, and symptoms.
             - **Focus on DIAGNOSIS + TREATMENT**: Questions should test not only the ability to diagnose conditions but also to determine appropriate management, treatment plans, and next steps in patient care.
             - Focus on clinical reasoning, diagnosis, management, or the next best step in patient care—especially treatment decisions, considering comorbidities, contraindications, or complications.
             - Reflect real-world scenarios encountered during or after clinical rotations, not preclinical or basic science content.
@@ -55,6 +56,9 @@ template_step2_ck = """
             - Do NOT include letters or numbers (e.g., A, B, C or 1, 2, 3) in the answer choices or the answer.
             - Provide a clear, concise explanation for the correct answer and why the other options are incorrect, in no more than 5 sentences.
             - Do NOT repeat or reuse any sample content in your generation.
+            - Make sure all of the questions are worded differently. Dont format all of the questions the same.
+            - ONLY Include Patient Details that are relevant to the question. 
+            - Do not include extra patient information that is not relevant to the question or might be misleading.
 
             ### Reference Sample:
             Sample Question: {sample_question}  
