@@ -13,9 +13,9 @@ try:
     mongo_uri = os.getenv("MONGODB_URI")
     print(mongo_uri)
     client = MongoClient(mongo_uri)
-    # query_filter = {
-    #     "topic": "Biochemistry"
-    # }
+    query_filter = {
+        "examType": "Step-2"
+    }
     # update_operation = {
     #     "$set": {
     #         "created_at": datetime.now().isoformat(),
@@ -25,11 +25,11 @@ try:
     db = client["Qbank"]
     collection = db["qbanks"]   # Use your desired database name
     print("MongoDB client set up. Database name:", db.name)
-    collection.insert_many(values)
+    # collection.insert_many(values)
     # collection.update_many(query_filter, update_operation)
 
     # Remove the 'questions' field from all documents
-    # result = collection.update_many({}, {"$set": {"examType": "Step-1"}})
+    result = collection.update_many(query_filter, {"$rename": {"entireQuestion": "question"}})
     print(f"Inserted {len(values)} documents.")
 except Exception as e:
     print(f"Failed to connect to MongoDB: {e}")
