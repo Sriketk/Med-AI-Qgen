@@ -30,6 +30,7 @@ template_step1 = """
             
             """
 
+
 template_step2_ck = """
             You are a professional medical board exam question writer.
 
