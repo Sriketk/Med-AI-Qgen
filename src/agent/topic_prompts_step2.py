@@ -162,70 +162,101 @@ This question assesses understanding of immunological principles, including the 
 BiostatsAndEpidemiology = {
     "EPIDEMIOLOGY_AND_POPULATION_HEALTH": {
         "prompt": (
-            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about epidemiology and population health. "
-            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK-style clinical question focused on population health, public health interventions, social determinants of health, or global burden of disease. "
+            "Include a realistic clinical vignette with demographic context, relevant statistics or public health data, 5 answer choices, a correct answer, and a concise explanation that includes core epidemiologic reasoning. "
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": "A study is conducted to assess the prevalence of hypertension in a population. The sample includes 1000 individuals, and 150 are found to have hypertension. What is the prevalence of hypertension in this population?",
-            "choices": ["10%", "15%", "20%", "25%", "30%"],
-            "answer": "15%",
-            "explanation": "Prevalence is calculated as the number of cases divided by the total population. Here, 150 out of 1000 individuals have hypertension, resulting in a prevalence of 15%.",
+            "question": """A 62-year-old man with type 2 diabetes and hypertension presents for a routine follow-up. His primary care physician practices in a county with high rates of cardiovascular disease-related mortality. The physician wants to prioritize interventions that offer the greatest impact on population health in this region. Which of the following public health strategies would be expected to have the greatest effect on reducing cardiovascular mortality at the population level?""",
+            "choices": [
+                "Implementing a community exercise program for adults over age 60",
+                "Launching a national awareness campaign about dietary sodium",
+                "Subsidizing medications for secondary prevention of coronary artery disease",
+                "Regulating tobacco product advertising and sales",
+                "Expanding access to cardiac catheterization laboratories",
+            ],
+            "answer": "Regulating tobacco product advertising and sales",
+            "explanation": "Tobacco control policies (e.g., advertising bans, taxation, sales restrictions) are among the most effective and scalable public health interventions for reducing cardiovascular mortality. While clinical programs are helpful, regulatory strategies targeting risk factors at the population level have the broadest and most cost-effective impact.",
         },
     },
     "MEASURES_AND_DISTRIBUTION_OF_DATA": {
         "prompt": (
-            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about measures and distribution of data. "
-            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK-style question focused on interpretation of central tendency, variability, skewness, or distribution of data in a clinical or research context. "
+            "Include a clinical vignette, relevant numerical data, 5 answer options, a correct answer, and a short explanation with interpretation of statistical measures. "
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": "A researcher is analyzing the distribution of cholesterol levels in a sample of 200 adults. The mean cholesterol level is 200 mg/dL with a standard deviation of 20 mg/dL. Assuming a normal distribution, what percentage of individuals have cholesterol levels between 180 mg/dL and 220 mg/dL?",
-            "choices": ["68%", "75%", "80%", "85%", "90%"],
-            "answer": "68%",
-            "explanation": "In a normal distribution, approximately 68% of the data falls within one standard deviation of the mean. Here, 180 mg/dL to 220 mg/dL represents one standard deviation from the mean of 200 mg/dL.",
+            "question": """A researcher collects systolic blood pressure measurements from 1,000 patients in a cardiology clinic. The data are right-skewed due to a subset of patients with poorly controlled hypertension. The mean is 148 mmHg, median is 135 mmHg, and mode is 130 mmHg. Which of the following statements best describes this data set?""",
+            "choices": [
+                "The data are normally distributed",
+                "The median is greater than the mean",
+                "The mean is the best measure of central tendency",
+                "The distribution is left-skewed",
+                "The median is less affected by outliers than the mean",
+            ],
+            "answer": "The median is less affected by outliers than the mean",
+            "explanation": "In a right-skewed distribution, the mean is pulled in the direction of the tail by extreme values (outliers). The median is more resistant to outliers and better represents the central location of skewed data.",
         },
     },
     "PROBABILITY_AND_PRINCIPLES_OF_TESTING": {
         "prompt": (
-            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about probability and principles of testing. "
-            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK-style question involving test characteristics (sensitivity, specificity, PPV, NPV, likelihood ratios, Bayes' theorem), clinical decision thresholds, or diagnostic reasoning. "
+            "Embed these concepts within a realistic clinical vignette and return 5 answer options, a correct answer, and a concise explanation that teaches core probability principles. "
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": "A new diagnostic test for diabetes has a sensitivity of 90% and a specificity of 95%. In a population where the prevalence of diabetes is 10%, what is the positive predictive value of the test?",
-            "choices": ["50%", "60%", "70%", "80%", "90%"],
-            "answer": "70%",
-            "explanation": "Positive predictive value (PPV) is the probability that subjects with a positive screening test truly have the disease. It is influenced by the prevalence of the disease in the population. Here, the PPV is calculated using the sensitivity, specificity, and prevalence.",
+            "question": """A 45-year-old woman presents with fatigue, weight gain, and cold intolerance. Her physician suspects hypothyroidism and orders a TSH test, which returns slightly elevated. The physician considers ordering confirmatory free T4 levels. The TSH test has a sensitivity of 95% and specificity of 85% for hypothyroidism. The prevalence of hypothyroidism in the population is 2%. Which of the following best explains the likelihood that this patient actually has hypothyroidism based on the TSH result?""",
+            "choices": [
+                "High due to the test’s high sensitivity",
+                "Low due to the test’s low specificity",
+                "Low due to the low prevalence of hypothyroidism",
+                "High because the TSH test is a gold standard",
+                "Uncertain without the free T4 level",
+            ],
+            "answer": "Low due to the low prevalence of hypothyroidism",
+            "explanation": "Despite high sensitivity and specificity, the positive predictive value of a test depends heavily on disease prevalence. In low-prevalence settings, even good tests have a higher rate of false positives, reducing the likelihood that a positive result reflects true disease (Bayes' theorem).",
         },
     },
     "STUDY_DESIGN_AND_INTERPRETATION": {
         "prompt": (
-            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about study design and interpretation. "
-            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK-style question about study design or result interpretation. Focus on randomized controlled trials, cohort studies, case-control studies, biases, confounders, or validity measures. "
+            "Provide a clinical vignette with study parameters and 5 answer choices. Include the correct answer and a concise explanation that reinforces key epidemiologic reasoning. "
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": "A randomized controlled trial is conducted to evaluate the efficacy of a new antihypertensive drug. The trial includes 500 participants, with 250 receiving the drug and 250 receiving a placebo. After 6 months, the mean reduction in blood pressure is 10 mmHg in the drug group and 5 mmHg in the placebo group. What is the absolute risk reduction?",
-            "choices": ["1%", "2%", "3%", "4%", "5%"],
-            "answer": "5%",
-            "explanation": "Absolute risk reduction (ARR) is the difference in event rates between two groups. Here, the ARR is the difference in mean blood pressure reduction between the drug and placebo groups, which is 5 mmHg.",
+            "question": """A study evaluates the effect of a new diabetes drug on the incidence of stroke. Researchers assign patients with poor glycemic control to the treatment group and those with well-controlled diabetes to the placebo group. Over 5 years, the treatment group has a lower incidence of stroke. Which of the following best explains the primary limitation of this study design?""",
+            "choices": [
+                "Recall bias",
+                "Loss to follow-up",
+                "Survivorship bias",
+                "Confounding by indication",
+                "Selection bias due to randomization",
+            ],
+            "answer": "Confounding by indication",
+            "explanation": "Patients with worse disease severity were preferentially assigned to treatment, introducing confounding by indication — a type of selection bias where disease severity influences treatment choice and outcome. This weakens causal inference unless controlled via randomization or statistical adjustment.",
         },
     },
     "MISCELLANEOUS": {
         "prompt": (
-            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK question about miscellaneous topics in biostatistics and epidemiology. "
-            "Include a clinical vignette, relevant data, 5 answer options, correct answer, and short explanation. "
+            "You are a biostatistics and epidemiology expert. Generate a USMLE Step 2 CK-style question about an advanced or mixed-concept topic that does not fit neatly into core categories. "
+            "This may include ROC curves, number needed to treat, attributable risk, interaction effects, meta-analysis, or ethics in statistical reporting. Include a vignette, 5 answer choices, correct answer, and a concise teaching explanation. "
             "Return ONLY a valid JSON object as described in the schema."
         ),
         "sample_question": {
-            "question": "A cohort study is conducted to investigate the association between smoking and lung cancer. The study follows 1000 smokers and 1000 non-smokers for 10 years. At the end of the study, 100 smokers and 10 non-smokers develop lung cancer. What is the relative risk of lung cancer in smokers compared to non-smokers?",
-            "choices": ["5", "10", "15", "20", "25"],
-            "answer": "10",
-            "explanation": "Relative risk (RR) is the ratio of the probability of an event occurring in the exposed group versus a non-exposed group. Here, the RR is calculated as (100/1000) / (10/1000) = 10, indicating smokers are 10 times more likely to develop lung cancer compared to non-smokers.",
+            "question": """A clinical trial compares two cholesterol-lowering drugs. The number needed to treat (NNT) with Drug A is 50 to prevent one myocardial infarction, while the NNT for Drug B is 100. Which of the following conclusions is most appropriate?""",
+            "choices": [
+                "Drug B is more effective at reducing MI risk",
+                "Drug A has twice the efficacy of Drug B",
+                "Drug A has a greater absolute risk reduction than Drug B",
+                "The relative risk reduction of Drug B is greater",
+                "Both drugs are equally effective since both reduce risk",
+            ],
+            "answer": "Drug A has a greater absolute risk reduction than Drug B",
+            "explanation": "NNT is the inverse of absolute risk reduction (ARR). A lower NNT means a higher ARR, implying Drug A prevents more events per treated patient. It does not necessarily reflect relative risk or overall efficacy without context.",
         },
     },
 }
+
 
 Cardiovascular = {
     "AORTIC_AND_PERIPHERAL_ARTERY_DISEASES": {
