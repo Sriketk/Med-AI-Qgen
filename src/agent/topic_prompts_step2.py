@@ -454,116 +454,111 @@ Cardiovascular = {
 Dermatology = {
     "NORMAL_STRUCTURE_AND_FUNCTION_OF_SKIN": {
         "prompt": (
-            "You are a dermatology expert. Generate a USMLE Step 2 CK question about the normal structure and function of skin. "
-            "Include a clinical vignette, relevant symptoms, histological findings, 5 answer options, correct answer, and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
+            "You are a dermatology expert. Generate a high-yield USMLE Step 2 CK question on normal structure and function of the skin. "
+            "Include a clinical vignette, patient presentation, histological correlation, 5 answer options, correct answer, and a brief but clear explanation. "
+            "Return ONLY a valid JSON object according to the schema."
         ),
         "sample_question": {
-            "question": "A 25-year-old woman presents with dry, itchy skin. Examination reveals fine scaling and lichenification. What is the most likely underlying cause of her symptoms?",
+            "question": "A 22-year-old swimmer presents with persistent skin dryness and cracking, especially after training sessions. Examination reveals xerotic patches and mild erythema on the dorsal hands and feet. A skin biopsy reveals decreased ceramide content and disruption of the stratum corneum lipid layer. Which of the following skin functions is most directly impaired?",
             "choices": [
-                "Epidermal barrier dysfunction",
-                "Autoimmune reaction",
-                "Bacterial infection",
-                "Fungal infection",
-                "Viral infection",
+                "Barrier to water loss",
+                "Melanin production",
+                "Sebum secretion",
+                "Tactile sensation",
+                "Thermoregulation via eccrine glands",
             ],
-            "answer": "Epidermal barrier dysfunction",
-            "explanation": "The patient's symptoms are consistent with atopic dermatitis, which is often due to epidermal barrier dysfunction leading to dry, itchy skin.",
+            "answer": "Barrier to water loss",
+            "explanation": "The stratum corneum is the outermost layer of the epidermis, rich in lipids (including ceramides), which form the water barrier. Dysfunction here impairs water retention and causes xerosis.",
         },
     },
     "DISORDERS_OF_EPDERMAL_APPENDAGES": {
         "prompt": (
-            "You are a dermatology expert. Generate a USMLE Step 2 CK question about disorders of epidermal appendages. "
-            "Include a clinical vignette, relevant symptoms, histological findings, 5 answer options, correct answer, and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
+            "You are a dermatology expert. Write a clinically detailed USMLE Step 2 CK question on disorders of epidermal appendages. "
+            "Include a full vignette with symptoms, possible risk factors, histology if relevant, 5 answer options, correct answer, and a short explanation."
         ),
         "sample_question": {
-            "question": "A 30-year-old man presents with multiple painful nodules on his axillae. Examination reveals inflamed nodules and sinus tracts. What is the most likely diagnosis?",
+            "question": "A 34-year-old woman presents with painful nodules and draining sinus tracts in the groin and underarms. She notes scarring from prior lesions. She has a BMI of 32 and reports smoking 1 pack per day. Biopsy shows follicular occlusion and perifollicular lymphocytic infiltration. What is the most likely diagnosis?",
             "choices": [
                 "Hidradenitis suppurativa",
-                "Acne vulgaris",
-                "Folliculitis",
-                "Psoriasis",
-                "Eczema",
+                "Acne conglobata",
+                "Folliculitis decalvans",
+                "Pilonidal cyst",
+                "Dissecting cellulitis",
             ],
             "answer": "Hidradenitis suppurativa",
-            "explanation": "Hidradenitis suppurativa is characterized by painful nodules and sinus tracts in areas with apocrine glands, such as the axillae.",
+            "explanation": "Hidradenitis suppurativa is a chronic inflammatory condition affecting apocrine gland–bearing areas, often triggered by follicular occlusion. It presents with nodules, sinus tracts, and scarring.",
         },
     },
     "INFLAMMATORY_DERMATOSES_AND_BULLOUS_DISEASES": {
         "prompt": (
-            "You are a dermatology expert. Generate a USMLE Step 2 CK question about inflammatory dermatoses and bullous diseases. "
-            "Include a clinical vignette, relevant symptoms, histological findings, 5 answer options, correct answer, and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
+            "You are a dermatology expert. Generate a challenging USMLE Step 2 CK vignette about inflammatory dermatoses and bullous diseases. "
+            "Include symptoms, progression, biopsy findings, and plausible distractors. Provide 5 answer choices, correct answer, and a concise explanation."
         ),
         "sample_question": {
-            "question": "A 40-year-old woman presents with tense blisters on her abdomen and thighs. Biopsy shows subepidermal blisters with eosinophils. What is the most likely diagnosis?",
+            "question": "A 72-year-old man presents with itchy, tense blisters on his lower abdomen and thighs. Nikolsky sign is negative. Skin biopsy reveals a subepidermal split with linear IgG and C3 deposition along the basement membrane on direct immunofluorescence. What is the most likely diagnosis?",
             "choices": [
                 "Bullous pemphigoid",
                 "Pemphigus vulgaris",
                 "Dermatitis herpetiformis",
-                "Erythema multiforme",
-                "Stevens-Johnson syndrome",
+                "Linear IgA bullous dermatosis",
+                "Toxic epidermal necrolysis",
             ],
             "answer": "Bullous pemphigoid",
-            "explanation": "Bullous pemphigoid is characterized by tense blisters and subepidermal blisters with eosinophils on biopsy.",
+            "explanation": "Bullous pemphigoid presents with tense, non-fragile blisters in older adults. It shows subepidermal separation and linear IgG/C3 deposition along the basement membrane zone.",
         },
     },
     "SKIN_AND_SOFT_TISSUE_INFECTIONS": {
         "prompt": (
-            "You are a dermatology expert. Generate a USMLE Step 2 CK question about skin and soft tissue infections. "
-            "Include a clinical vignette, relevant symptoms, microbiological findings, 5 answer options, correct answer, and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
+            "You are a dermatology expert. Create a USMLE Step 2 CK question on skin and soft tissue infections. Include microbiology, risk factors, clinical presentation, and decision-making. "
+            "Provide 5 answer options, the correct one, and a brief explanation."
         ),
         "sample_question": {
-            "question": "A 50-year-old man presents with a painful, swollen leg. Examination reveals erythema, warmth, and tenderness. What is the most likely causative organism?",
+            "question": "A 64-year-old man with diabetes presents with an erythematous, warm, and tender plaque on his lower leg. He has a low-grade fever. The borders are raised and sharply demarcated. Blood cultures are pending. What is the most likely causative organism?",
             "choices": [
-                "Staphylococcus aureus",
                 "Streptococcus pyogenes",
+                "Staphylococcus aureus",
                 "Pseudomonas aeruginosa",
-                "Escherichia coli",
-                "Candida albicans",
+                "Clostridium perfringens",
+                "Mycobacterium marinum",
             ],
             "answer": "Streptococcus pyogenes",
-            "explanation": "Cellulitis is commonly caused by Streptococcus pyogenes, presenting with erythema, warmth, and tenderness.",
+            "explanation": "Erysipelas, a superficial skin infection with sharply demarcated borders, is classically caused by Streptococcus pyogenes. Risk factors include diabetes and skin barrier disruption.",
         },
     },
     "SKIN_TUMORS_AND_TUMOR_LIKE_LESIONS": {
         "prompt": (
-            "You are a dermatology expert. Generate a USMLE Step 2 CK question about skin tumors and tumor-like lesions. "
-            "Include a clinical vignette, relevant symptoms, histological findings, 5 answer options, correct answer, and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
+            "You are a dermatology expert. Write a USMLE Step 2 CK–level question about skin tumors. Include histopathological clues and clinical differentiation. "
+            "Return a JSON with a question stem, 5 choices, the correct answer, and a short explanation."
         ),
         "sample_question": {
-            "question": "A 60-year-old woman presents with a pearly papule on her nose. Biopsy shows nests of basaloid cells. What is the most likely diagnosis?",
+            "question": "A 59-year-old woman presents with a slowly enlarging pearly papule on her upper cheek. It bleeds occasionally when rubbed. Dermoscopy reveals arborizing telangiectasias. A punch biopsy shows basaloid cell nests with peripheral palisading. What is the most likely diagnosis?",
             "choices": [
                 "Basal cell carcinoma",
                 "Squamous cell carcinoma",
-                "Melanoma",
+                "Amelanotic melanoma",
                 "Actinic keratosis",
                 "Seborrheic keratosis",
             ],
             "answer": "Basal cell carcinoma",
-            "explanation": "Basal cell carcinoma is characterized by a pearly papule and nests of basaloid cells on biopsy.",
+            "explanation": "Basal cell carcinoma commonly presents as a pearly nodule with telangiectasias. Histology shows basaloid cells with peripheral palisading and clefting from surrounding stroma.",
         },
     },
     "MISCELLANEOUS": {
         "prompt": (
-            "You are a dermatology expert. Generate a USMLE Step 2 CK question about miscellaneous dermatology topics. "
-            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
+            "You are a dermatology expert. Create a high-yield USMLE Step 2 CK vignette from a miscellaneous dermatology topic (e.g., systemic disease manifestations, drug eruptions, photodermatoses). "
+            "Include a clinical stem, 5 answer choices, the correct answer, and a brief rationale."
         ),
         "sample_question": {
-            "question": "A 35-year-old woman presents with a butterfly-shaped rash on her face. What is the most likely associated condition?",
+            "question": "A 28-year-old woman presents with facial rash that worsens after sun exposure. Examination reveals a malar rash sparing the nasolabial folds. She also reports arthralgias and fatigue. ANA is positive with anti-dsDNA antibodies. What is the most likely diagnosis?",
             "choices": [
                 "Systemic lupus erythematosus",
+                "Polymorphous light eruption",
                 "Rosacea",
-                "Psoriasis",
                 "Seborrheic dermatitis",
-                "Contact dermatitis",
+                "Dermatomyositis",
             ],
             "answer": "Systemic lupus erythematosus",
-            "explanation": "A butterfly-shaped rash on the face is characteristic of systemic lupus erythematosus.",
+            "explanation": "The malar rash in SLE typically spares the nasolabial folds. Other systemic features (arthralgia, fatigue) and positive anti-dsDNA support the diagnosis.",
         },
     },
 }
