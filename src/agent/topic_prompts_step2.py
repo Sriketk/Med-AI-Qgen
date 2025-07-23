@@ -564,24 +564,28 @@ Dermatology = {
 }
 
 MaleReproductiveSystem = {
-    "DISORDERS_OF_THE_MALE_REPRODUCTIVE_SYSTEM": {
-        "prompt": (
-            "You are a urology expert. Generate a USMLE Step 2 CK question about disorders of the male reproductive system. "
-            "Include a clinical vignette, relevant symptoms, labs, 5 answer options, correct answer, and short explanation. "
-            "Return ONLY a valid JSON object as described in the schema."
-        ),
-        "sample_question": {
-            "question": "A 50-year-old man presents with difficulty urinating and a weak stream. Digital rectal examination reveals an enlarged, non-tender prostate. What is the most likely diagnosis?",
-            "choices": [
-                "Benign prostatic hyperplasia",
-                "Prostate cancer",
-                "Prostatitis",
-                "Urethral stricture",
-                "Bladder cancer",
-            ],
-            "answer": "Benign prostatic hyperplasia",
-            "explanation": "The patient's symptoms and examination findings are consistent with benign prostatic hyperplasia, a common condition in older men.",
-        },
+    {
+        "DISORDERS_OF_THE_MALE_REPRODUCTIVE_SYSTEM": {
+            "prompt": (
+                "You are a urology expert. Generate a USMLE Step 2 CK–level question about disorders of the male reproductive system. "
+                "Include a realistic clinical vignette, symptoms, lab or imaging results when appropriate, and a clinical reasoning challenge. "
+                "Then list 5 answer choices, indicate the correct answer, and give a concise but high-yield explanation. "
+                "Return ONLY a valid JSON object using the following schema: "
+                "{ question: string, choices: string[], answer: string, explanation: string }"
+            ),
+            "sample_question": {
+                "question": "A 28-year-old man presents with a 2-day history of scrotal pain and swelling. The pain started gradually and worsens with activity. On physical exam, the right hemiscrotum is tender and elevated. The cremasteric reflex is intact. Urinalysis shows pyuria and bacteriuria. What is the most likely diagnosis?",
+                "choices": [
+                    "Epididymitis",
+                    "Testicular torsion",
+                    "Orchitis",
+                    "Varicocele",
+                    "Inguinal hernia",
+                ],
+                "answer": "Epididymitis",
+                "explanation": "Epididymitis presents with gradual-onset testicular pain, intact cremasteric reflex, and signs of urinary tract infection. Torsion would have acute onset and absent cremasteric reflex.",
+            },
+        }
     }
 }
 
